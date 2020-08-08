@@ -33,7 +33,11 @@ namespace VHS
                     movementInputData.IsRunning = false;
                 };
                 _playerControls.Player.Jump.performed += context => movementInputData.JumpClicked = true;
-                _playerControls.Player.Crouch.performed += context => movementInputData.CrouchClicked = !movementInputData.CrouchClicked;
+                _playerControls.Player.Crouch.performed += context =>
+                {
+                    PlayerEvents.Current.Crouch();
+                    movementInputData.CrouchClicked = true;
+                };
                 _playerControls.Player.Look.performed += context => cameraInputData.InputVector = context.ReadValue<Vector2>();
                 //_playerControls.Player.Slide.performed += context => m_Slide = true;
 

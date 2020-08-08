@@ -232,7 +232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642085388}
   m_LocalRotation: {x: 0, y: 0, z: 0.09454266, w: 0.9955208}
-  m_LocalPosition: {x: 1, y: -0.58, z: 1.24}
+  m_LocalPosition: {x: 1, y: -0.68, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 48035190}
@@ -510,7 +510,8 @@ GameObject:
   - component: {fileID: 510954825394885491}
   - component: {fileID: 510954825388265299}
   - component: {fileID: 510954825384444181}
-  - component: {fileID: 4552746811184655909}
+  - component: {fileID: 89745195}
+  - component: {fileID: 425306453515993798}
   m_Layer: 8
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -526,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510954825394950481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 48035190}
@@ -559,7 +560,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 85
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -593,7 +594,7 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510954825394950481}
   m_Enabled: 1
---- !u!114 &4552746811184655909
+--- !u!114 &89745195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -602,14 +603,73 @@ MonoBehaviour:
   m_GameObject: {fileID: 510954825394950481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf6e2be9c8c3e146a373e493a7a3b9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 07db5cf035c12fc4ea2fb53cfaca9e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 6
-  returnSpeed: 25
-  recoilRotation: {x: 2, y: 2, z: 2}
-  recoilRotationAiming: {x: 0.5, y: 0.5, z: 1.5}
-  aiming: 0
+  data: {fileID: 11400000, guid: 597a28d614f0e2a449871720112bf46b, type: 2}
+  x: 1
+  y: 1
+  z: 0
+--- !u!114 &425306453515993798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510954825394950481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 510954825395441009}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &510954825394950483
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,15 +701,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510954825394950483}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: 0.205, z: 0.524}
+  m_LocalRotation: {x: 0, y: 0.7520699, z: 0, w: 0.6590834}
+  m_LocalPosition: {x: 0.62, y: 0.205, z: -12.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434466940099944637}
   - {fileID: 26863932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 97.54, z: 0}
 --- !u!143 &510954825382077587
 CharacterController:
   m_ObjectHideFlags: 0
@@ -661,13 +721,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &510954825389961779
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -696,7 +756,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.238
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -863,10 +923,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInputData: {fileID: 11400000, guid: abad080c0665fdc4cb00444da1f990a9, type: 2}
   headBobData: {fileID: 11400000, guid: fd51ede42cc20a04da93c2d2fac1e05c, type: 2}
+  m_FootstepSounds:
+  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  m_RunstepLenghten: 0.7
+  m_StepInterval: 4
   crouchSpeed: 1
   walkSpeed: 3
   runSpeed: 6
-  jumpSpeed: 6
+  jumpSpeed: 8
   moveBackwardsSpeedPercent: 0.5
   moveSideSpeedPercent: 0.7
   canRunThreshold: 0.7
@@ -876,26 +943,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
       inSlope: 2
       outSlope: 2
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   crouchPercent: 0.6
-  crouchTransitionDuration: 0.5
+  crouchTransitionDuration: 0.3
   crouchTransitionCurve:
     serializedVersion: 2
     m_Curve:
@@ -961,18 +1028,18 @@ MonoBehaviour:
   stickToGroundForce: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 1
   rayLength: 0.1
   raySphereRadius: 0.2
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 1
   rayObstacleLength: 0.4
   rayObstacleSphereRadius: 0.2
-  smoothRotateSpeed: 10
-  smoothInputSpeed: 10
-  smoothVelocitySpeed: 3
-  smoothFinalDirectionSpeed: 10
+  smoothRotateSpeed: 50
+  smoothInputSpeed: 50
+  smoothVelocitySpeed: 6
+  smoothFinalDirectionSpeed: 20
   smoothHeadBobSpeed: 5
   experimental: 0
   smoothInputMagnitudeSpeed: 5
@@ -1010,7 +1077,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4434466940099944637}
-  - component: {fileID: 6778573333386781385}
   - component: {fileID: 450918098}
   m_Layer: 9
   m_Name: FPSCam
@@ -1027,30 +1093,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6130102825226065848}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 510954825395441009}
   m_Father: {fileID: 510954825395441011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6778573333386781385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6130102825226065848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf6e2be9c8c3e146a373e493a7a3b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 6
-  returnSpeed: 25
-  recoilRotation: {x: 2, y: 2, z: 2}
-  recoilRotationAiming: {x: 0.5, y: 0.5, z: 1.5}
-  aiming: 0
 --- !u!114 &450918098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,19 +1140,19 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     zoomTransitionDuration: 0.25
-    runFOV: 70
+    runFOV: 80
     runCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: 2
+        outSlope: 2
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
@@ -1111,13 +1160,13 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    runTransitionDuration: 0.75
-    runReturnTransitionDuration: 0.5
+    runTransitionDuration: 0.3
+    runReturnTransitionDuration: 0.2
   cameraSway:
     swayAmount: 1
     swaySpeed: 1
@@ -1147,8 +1196,10 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 2
       m_RotationOrder: 4
+  _postProcessVolume: {fileID: 0}
+  _movementInputData: {fileID: 11400000, guid: abad080c0665fdc4cb00444da1f990a9, type: 2}
   sensitivity: {x: 40, y: 40}
-  smoothAmount: {x: 5, y: 5}
+  smoothAmount: {x: 40, y: 40}
   lookAngleMinMax: {x: -90, y: 90}
 --- !u!1 &8844384381032259859
 GameObject:
@@ -1261,7 +1312,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 2
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25

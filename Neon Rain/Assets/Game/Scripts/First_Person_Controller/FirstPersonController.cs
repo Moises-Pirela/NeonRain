@@ -13,7 +13,7 @@ namespace VHS
             #region Private Serialized     
                 #region Data
                     [Space, Header("Data")]
-                    [SerializeField] private MovementInputData movementInputData = null;
+                    public MovementInputData movementInputData = null;
                     [SerializeField] private HeadBobData headBobData = null;
                     private AudioSource m_AudioSource;
                     [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
@@ -116,6 +116,13 @@ namespace VHS
 
                     [Space]
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_currentSpeed;
+                    
+                    public float MCurrentSpeed
+                    {
+                        get => m_currentSpeed;
+                        set => m_currentSpeed = value;
+                    }
+
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_smoothCurrentSpeed;
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_finalSmoothCurrentSpeed;
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_walkRunSpeedDifference;
@@ -199,7 +206,7 @@ namespace VHS
 
             protected void FixedUpdate()
             {
-                ProgressStepCycle(m_currentSpeed);
+                ProgressStepCycle(m_smoothCurrentSpeed);
             }
 
             /*
@@ -273,7 +280,8 @@ namespace VHS
                 {
                     if (m_characterController.velocity.sqrMagnitude > 0 && (m_inputVector.x != 0 || m_inputVector.y != 0))
                     {
-                        m_StepCycle += (m_characterController.velocity.magnitude + (speed*(!movementInputData.IsRunning ? 1f : m_RunstepLenghten)))*
+                        var stepModifier = movementInputData.IsCrouching ? 3f : 1;
+                        m_StepCycle += (m_characterController.velocity.magnitude + (speed*(!movementInputData.IsRunning ? stepModifier : m_RunstepLenghten)))*
                                        Time.fixedDeltaTime;
                     }
 
@@ -368,45 +376,47 @@ namespace VHS
                     m_hitWall = _hitWall ? true : false;
                 }
 
-                protected virtual bool CheckIfRoof() /// TO FIX
+                protected virtual bool CheckIfRoof()
                 {
-                    Vector3 _origin = transform.position;
-                    RaycastHit _roofInfo;
+                    var originVector = transform.position;
 
-                    bool _hitRoof = Physics.SphereCast(_origin,raySphereRadius,Vector3.up,out _roofInfo,m_initHeight);
+                    var hitRoof = Physics.SphereCast(originVector,raySphereRadius,Vector3.up,out _,m_initHeight, obstacleLayers);
 
-                    return _hitRoof;
+                    return hitRoof;
                 }
 
                 protected virtual bool CanRun()
                 {
-                    Vector3 _normalizedDir = Vector3.zero;
+                    var normalizedDirection = Vector3.zero;
 
                     if(m_smoothFinalMoveDir != Vector3.zero)
-                        _normalizedDir = m_smoothFinalMoveDir.normalized;
+                        normalizedDirection = m_smoothFinalMoveDir.normalized;
 
-                    float _dot = Vector3.Dot(transform.forward,_normalizedDir);
-                    return _dot >= canRunThreshold && !movementInputData.IsCrouching ? true : false;
+                    // ReSharper disable once SuggestVarOrType_BuiltInTypes
+                    float dot = Vector3.Dot(transform.forward,normalizedDirection);
+                    
+                    return dot >= canRunThreshold && !movementInputData.IsCrouching;
                 }
 
                 protected virtual void CalculateMovementDirection()
                 {
+                    var movementTransform = transform;
+                    
+                    var vDirection = movementTransform.forward * m_smoothInputVector.y;
+                    var hDirection = movementTransform.right * m_smoothInputVector.x;
 
-                    Vector3 _vDir = transform.forward * m_smoothInputVector.y;
-                    Vector3 _hDir = transform.right * m_smoothInputVector.x;
+                    var desiredDirection = vDirection + hDirection;
+                    var flattenDirection = FlattenVectorOnSlopes(desiredDirection);
 
-                    Vector3 _desiredDir = _vDir + _hDir;
-                    Vector3 _flattenDir = FlattenVectorOnSlopes(_desiredDir);
-
-                    m_finalMoveDir = _flattenDir;
+                    m_finalMoveDir = flattenDirection;
                 }
 
-                protected virtual Vector3 FlattenVectorOnSlopes(Vector3 _vectorToFlat)
+                protected virtual Vector3 FlattenVectorOnSlopes(Vector3 vectorToFlat)
                 {
                     if(m_isGrounded)
-                        _vectorToFlat = Vector3.ProjectOnPlane(_vectorToFlat,m_hitInfo.normal);
+                        vectorToFlat = Vector3.ProjectOnPlane(vectorToFlat,m_hitInfo.normal);
                     
-                    return _vectorToFlat;
+                    return vectorToFlat;
                 }
 
                 protected virtual void CalculateSpeed()
@@ -414,37 +424,36 @@ namespace VHS
                     m_currentSpeed = movementInputData.IsRunning && CanRun() ? runSpeed : walkSpeed;
                     m_currentSpeed = movementInputData.IsCrouching ? crouchSpeed : m_currentSpeed;
                     m_currentSpeed = !movementInputData.HasInput ? 0f : m_currentSpeed;
-                    m_currentSpeed = movementInputData.InputVector.y == -1 ? m_currentSpeed * moveBackwardsSpeedPercent : m_currentSpeed;
+                    m_currentSpeed = Math.Abs(movementInputData.InputVector.y - (-1)) < 1 ? m_currentSpeed * moveBackwardsSpeedPercent : m_currentSpeed;
                     m_currentSpeed = movementInputData.InputVector.x != 0 && movementInputData.InputVector.y ==  0 ? m_currentSpeed * moveSideSpeedPercent :  m_currentSpeed;
                 }
 
                 protected virtual void CalculateFinalMovement()
                 {
-                    float _smoothInputVectorMagnitude = experimental ? m_smoothInputVectorMagnitude : 1f;
-                    Vector3 _finalVector = m_smoothFinalMoveDir * m_finalSmoothCurrentSpeed * _smoothInputVectorMagnitude;
+                    var smoothInputVectorMagnitude = experimental ? m_smoothInputVectorMagnitude : 1f;
+                    var finalVector = m_smoothFinalMoveDir * (m_finalSmoothCurrentSpeed * smoothInputVectorMagnitude);
 
-                    // We have to assign individually in order to make our character jump properly because before it was overwriting Y value and that's why it was jerky now we are adding to Y value and it's working
-                    m_finalMoveVector.x = _finalVector.x ;
-                    m_finalMoveVector.z = _finalVector.z ;
+                    m_finalMoveVector.x = finalVector.x ;
+                    m_finalMoveVector.z = finalVector.z ;
 
-                    if(m_characterController.isGrounded) // Thanks to this check we are not applying extra y velocity when in air so jump will be consistent
-                        m_finalMoveVector.y += _finalVector.y ; //so this makes our player go in forward dir using slope normal but when jumping this is making it go higher so this is weird
+                    if(m_characterController.isGrounded)
+                        m_finalMoveVector.y += finalVector.y ;
                 }
             #endregion
 
             #region Crouching Methods
                 protected virtual void HandleCrouch()
                 {
-                    if (movementInputData.CrouchClicked && m_isGrounded)
-                    {
-                        InvokeCrouchRoutine();
-                    }
+                    if (!movementInputData.CrouchClicked || !m_isGrounded) return;
+                    
+                    InvokeCrouchRoutine();
+                    movementInputData.CrouchClicked = false;
                 }
 
                 protected virtual void InvokeCrouchRoutine()
                 {
-                    if(movementInputData.IsCrouching)
-                        if(CheckIfRoof())
+                    if (movementInputData.IsCrouching)
+                        if (CheckIfRoof())
                             return;
 
                     if(m_LandRoutine != null)
@@ -461,33 +470,34 @@ namespace VHS
                 {
                     m_duringCrouchAnimation = true;
 
-                    float _percent = 0f;
-                    float _smoothPercent = 0f;
-                    float _speed = 1f / crouchTransitionDuration;
+                    var percent = 0f;
+                    var speed = 1f / crouchTransitionDuration;
 
-                    float _currentHeight = m_characterController.height;
-                    Vector3 _currentCenter = m_characterController.center;
+                    var currentHeight = m_characterController.height;
+                    var currentCenter = m_characterController.center;
 
-                    float _desiredHeight = movementInputData.IsCrouching ? m_initHeight : m_crouchHeight;
-                    Vector3 _desiredCenter = movementInputData.IsCrouching ? m_initCenter : m_crouchCenter;
+                    var desiredHeight = movementInputData.IsCrouching ? m_initHeight : m_crouchHeight;
+                    var desiredCenter = movementInputData.IsCrouching ? m_initCenter : m_crouchCenter;
 
-                    Vector3 _camPos = m_yawTransform.localPosition;
-                    float _camCurrentHeight = _camPos.y;
-                    float _camDesiredHeight = movementInputData.IsCrouching ? m_initCamHeight : m_crouchCamHeight;
-
+                    var camPos = m_yawTransform.localPosition;
+                    var camCurrentHeight = camPos.y;
+                    var camDesiredHeight = movementInputData.IsCrouching ? m_initCamHeight : m_crouchCamHeight;
+                    
+                    
                     movementInputData.IsCrouching = !movementInputData.IsCrouching;
                     m_headBob.CurrentStateHeight = movementInputData.IsCrouching ? m_crouchCamHeight : m_initCamHeight;
+                    
 
-                    while(_percent < 1f)
+                    while(percent < 1f)
                     {
-                        _percent += Time.deltaTime * _speed;
-                        _smoothPercent = crouchTransitionCurve.Evaluate(_percent);
+                        percent += Time.deltaTime * speed;
+                        var smoothPercent = crouchTransitionCurve.Evaluate(percent);
 
-                        m_characterController.height = Mathf.Lerp(_currentHeight,_desiredHeight,_smoothPercent);
-                        m_characterController.center = Vector3.Lerp(_currentCenter,_desiredCenter,_smoothPercent);
+                        m_characterController.height = Mathf.Lerp(currentHeight,desiredHeight,smoothPercent);
+                        m_characterController.center = Vector3.Lerp(currentCenter,desiredCenter,smoothPercent);
 
-                        _camPos.y = Mathf.Lerp(_camCurrentHeight,_camDesiredHeight, _smoothPercent);
-                        m_yawTransform.localPosition = _camPos;
+                        camPos.y = Mathf.Lerp(camCurrentHeight,camDesiredHeight, smoothPercent);
+                        m_yawTransform.localPosition = camPos;
 
                         yield return null;
                     }
@@ -500,11 +510,10 @@ namespace VHS
             #region Landing Methods
                 protected virtual void HandleLanding()
                 {
-                    if(!m_previouslyGrounded && m_isGrounded)
-                    {
-                        InvokeLandingRoutine();
-                        PlayLandingSound();
-                    }
+                    if (m_previouslyGrounded || !m_isGrounded) return;
+                    
+                    InvokeLandingRoutine();
+                    PlayLandingSound();
                 }
 
                 protected virtual void InvokeLandingRoutine()
@@ -518,23 +527,23 @@ namespace VHS
 
                 protected virtual IEnumerator LandingRoutine()
                 {
-                    float _percent = 0f;
-                    float _landAmount = 0f;
+                    var percent = 0f;
+                    var landAmount = 0f;
 
-                    float _speed = 1f / landDuration;
+                    var speed = 1f / landDuration;
 
-                    Vector3 _localPos = m_yawTransform.localPosition;
-                    float _initLandHeight = _localPos.y;
+                    var localPos = m_yawTransform.localPosition;
+                    var initLandHeight = localPos.y;
 
-                    _landAmount = m_inAirTimer > landTimer ? highLandAmount : lowLandAmount;
+                    landAmount = m_inAirTimer > landTimer ? highLandAmount : lowLandAmount;
 
-                    while(_percent < 1f)
+                    while(percent < 1f)
                     {
-                        _percent += Time.deltaTime * _speed;
-                        float _desiredY = landCurve.Evaluate(_percent) * _landAmount;
+                        percent += Time.deltaTime * speed;
+                        var desiredY = landCurve.Evaluate(percent) * landAmount;
 
-                        _localPos.y = _initLandHeight + _desiredY;
-                        m_yawTransform.localPosition = _localPos;
+                        localPos.y = initLandHeight + desiredY;
+                        m_yawTransform.localPosition = localPos;
 
                         yield return null;
                     }
@@ -548,24 +557,21 @@ namespace VHS
                     
                     if(movementInputData.HasInput && m_isGrounded  && !m_hitWall)
                     {
-                        if(!m_duringCrouchAnimation) // we want to make our head bob only if we are moving and not during crouch routine
-                        {
-                            m_headBob.ScrollHeadBob(movementInputData.IsRunning && CanRun(),movementInputData.IsCrouching, movementInputData.InputVector);
-                            m_yawTransform.localPosition = Vector3.Lerp(m_yawTransform.localPosition,(Vector3.up * m_headBob.CurrentStateHeight) + m_headBob.FinalOffset,Time.deltaTime * smoothHeadBobSpeed);
-                        }
+                        if (m_duringCrouchAnimation) return;
+                        
+                        m_headBob.ScrollHeadBob(movementInputData.IsRunning && CanRun(),movementInputData.IsCrouching, movementInputData.InputVector);
+                        m_yawTransform.localPosition = Vector3.Lerp(m_yawTransform.localPosition,(Vector3.up * m_headBob.CurrentStateHeight) + m_headBob.FinalOffset,Time.deltaTime * smoothHeadBobSpeed);
                     }
-                    else // if we are not moving or we are not grounded
+                    else
                     {
                         if(!m_headBob.Resetted)
                         {
                             m_headBob.ResetHeadBob();
                         }
 
-                        if(!m_duringCrouchAnimation) // we want to reset our head bob only if we are standing still and not during crouch routine
+                        if(!m_duringCrouchAnimation)
                             m_yawTransform.localPosition = Vector3.Lerp(m_yawTransform.localPosition,new Vector3(0f,m_headBob.CurrentStateHeight,0f),Time.deltaTime * smoothHeadBobSpeed);
                     }
-
-                    //m_camTransform.localPosition = Vector3.Lerp(m_camTransform.localPosition,m_headBob.FinalOffset,Time.deltaTime * smoothHeadBobSpeed);
                 }
 
                 protected virtual void HandleCameraSway()
@@ -590,27 +596,23 @@ namespace VHS
                         }
                     }
 
-                    if(movementInputData.RunReleased || !movementInputData.HasInput || m_hitWall)
-                    {
-                        if(m_duringRunAnimation)
-                        {
-                            m_duringRunAnimation = false;
-                            m_cameraController.ChangeRunFOV(true);
-                        }
-                    }
+                    if (!movementInputData.RunReleased && movementInputData.HasInput && !m_hitWall) return;
+                    
+                    if (!m_duringRunAnimation) return;
+                        
+                    m_duringRunAnimation = false;
+                    m_cameraController.ChangeRunFOV(true);
                 }
                 protected virtual void HandleJump()
                 {
-                    if(movementInputData.JumpClicked && !movementInputData.IsCrouching)
-                    {
-                        //m_finalMoveVector.y += jumpSpeed /* m_currentSpeed */; // we are adding because ex. when we are going on slope we want to keep Y value not overwriting it
-                        m_finalMoveVector.y = jumpSpeed /* m_currentSpeed */; // turns out that when adding to Y it is too much and it doesn't feel correct because jumping on slope is much faster and higher;
+                    if (!movementInputData.JumpClicked || movementInputData.IsCrouching) return;
                     
-                        m_previouslyGrounded = true;
-                        m_isGrounded = false;
+                    m_finalMoveVector.y = jumpSpeed;
+                    
+                    m_previouslyGrounded = true;
+                    m_isGrounded = false;
                         
-                        PlayJumpSound();
-                    }
+                    PlayJumpSound();
                 }
                 protected virtual void ApplyGravity()
                 {
@@ -636,10 +638,10 @@ namespace VHS
 
                 protected virtual void RotateTowardsCamera()
                 {
-                    Quaternion _currentRot = transform.rotation;
-                    Quaternion _desiredRot = m_yawTransform.rotation;
+                    var currentRot = transform.rotation;
+                    var desiredRot = m_yawTransform.rotation;
 
-                    transform.rotation = Quaternion.Slerp(_currentRot,_desiredRot,Time.deltaTime * smoothRotateSpeed);
+                    transform.rotation = Quaternion.Slerp(currentRot,desiredRot,Time.deltaTime * smoothRotateSpeed);
                 }
             #endregion
         #endregion
