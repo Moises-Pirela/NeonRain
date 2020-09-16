@@ -19,22 +19,62 @@
         <e p="Game" t="Include">
           <e p="PlayerControls.cs" t="Include" />
           <e p="Scripts" t="Include">
-            <e p="Camera_Controller" t="Include">
+            <e p="BehaviorTree" t="Include">
+              <e p="AIController.cs" t="Include" />
+              <e p="BaseAI.cs" t="Include" />
+              <e p="Behaviors" t="Include">
+                <e p="ScharfuhrerBehavior.cs" t="Include" />
+              </e>
+              <e p="BTNode.cs" t="Include" />
+              <e p="BTNodeStates.cs" t="Include" />
+              <e p="BTSelector.cs" t="Include" />
+              <e p="BTSequence.cs" t="Include" />
+              <e p="Conditions" t="Include">
+                <e p="EnemyInRangeCondition.cs" t="Include" />
+                <e p="EnemySpottedCondition.cs" t="Include" />
+                <e p="IsActiveCondition.cs" t="Include" />
+                <e p="OfficerDeadCondition.cs" t="Include" />
+                <e p="ResistFleeCondition.cs" t="Include" />
+                <e p="ShouldFleeCondition.cs" t="Include" />
+              </e>
+              <e p="IBehaviorAI.cs" t="Include" />
+              <e p="Tasks" t="Include">
+                <e p="CheckArrivalTask.cs" t="Include" />
+                <e p="CheckTypeTask.cs" t="Include" />
+                <e p="FleeTask.cs" t="Include" />
+                <e p="GenerateAwarenessMeterTask.cs" t="Include" />
+                <e p="MoveTask.cs" t="Include" />
+                <e p="MoveToTask.cs" t="Include" />
+                <e p="PlayerSpottedTask.cs" t="Include" />
+                <e p="SearchTask.cs" t="Include" />
+                <e p="ShootTask.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Camera" t="Include">
               <e p="CameraBreathing.cs" t="Include" />
               <e p="CameraController.cs" t="Include" />
               <e p="CameraSwaying.cs" t="Include" />
               <e p="CameraZoom.cs" t="Include" />
             </e>
+            <e p="Enemies" t="Include">
+              <e p="AIManager.cs" t="Include" />
+              <e p="NaziOfficerAIController.cs" t="Include" />
+              <e p="NaziTrooperAIController.cs" t="Include" />
+              <e p="UnitData.cs" t="Include" />
+              <e p="VisionController.cs" t="Include" />
+            </e>
+            <e p="Entity" t="Include">
+              <e p="BaseEntity.cs" t="Include" />
+              <e p="RotateTowardsCamera.cs" t="Include" />
+            </e>
             <e p="Equipment" t="Include">
               <e p="Equipment.cs" t="Include" />
+              <e p="GravityArm.cs" t="Include" />
+              <e p="GravityAttractor.cs" t="Include" />
               <e p="Melee.cs" t="Include" />
               <e p="Pistol.cs" t="Include" />
             </e>
-            <e p="First_Person_Controller" t="Include">
-              <e p="FirstPersonController.cs" t="Include" />
-              <e p="HeadBob.cs" t="Include" />
-            </e>
-            <e p="Input_Handler" t="Include">
+            <e p="Input" t="Include">
               <e p="InputHandler.cs" t="Include" />
             </e>
             <e p="Interactables" t="Include">
@@ -57,12 +97,18 @@
             </e>
             <e p="Player" t="Include">
               <e p="CameraRecoil.cs" t="Include" />
+              <e p="Damageable.cs" t="Include" />
               <e p="EquipmentController.cs" t="Include" />
+              <e p="FirstPersonController.cs" t="Include" />
+              <e p="HeadBob.cs" t="Include" />
               <e p="PlayerAnimationEvents.cs" t="Include" />
               <e p="PlayerAnimations.cs" t="Include" />
+              <e p="PlayerCollisionEvents.cs" t="Include" />
               <e p="PlayerEvents.cs" t="Include" />
+              <e p="PlayerHudController.cs" t="Include" />
+              <e p="PlayerManager.cs" t="Include" />
             </e>
-            <e p="Scriptable_Objects" t="Include">
+            <e p="ScriptableObjects" t="Include">
               <e p="CameraInputData.cs" t="Include" />
               <e p="HeadBobData.cs" t="Include" />
               <e p="InteractionInputData.cs" t="Include" />
@@ -251,6 +297,28 @@
                 </e>
               </e>
             </e>
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="PBR" t="Include">
+            <e p="PS1_Liquid_PBR.shader" t="Include" />
+            <e p="PS1_PBR.shader" t="Include" />
+            <e p="PS1_PBR_Spec.shader" t="Include" />
+          </e>
+          <e p="Standard" t="Include">
+            <e p="Non-Dithered" t="Include">
+              <e p="PS1_DoubleSided_ND.shader" t="Include" />
+              <e p="PS1_Liquid_ND.shader" t="Include" />
+              <e p="PS1_ND.shader" t="Include" />
+            </e>
+            <e p="PS1.shader" t="Include" />
+            <e p="PS1_DoubleSided.shader" t="Include" />
+            <e p="PS1_Liquid.shader" t="Include" />
+          </e>
+          <e p="Unlit" t="Include">
+            <e p="PS1_DoubleSided_Unlit.shader" t="Include" />
+            <e p="PS1_Liquid_Unlit.shader" t="Include" />
+            <e p="PS1_Unlit.shader" t="Include" />
           </e>
         </e>
       </e>

@@ -34,11 +34,15 @@ public class Pistol : Equipment
 
         if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, 100, layerMask, QueryTriggerInteraction.Ignore)) return;
 
+        BaseEntity target = hit.transform.GetComponent<BaseEntity>();
+        
         var effect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         effect.transform.SetParent(hit.transform);
         Destroy(effect, 2f);
         
-        
+        if (target == null) return; 
+            
+        target.TakeDamage(damage);
         
         // if (hit.transform.GetComponent<Explosive>())
         //         hit.transform.GetComponent<Explosive>().Explode();

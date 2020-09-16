@@ -107,6 +107,16 @@ public class AIController : MonoBehaviour, IBehaviorAI
         return enemyType;
     }
 
+    public Vector3 GetEnemyPosition()
+    {
+        throw new NotImplementedException();
+    }
+
+    public GameObject SetCurrentTarget(GameObject target)
+    {
+        throw new NotImplementedException();
+    }
+
     public bool PlayerInRange()
     {
         return playerInRange; //Vector3.Distance(GetAgentTransform().position, GetPlayerPosition()) <= sightDistance;

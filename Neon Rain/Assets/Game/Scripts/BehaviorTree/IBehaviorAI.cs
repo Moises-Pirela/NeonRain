@@ -11,6 +11,8 @@ public interface IBehaviorAI
     Vector3 GetTargetPosition();
     NavMeshAgent GetNavMeshAgent();
     EnemyType GetEnemyType();
+    Vector3 GetEnemyPosition();
+    GameObject SetCurrentTarget(GameObject target);
     bool PlayerInRange();
     bool PlayerSpotted();
     bool IsLocked();

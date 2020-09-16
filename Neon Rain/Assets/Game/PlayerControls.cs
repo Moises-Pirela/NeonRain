@@ -81,6 +81,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Secondary_Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""179ed04f-a436-42b5-86fd-df6f1d9f1066"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""a8f1490b-f1a4-4b76-90bc-888443a56ea1"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -248,6 +264,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Primary_Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3421fb3-da94-4846-bfe4-928f6a7c88bc"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Secondary_Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93a2c38d-afb1-4e5c-a694-56dd13f1df7b"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -281,6 +319,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Slide = m_Player.FindAction("Slide", throwIfNotFound: true);
         m_Player_Primary_Fire = m_Player.FindAction("Primary_Fire", throwIfNotFound: true);
+        m_Player_Secondary_Fire = m_Player.FindAction("Secondary_Fire", throwIfNotFound: true);
+        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -338,6 +378,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Slide;
     private readonly InputAction m_Player_Primary_Fire;
+    private readonly InputAction m_Player_Secondary_Fire;
+    private readonly InputAction m_Player_Scroll;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -350,6 +392,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Slide => m_Wrapper.m_Player_Slide;
         public InputAction @Primary_Fire => m_Wrapper.m_Player_Primary_Fire;
+        public InputAction @Secondary_Fire => m_Wrapper.m_Player_Secondary_Fire;
+        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -383,6 +427,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Primary_Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary_Fire;
                 @Primary_Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary_Fire;
                 @Primary_Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary_Fire;
+                @Secondary_Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
+                @Secondary_Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
+                @Secondary_Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
+                @Scroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @Scroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @Scroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -411,6 +461,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Primary_Fire.started += instance.OnPrimary_Fire;
                 @Primary_Fire.performed += instance.OnPrimary_Fire;
                 @Primary_Fire.canceled += instance.OnPrimary_Fire;
+                @Secondary_Fire.started += instance.OnSecondary_Fire;
+                @Secondary_Fire.performed += instance.OnSecondary_Fire;
+                @Secondary_Fire.canceled += instance.OnSecondary_Fire;
+                @Scroll.started += instance.OnScroll;
+                @Scroll.performed += instance.OnScroll;
+                @Scroll.canceled += instance.OnScroll;
             }
         }
     }
@@ -434,5 +490,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
         void OnPrimary_Fire(InputAction.CallbackContext context);
+        void OnSecondary_Fire(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
     }
 }

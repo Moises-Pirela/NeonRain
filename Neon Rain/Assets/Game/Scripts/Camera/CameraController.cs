@@ -1,4 +1,5 @@
-﻿using NaughtyAttributes;
+﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -62,7 +63,10 @@ namespace VHS
             InitValues();
             InitComponents();
             ChangeCursorState();
-            
+        }
+
+        private void Start()
+        {
             PlayerEvents.Current.onPlayerCrouch += ApplyCrouchEffect;
         }
 

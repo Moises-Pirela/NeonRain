@@ -26,6 +26,8 @@ public class EquipmentController : MonoBehaviour
 
     private PlayerControls _playerControls;
 
+    private float scrollValue;
+
     private void Awake()
     {
         _playerControls = new PlayerControls();
@@ -33,11 +35,19 @@ public class EquipmentController : MonoBehaviour
 
     private void Start()
     {
+        _playerControls.Player.Scroll.performed += context =>
+        {
+            scrollValue = context.ReadValue<float>();
+            
+            Debug.Log(scrollValue);
+            
+            
+        };
         // var left = leftHand.GetComponent<Equipment>();
         // var right = rightHand.GetComponent<Equipment>();
         // EquipLeftHand(left);
         // EquipRightHand(right);
-        SelectRHandEquipment();
+        SelectHandEquipment();
     }
     
     private void OnEnable()
@@ -50,107 +60,22 @@ public class EquipmentController : MonoBehaviour
         _playerControls.Disable();
     }
 
-    public void SelectRHandEquipment()
+    public void SelectHandEquipment()
     {
         var equipment = 0;
         foreach (Transform currentEquipment in rightHandEquipmentHolder)
         {
-            if (equipment == selectedEquipment)
-            {
-                currentEquipment.gameObject.SetActive(true);
-                var right = currentEquipment.GetComponent<Equipment>();
-                EquipRightHand(right);
-            }
+            var selectedEquipment = currentEquipment.GetComponent<Equipment>();
+
+            if (selectedEquipment.equipmentType == Equipment.EquipmentType.Rhand)
+                EquipRightHand(selectedEquipment);
             else
             {
-                currentEquipment.gameObject.SetActive(false);    
-            } 
-            
+                EquipLeftHand(selectedEquipment);
+            }
+
             equipment++;
         }
-    }
-
-    private void Update()
-    {
-        //if (PlayerEvents.Current.isPaused) return;
-        
-        // if (rightHandEquipment.MyInput())
-        // {
-        //     if (grabbedObject != null)
-        //     {
-        //         //var obj = grabbedObject.GetComponent<SelectableObject>();
-        //         //var explosive = grabbedObject.GetComponent<Explosive>();
-        //
-        //         //PlayerEvents.Current.isGrabbing = false;
-        //         
-        //         //if (!explosive)
-        //             //explosive.shouldExplode = true;
-        //
-        //         //obj.Throw(fpsCam.transform.forward, 1000);
-        //         grabbedObject = null;
-        //     }
-        //     else
-        //     {
-        //         rightHandEquipment.Use();       
-        //     }
-        // }
-
-        // if (leftHandEquipment.MyReverseInput())
-        // {
-        //     leftHandEquipment.LeaveUse();
-        // }
-        //
-        // if (Input.GetButton("Reload"))
-        // {
-        //
-        // }
-
-        //var prevEquipment = selectedEquipment;
-
-        // if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        // {
-        //     if (selectedEquipment >= rightHandEquipmentHolder.childCount - 1)
-        //         selectedEquipment = 0;
-        //     else
-        //     {
-        //         selectedEquipment++;
-        //     }
-        // }
-        // if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        // {
-        //     if (selectedEquipment <= 0)
-        //         selectedEquipment = rightHandEquipmentHolder.childCount - 1;
-        //     else
-        //     {
-        //         selectedEquipment--;
-        //     }
-        // }
-
-        // if (Input.GetButtonDown("LeanRight"))
-        // {
-        //     fpsCam.transform.DORotate(new Vector3(0, 0, -20), 0.2f);
-        //     fpsCam.transform.DOMoveX(1.5f, 0.2f);
-        // }
-        // else if (Input.GetButtonDown("LeanLeft"))
-        // {
-        //     fpsCam.transform.DORotate(new Vector3(0, 0, 20), 0.2f);
-        //     fpsCam.transform.DOMoveX(-1.5f, 0.2f);
-        // }
-        
-        // if (prevEquipment != selectedEquipment)
-        //         SelectRHandEquipment();
-        
-        // if (PlayerEvents.Current.isGrappling && !PlayerEvents.Current.isPulling)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, targetLocation, 14 * Time.deltaTime);
-        // }
-        // else if (PlayerEvents.Current.isPulling)
-        // {
-        //     if (targetObject != null)
-        //     {
-        //         targetObject.transform.position = Vector3.MoveTowards(targetObject.transform.position, transform.position, 14 * Time.deltaTime);
-        //     }
-        // }
     }
 
     public void EquipRightHand(Equipment right)
@@ -164,14 +89,12 @@ public class EquipmentController : MonoBehaviour
     
     public void EquipLeftHand(Equipment left)
     {
-        leftHandEquipment = left;
+        //myLeftHandAction.performed -= context => leftHandEquipment.Use();
 
-        myLeftHandAction.performed -= context => leftHandEquipment.Use();
+        leftHandEquipment = left;
 
         leftHandEquipment.SetEquipment(fpsCam, playerController, this);
         
-        myLeftHandAction = leftHandEquipment.MyInput();
-
-        myLeftHandAction.performed += context => leftHandEquipment.Use();
+        _playerControls.Player.Secondary_Fire.performed += context => leftHandEquipment.Use();
     }
 }

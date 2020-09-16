@@ -626,6 +626,8 @@ namespace VHS
                     }
                     else
                     {
+                        if (PlayerEvents.Current.isGrappling) return;
+                        
                         m_inAirTimer += Time.deltaTime;
                         m_finalMoveVector += Physics.gravity * gravityMultiplier * Time.deltaTime;
                     }

@@ -20,21 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e50cf8b-3803-4ce3-a782-c0a2564d9c46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ShootTask.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ShootTask.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Neon Rain/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Animations/Rain/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animations/Rain/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Animations/Rain/RightArmSpriteAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animations/Rain/RightArmSpriteAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Animations/Rain/Shoot.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animations/Rain/Shoot.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Data/PerlinNoiseData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Data/PerlinNoiseData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Rain/Rain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Rain/Rain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/PlayerControls.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/First_Person_Controller/FirstPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/First_Person_Controller/FirstPersonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Input_Handler/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Input_Handler/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Standard Assets/Characters.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Standard Assets/Characters.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene_Profiles/CC 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene_Profiles/CC 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene_Profiles/CC.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/SampleScene_Profiles/CC.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IBehaviorAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IBehaviorAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,53 +48,108 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scriptable_Objects/CameraInputData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Melee.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Standard Assets/Utility/FOVKick.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraSwaying.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraBreathing.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/First_Person_Controller/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scriptable_Objects/PerlinNoiseData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scriptable_Objects/MovementInputData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_DoubleSided_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_Liquid.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input_Handler/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_DoubleSided.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/OfficerDeadCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_Liquid_ND.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_DoubleSided_ND.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_ND.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/IsActiveCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Standard Assets/Utility/FOVKick.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/CGIncludes/UnityShaderVariables.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Melee.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ShouldFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IBehaviorAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ResistFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/Standard Assets/Characters/FirstPersonCharacter/Scripts/HeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Standard Assets/Utility/FOVKick.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Melee.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_ND.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Node.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Selector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ActionNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Inverter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Sequence.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Blackboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ScharfuhrerBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityArm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/EnemySpottedSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/EnemySpotted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/EnemySpottedConditional.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/EnemySpottedCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IBehaviorAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/IEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/HeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Scriptable_Objects/CameraInputData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Scriptable_Objects/MovementInputData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/First_Person_Controller/FirstPersonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input_Handler/InputHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Camera_Controller/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/ScharfuhrerAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Billboard.shader" />
+        <option value="$PROJECT_DIR$/Assets/Game/S_Billboard.shader" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/RotateTowardsCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/StormTrooperAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/SturmmannAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitScriptableObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/OfficerAliveCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/IsActiveCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/OfficerDeadCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FleeTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ResistFleeCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziTrooperAIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ShouldFleeCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ShootTask.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -151,6 +209,17 @@
       <workItem from="1596752412335" duration="6871000" />
       <workItem from="1596846331692" duration="5982000" />
       <workItem from="1596862859427" duration="5874000" />
+      <workItem from="1597358217653" duration="3206000" />
+      <workItem from="1597444700316" duration="2522000" />
+      <workItem from="1598235726982" duration="2118000" />
+      <workItem from="1598479019540" duration="2695000" />
+      <workItem from="1598654237863" duration="15639000" />
+      <workItem from="1598737939190" duration="5482000" />
+      <workItem from="1599269074296" duration="5224000" />
+      <workItem from="1599691730164" duration="10920000" />
+      <workItem from="1599786331629" duration="7034000" />
+      <workItem from="1599800408270" duration="2090000" />
+      <workItem from="1600131161944" duration="12474000" />
     </task>
     <servers />
   </component>
@@ -175,6 +244,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="765" y="221" key="RiderGenerateDialog" timestamp="1598663016917">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="221" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598663016917" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1596574017222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,5 +256,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="621" y="253" width="714" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596846656288" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597358233298">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597358233298" />
   </component>
 </project>

@@ -1,0 +1,17 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:cd5adc68bea946b08cafc211b98b4a49:97327f1dd4de053394bf78d51be1f7e2:aac9a501558b9a6f4bb16457bc4467a2$
+#
+:format=40300
+:texture=BasicEnemy.png
+:size=512x512
+:pivotpoints=enabled
+:borders=disabled
+
+Soldier_1;1;302;85;209; 0.5176470588235295;0.49521531100478466; 0;0;0;0; 9;63;196;85;154;73;99;73;6;45;0;21;6;21;60;0;144;38;209; 7;1;2;7;3;4;6;4;5;6;2;3;6;2;6;7;0;1;7;0;7;8
+Soldier_2;1;91;85;209; 0.5176470588235295;0.49521531100478466; 0;0;0;0; 9;63;196;85;154;73;99;73;6;45;0;21;6;21;60;0;144;38;209; 7;1;2;7;3;4;6;4;5;6;2;3;6;2;6;7;0;1;7;0;7;8
+Soldier_3;88;302;85;209; 0.5176470588235295;0.49521531100478466; 0;0;0;0; 9;63;196;85;154;73;99;73;6;45;0;21;6;21;60;0;144;38;209; 7;1;2;7;3;4;6;4;5;6;2;3;6;2;6;7;0;1;7;0;7;8
