@@ -16,6 +16,6 @@ MonoBehaviour:
   aiType: 0
   shootingRange: 10
   sightDistance: 15
-  fov: 45
+  fov: 60
   fireRate: 1
-  damage: 75
+  damage: 45

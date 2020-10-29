@@ -97,6 +97,7 @@ namespace VHS
                     private Transform m_camTransform;
                     private HeadBob m_headBob;
                     private CameraController m_cameraController;
+                    private PlayerManager _playerManager;
                     
                     private RaycastHit m_hitInfo;
                     private IEnumerator m_CrouchRoutine;
@@ -168,6 +169,8 @@ namespace VHS
 
             protected virtual void Update()
             {
+                if (DebugController._instance.IsInConsole) return;
+                
                 if(m_yawTransform != null)
                     RotateTowardsCamera();
 
@@ -198,6 +201,7 @@ namespace VHS
                     HandleLanding();
 
                     ApplyGravity();
+                    
                     ApplyMovement();
 
                     m_previouslyGrounded = m_isGrounded;
@@ -231,6 +235,7 @@ namespace VHS
                     m_yawTransform = m_cameraController.transform;
                     m_camTransform = GetComponentInChildren<Camera>().transform;
                     m_headBob = new HeadBob(headBobData, moveBackwardsSpeedPercent, moveSideSpeedPercent);
+                    _playerManager = GetComponent<PlayerManager>();
                 }
 
                 protected virtual void InitVariables()
@@ -350,7 +355,7 @@ namespace VHS
                 }
             #endregion
 
-            #region Locomotion Calculation Methods
+             #region Locomotion Calculation Methods
                 protected virtual void CheckIfGrounded()
                 {
                     Vector3 _origin = transform.position + m_characterController.center;
@@ -395,7 +400,7 @@ namespace VHS
                     // ReSharper disable once SuggestVarOrType_BuiltInTypes
                     float dot = Vector3.Dot(transform.forward,normalizedDirection);
                     
-                    return dot >= canRunThreshold && !movementInputData.IsCrouching;
+                    return dot >= canRunThreshold && !movementInputData.IsCrouching && _playerManager.Armor > 0;
                 }
 
                 protected virtual void CalculateMovementDirection()
@@ -594,6 +599,12 @@ namespace VHS
                             m_duringRunAnimation = true;
                             m_cameraController.ChangeRunFOV(false);
                         }
+
+                        if (movementInputData.RunClicked && !CanRun())
+                        {
+                            m_duringRunAnimation = false;
+                            m_cameraController.ChangeRunFOV(true);
+                        }
                     }
 
                     if (!movementInputData.RunReleased && movementInputData.HasInput && !m_hitWall) return;
@@ -625,9 +636,7 @@ namespace VHS
                         movementInputData.JumpClicked = false;
                     }
                     else
-                    {
-                        if (PlayerEvents.Current.isGrappling) return;
-                        
+                    {   
                         m_inAirTimer += Time.deltaTime;
                         m_finalMoveVector += Physics.gravity * gravityMultiplier * Time.deltaTime;
                     }
@@ -635,7 +644,16 @@ namespace VHS
 
                 protected virtual void ApplyMovement()
                 {
+                    if (!m_characterController.enabled) return;
+                    
                     m_characterController.Move(m_finalMoveVector * Time.deltaTime);
+                    
+                    if (movementInputData.HasInput)
+                        PlayerEvents.Current.Walk();
+                    if (movementInputData.IsRunning && !movementInputData.IsCrouching)
+                    {
+                        PlayerEvents.Current.Sprinting();
+                    }
                 }
 
                 protected virtual void RotateTowardsCamera()

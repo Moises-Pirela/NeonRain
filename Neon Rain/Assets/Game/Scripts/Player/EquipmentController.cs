@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,18 +14,20 @@ public class EquipmentController : MonoBehaviour
     [HideInInspector] public int selectedEquipment = 0;
 
     [SerializeField] private Transform rightHandEquipmentHolder;
-    [SerializeField] private float maxGrabDistance;
-
-    [HideInInspector] public Vector3 targetLocation;
-    [HideInInspector] public GameObject targetObject;
 
     public Camera fpsCam;
     public Transform playerController;
+
+    public PlayerManager _playerManager;
 
     private InputAction myLeftHandAction;
     private InputAction myRightHandAction;
 
     private PlayerControls _playerControls;
+
+    [SerializeField] private Animator rightHandAnimator;
+    [SerializeField] private SpriteRenderer leftHandSprite;
+    [SerializeField] private GameObject rainHands;
 
     private float scrollValue;
 
@@ -38,15 +41,12 @@ public class EquipmentController : MonoBehaviour
         _playerControls.Player.Scroll.performed += context =>
         {
             scrollValue = context.ReadValue<float>();
-            
-            Debug.Log(scrollValue);
-            
-            
         };
+
+        PlayerHudController.onCloseWeaponWheel += SelectHandEquipment;
+        
         // var left = leftHand.GetComponent<Equipment>();
         // var right = rightHand.GetComponent<Equipment>();
-        // EquipLeftHand(left);
-        // EquipRightHand(right);
         SelectHandEquipment();
     }
     
@@ -66,11 +66,13 @@ public class EquipmentController : MonoBehaviour
         foreach (Transform currentEquipment in rightHandEquipmentHolder)
         {
             var selectedEquipment = currentEquipment.GetComponent<Equipment>();
-
-            if (selectedEquipment.equipmentType == Equipment.EquipmentType.Rhand)
-                EquipRightHand(selectedEquipment);
-            else
+            
+            if (selectedEquipment.mydata == SaveData.Current.inventory.rightHand)
             {
+                StartCoroutine(EquipRightHand(selectedEquipment));
+            }
+            else if (selectedEquipment.mydata == SaveData.Current.inventory.leftHand)
+            {   
                 EquipLeftHand(selectedEquipment);
             }
 
@@ -78,13 +80,29 @@ public class EquipmentController : MonoBehaviour
         }
     }
 
-    public void EquipRightHand(Equipment right)
+    private IEnumerator EquipRightHand(Equipment right)
     {
+        PlayerEvents.Current.SwapWeapon();
+        
         rightHandEquipment = right;
         
         rightHandEquipment.SetEquipment(fpsCam, playerController);
         
-        _playerControls.Player.Primary_Fire.performed += context => rightHandEquipment.Use();
+        _playerControls.Player.Primary_Fire.performed += context =>
+        {
+            if (_playerManager.isDead) return;
+            rightHandEquipment.Use(context);
+        };
+        
+        yield return new WaitWhile(() => PlayerEvents.Current.isSwappingWeapons);
+        
+        rightHandAnimator.runtimeAnimatorController = rightHandEquipment.animatorController;
+
+        yield return new WaitUntil(() => PlayerEvents.Current.weaponSwapped);
+        
+        rightHandAnimator.gameObject.transform.localPosition = rightHandEquipment.equippedHandPos;
+        
+        PlayerEvents.Current.isAttacking = false;
     }
     
     public void EquipLeftHand(Equipment left)
@@ -95,6 +113,14 @@ public class EquipmentController : MonoBehaviour
 
         leftHandEquipment.SetEquipment(fpsCam, playerController, this);
         
-        _playerControls.Player.Secondary_Fire.performed += context => leftHandEquipment.Use();
+        _playerControls.Player.Secondary_Fire.performed += context =>
+        {
+            if (_playerManager.isDead) return;
+            
+            if (_playerManager.Armor < left.mydata.armorDrain) return;
+            
+            leftHandEquipment.Use(context);
+        };
+        _playerControls.Player.Secondary_Fire.canceled += context => leftHandEquipment.LeaveUse(context);
     }
 }

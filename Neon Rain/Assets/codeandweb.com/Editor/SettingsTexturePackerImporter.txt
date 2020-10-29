@@ -3,11 +3,11 @@ importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/Game/Sprites/Enemies/BasicEnemy.tpsheet
-- Assets/Game/Sprites/Rain/Pistol.tpsheet
+- Assets/Game/Sprites/Rain/Weapons.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/Game/Sprites/Enemies/BasicEnemy.png
-- Assets/Game/Sprites/Rain/Pistol.png
+- Assets/Game/Sprites/Rain/Weapons.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
 - 

@@ -14,9 +14,9 @@ public class MoveToTask : BTNode
     
     public override BTNodeStates Evaluate()
     {
-        var position = (_myagent.CurrentTarget.transform.position + new Vector3(Random.Range(0, 5),0,0)) ;
+        var destination = _myagent.CurrentTarget.transform.position + new Vector3(Random.Range(0, 15), 0, 0);
         
-        _myagent.agent.SetDestination(position);
+        _myagent.agent.SetDestination(destination);
 
         return BTNodeStates.SUCCESS;
     }

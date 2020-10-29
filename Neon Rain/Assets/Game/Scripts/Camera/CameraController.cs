@@ -22,6 +22,8 @@ namespace VHS
         [SerializeField] private MovementInputData _movementInputData;
         private Vignette _vignette;
 
+        public CameraRecoil recoil;
+
         #endregion
 
         #region Settings
@@ -68,10 +70,13 @@ namespace VHS
         private void Start()
         {
             PlayerEvents.Current.onPlayerCrouch += ApplyCrouchEffect;
+            PlayerEvents.Current.onPlayerStand += ApplyCrouchEffect;
         }
 
         void LateUpdate()
         {
+            if (DebugController._instance.IsInConsole) return;
+
             CalculateRotation();
             SmoothRotation();
             ApplyRotation();
@@ -91,7 +96,7 @@ namespace VHS
         {
             m_pitchTranform = transform.GetChild(0).transform;
             m_cam = GetComponentInChildren<Camera>();
-            _postProcessVolume.profile.TryGetSettings(out _vignette);
+            _postProcessVolume = GameObject.Find("FirstPersonVolume").GetComponent<PostProcessVolume>();
 
         }
 
@@ -105,13 +110,13 @@ namespace VHS
         {
             cameraZoom.Init(m_cam, camInputData);
             cameraSway.Init(m_cam.transform);
+            _postProcessVolume.profile.TryGetSettings(out _vignette);
         }
 
         void CalculateRotation()
         {
             m_desiredYaw += camInputData.InputVector.x * sensitivity.x * Time.deltaTime;
             m_desiredPitch -= camInputData.InputVector.y * sensitivity.y * Time.deltaTime;
-
             m_desiredPitch = Mathf.Clamp(m_desiredPitch, lookAngleMinMax.x, lookAngleMinMax.y);
         }
 

@@ -15,35 +15,34 @@ public class PlayerEvents : MonoBehaviour
     public bool isCrouching = false;
     public bool isPaused = false;
 
-    public bool canShoot = true;
+    public bool isAttacking = false;
+    public bool isSwappingWeapons = false;
+    public bool weaponSwapped = false;
 
     void Awake()
     {
         Current = this;
     }
 
-    public event Action onKill;
-    public void Kill()
+    public event Action onRest;
+
+    public void Rest()
     {
-        onKill?.Invoke();
+        onRest?.Invoke();
     }
 
-    public event Action onArmorChange;
-    public void ArmorChange()
+    public event Action onSwapWeapon;
+
+    public void SwapWeapon()
     {
-        onArmorChange.Invoke();
+        onSwapWeapon?.Invoke();
     }
 
-    public event Action onHeal;
-    public void Heal()
-    {
-        onHeal.Invoke();
-    }
+    public event Action onPlayerMelee;
 
-    public event Action onTakeDamage;
-    public void TakeDamage()
+    public void PlayerMelee()
     {
-        onTakeDamage.Invoke();
+        onPlayerMelee.Invoke();
     }
     
     public event Action onPlayerShoot;
@@ -52,86 +51,42 @@ public class PlayerEvents : MonoBehaviour
         onPlayerShoot.Invoke();
     }
 
-    public event Action onPlayerADS;
-    public void PlayerADS()
-    {
-        isAiming = true;
-        onPlayerADS.Invoke();
-    }
-
-    public event Action onPlayerLeaveADS;
-    public void PlayerLeaveADS()
-    {
-        isAiming = false;
-        onPlayerLeaveADS.Invoke();
-    }
-
-    public event Action onPlayerReload;
-    public void PlayerReload()
-    {
-        onPlayerReload?.Invoke();
-        hasAmmo = true;
-    }
-
-    public event Action onPlayerShootGrapple;
-    public void PlayerShootGrapple()
-    {
-        onPlayerShootGrapple?.Invoke();
-    }
-
-    public event Action onPlayerGrappleReachLocation;
-    public void PlayerGrappleReachLocation()
-    {
-        onPlayerGrappleReachLocation?.Invoke();
-    }
-
-    public event Action onPlayerSwitchWeapons;
-    public void PlayerSwitchWeapons()
-    {
-        onPlayerSwitchWeapons?.Invoke();
-    }
-
-    public event Action onPlayerGrappleEnemyDone;
-    public void PlayerEnemyGrappleDone()
-    {
-        onPlayerGrappleEnemyDone?.Invoke();
-    }
-
     public event Action onPlayerWalk;
     public void Walk()
     {
         onPlayerWalk.Invoke();
     }
 
-    public event Action onPlayerSprint;
-    public void Sprint()
+    public event Action onPlayerStartSprint;
+    public void StartSprint()
     {
-        onPlayerSprint.Invoke();
+        onPlayerStartSprint.Invoke();
+    }
+
+    public event Action sprinting;
+
+    public void Sprinting()
+    {
+        sprinting.Invoke();
+    }
+    
+    public event Action onPlayerStopSprint;
+    public void StopSprint()
+    {
+        onPlayerStopSprint.Invoke();
     }
 
     public event Action onPlayerCrouch;
     public void Crouch()
     {
+        isCrouching = true;
         onPlayerCrouch.Invoke();
     }
     
-    public event Action onPlayerLeaveCrouch;
-
-    public void LeaveCrouch()
+    public event Action onPlayerStand;
+    public void Stand()
     {
-        onPlayerLeaveCrouch.Invoke();
-    }
-
-    public event Action onPlayerSlide;
-    public void Slide()
-    {
-        onPlayerSlide.Invoke();
-    }
-
-
-    public event Action onPlayerIdle;
-    public void Idle()
-    {
-        onPlayerIdle.Invoke();
+        isCrouching = false;
+        onPlayerStand.Invoke();
     }
 }

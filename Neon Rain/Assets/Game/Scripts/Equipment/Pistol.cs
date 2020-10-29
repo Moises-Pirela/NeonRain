@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,18 +10,24 @@ public class Pistol : Equipment
     private Transform playerController;
     public GameObject impactEffect;
 
+    private void Awake()
+    {
+        mydata = SaveData.Current.inventory.pistol;
+    }
+
+
     public override void SetEquipment(Camera camera, Transform player, EquipmentController equipmentController = null)
     {
         fpsCam = camera;
         playerController = player;
     }
 
-    public override void Use()
+    public override void Use(InputAction.CallbackContext context)
     {
-        if (PlayerEvents.Current.canShoot) return;
+        if (DebugController._instance.IsInConsole || GameMaster._current.IsPaused) return;
         
-        PlayerEvents.Current.canShoot = true;
-
+        if (PlayerEvents.Current.isAttacking) return;
+        
         var layerMask = 1 << 8;
         var layerMask2 = layerMask + (1 << 9);
 
@@ -52,7 +59,7 @@ public class Pistol : Equipment
         // target.Health -= damage;
     }
 
-    public override void LeaveUse()
+    public override void LeaveUse(InputAction.CallbackContext context)
     {
         throw new System.NotImplementedException();
     }
@@ -70,5 +77,10 @@ public class Pistol : Equipment
     public override bool MyReverseInput()
     {
         throw new System.NotImplementedException();
+    }
+
+    public Pistol(EquipmentData data) : base(data)
+    {
+        
     }
 }

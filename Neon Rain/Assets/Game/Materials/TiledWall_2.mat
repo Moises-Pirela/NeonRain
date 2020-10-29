@@ -12,7 +12,7 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Diffuse:
         m_Texture: {fileID: 2800000, guid: 3289945602151cf4eb134c08f0a1b6ab, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaClip: 0.25
+    - _AlphaClip: 0
     - _BumpScale: 1
     - _ColourDepth: 32
     - _Cutoff: 0.5
@@ -80,9 +80,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _VertexDetail: 80
+    - _VertexDetail: 2270.29
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.9292453, b: 0.9292453, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

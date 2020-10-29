@@ -9,15 +9,27 @@ public abstract class Damageable : MonoBehaviour
 
     public float maxShield = 200f;
     
+    [HideInInspector] public bool takingDamage = false;
+    [HideInInspector] public bool isDead = false;
+    
     private float health;
     public float Health
     {
         get => health;
         set
         {
+            if (value < health)
+                takingDamage = true;
+            
             health = value;
             
             onHealthChange?.Invoke();
+
+            if (health <= 0)
+            {
+                isDead = true;
+                onDeath?.Invoke();
+            }
         }
     }
 
@@ -27,14 +39,20 @@ public abstract class Damageable : MonoBehaviour
         get => armor;
         set
         {
+            var initialArmor = armor;
+            
+            if (value < armor)
+                takingDamage = true;
+            
             armor = value;
             
-            onArmorChange?.Invoke();
+            onArmorChange?.Invoke(armor , initialArmor);
         }
     }
 
     public Action onHealthChange;
-    public Action onArmorChange;
+    public Action<float, float> onArmorChange;
+    public Action onDeath;
 
     public void SetUp()
     {

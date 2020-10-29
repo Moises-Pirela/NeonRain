@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using DG.Tweening;
+using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 namespace Game.Scripts.PlayerScripts
 {
@@ -14,6 +17,21 @@ namespace Game.Scripts.PlayerScripts
         [SerializeField] private Transform holdPosition;
 
         [SerializeField] private float range = 15;
+
+        private bool readyToAttract = false;
+        private bool attracting = false;
+
+        private Rigidbody target;
+        
+        public GravityAttractor(EquipmentData data) : base(data)
+        {
+        }
+        
+        private void Awake()
+        {
+            mydata = SaveData.Current.inventory.gravityAttractor;
+        }
+        
         public override void SetEquipment(Camera camera, Transform player = null, EquipmentController equipmentController = null)
         {
             fpsCam = camera;
@@ -21,55 +39,37 @@ namespace Game.Scripts.PlayerScripts
             this.equipmentController = equipmentController;
         }
 
-        public override void Use()
+        public override void Use(InputAction.CallbackContext context)
         {
-            var layerMask = 1 << 2;
-
-            layerMask = ~layerMask;
-            
-            var ray = fpsCam.ScreenPointToRay(Input.mousePosition);
-            
-            PlayerEvents.Current.PlayerShootGrapple();
-            
-            if (!audioSource.isPlaying)
-                audioSource.Play();;
-
-            if (lockedObject == null)
+            switch (context.interaction)
             {
-                if (Physics.Raycast(ray, out var hit, range, layerMask, QueryTriggerInteraction.Ignore)) 
-                    lockedObject = hit.collider.gameObject;     
+                case TapInteraction _:
+                    if (target)
+                    {
+                        ClearTarget();
+                    }
+                        
+                    break;
+                case HoldInteraction _:
+                    if (!target)
+                    {
+                        readyToAttract = true; 
+                    }
+                        
+                    break;
             }
-            
-            if (lockedObject == null) return;
-            
-            //equipmentController.targetLocation = hit.point;
-
-            var objectRigidbody = lockedObject.GetComponent<Rigidbody>(); 
-            
-            if (!objectRigidbody) return;
-
-            objectRigidbody.useGravity = false;
-            
-            objectRigidbody.AddTorque(new Vector3(1,0.2f,1)* 2);
-            objectRigidbody.useGravity = false;
-            
-            var transform1 = fpsCam.transform;
-            var newPosition = transform1.position + transform1.forward * 5;
-
-            objectRigidbody.position = Vector3.Lerp(objectRigidbody.position, newPosition, 5 * Time.deltaTime);
-
-             var enemyAi = lockedObject.GetComponent<IBehaviorAI>();
-             if (enemyAi == null) return;
-             enemyAi.GetNavMeshAgent().enabled = false;
-             
         }
 
-        public override void LeaveUse()
+        public override void LeaveUse(InputAction.CallbackContext context)
         {
-            lockedObject = null;
-            
-            if (audioSource.isPlaying)
-                audioSource.Stop();
+            switch (context.interaction)
+            {
+                case TapInteraction _:
+                    break;
+                case HoldInteraction _:
+                    Attract();
+                    break;
+            }
         }
 
         public override InputAction MyInput()
@@ -81,6 +81,77 @@ namespace Game.Scripts.PlayerScripts
         public override bool MyReverseInput()
         {
             return Input.GetButtonUp("Fire2");
+        }
+
+        private void Update()
+        {
+            if (attracting)
+            {
+                target.transform.position = Vector3.Slerp(target.transform.position, holdPosition.position, 0.3f);
+            }
+        }
+
+        private void Attract()
+        {
+            if (!target) return;
+
+            var agent = target.GetComponent<BaseAI>();
+            
+            Transform targetTransform;
+
+            targetTransform = target.transform;//.DORotate(holdPosition.position, 0.3f);
+
+            if (agent)
+            {
+                agent.agent.enabled = false;
+            }
+            else
+            {
+                target.AddTorque(Vector3.forward * 5f, ForceMode.Impulse);
+            }
+
+            targetTransform.parent = holdPosition;
+
+            target.constraints = RigidbodyConstraints.FreezePosition;
+            
+            readyToAttract = false;
+
+            attracting = true;
+            
+            _playerManager.DrainArmor(mydata.armorDrain);
+        }
+
+        private void FindTarget()
+        {
+            ClearTarget();
+            
+            if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range)) return;
+
+            Rigidbody hitTarget = hit.collider.GetComponent<Rigidbody>();
+            
+            if (!hitTarget) return;
+
+            target = hitTarget;
+        }
+
+        private void FixedUpdate()
+        {
+            if (readyToAttract)
+                FindTarget();
+        }
+
+        private void ClearTarget()
+        {
+            if (target)
+            {
+                target.constraints = RigidbodyConstraints.None;
+                target.useGravity = false;
+                target.transform.parent = null;
+                attracting = false;
+            }
+            
+            target = null;
+            
         }
     }
 }

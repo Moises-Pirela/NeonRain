@@ -88,13 +88,61 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""id"": ""179ed04f-a436-42b5-86fd-df6f1d9f1066"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Tap(pressPoint=0.3),Hold""
                 },
                 {
                     ""name"": ""Scroll"",
                     ""type"": ""Value"",
                     ""id"": ""a8f1490b-f1a4-4b76-90bc-888443a56ea1"",
                     ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleDebug"",
+                    ""type"": ""Button"",
+                    ""id"": ""10e6b568-d990-495f-b834-8d6f1ed524ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ReturnDebug"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a958ee5-ac91-4ddd-a104-b4fcb3dfd736"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""WeaponWheel"",
+                    ""type"": ""Button"",
+                    ""id"": ""c85642a4-9718-4873-8523-f4e408350384"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a53f57d-724b-4250-a74d-914af0b31abb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd4beccf-fa66-43f7-92b5-b8618aac3d5f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Cancel_Secondary_Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""60d168f8-5964-4701-9852-e96d32c257ad"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -157,11 +205,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""326902df-8d30-4751-aff2-4ea46f9c60ac"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""b7ba8ab4-f8b2-4ed3-903a-14b0d6df4ac5"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aca5138c-cb28-4a54-a276-0547003028bb"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -179,11 +249,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a020e910-fa23-40f3-b249-c34f793af955"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""582b34d8-013b-4c2e-b156-ed8daacde3e0"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""407e7ab9-2087-40d3-ab57-c8c72124dc95"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone,ScaleVector2(x=10,y=10)"",
+                    ""groups"": ""Controller"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -201,11 +293,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7ba79bd2-b7c0-45b3-93a5-9c2ceaf1286a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c2d3a57f-618a-4caf-97f9-c185ac9f2ebf"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3572e8b1-26d0-484d-97e3-722cb4c0104a"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -267,6 +381,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""598b5e25-fa60-42ba-9261-60cf5088e5c2"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Primary_Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d3421fb3-da94-4846-bfe4-928f6a7c88bc"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
@@ -278,12 +403,133 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""19dd67bc-8843-4e34-9962-219a1a1d2be3"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Secondary_Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""93a2c38d-afb1-4e5c-a694-56dd13f1df7b"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard and Mouse"",
                     ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05562b12-152c-43a1-aefa-4088be18c283"",
+                    ""path"": ""<Keyboard>/delete"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""ToggleDebug"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22f79907-1555-42f7-b7dd-7b7ccb7f1a39"",
+                    ""path"": ""<Keyboard>/end"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReturnDebug"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cea2f28-4471-4337-a802-797610ef3ef0"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""WeaponWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6878d5c-3063-4a23-b5cd-0fd729565ca1"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""WeaponWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ba0dac6-f815-4376-bbb1-dd6c5bfe84e5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bea8f23c-0884-4bc1-a2c9-f3aa82f00cd7"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93ee1d10-ed42-4c68-a218-81415b0ef642"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c35655e-e589-4654-8440-9d94e3cfbbd6"",
+                    ""path"": ""*/{Submit}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea193248-f591-40a6-9838-8ae6af85b6aa"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Cancel_Secondary_Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e22ade22-9e09-4185-8368-8d5aa8eb0faf"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Cancel_Secondary_Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -306,6 +552,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -321,6 +578,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Primary_Fire = m_Player.FindAction("Primary_Fire", throwIfNotFound: true);
         m_Player_Secondary_Fire = m_Player.FindAction("Secondary_Fire", throwIfNotFound: true);
         m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
+        m_Player_ToggleDebug = m_Player.FindAction("ToggleDebug", throwIfNotFound: true);
+        m_Player_ReturnDebug = m_Player.FindAction("ReturnDebug", throwIfNotFound: true);
+        m_Player_WeaponWheel = m_Player.FindAction("WeaponWheel", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Continue = m_Player.FindAction("Continue", throwIfNotFound: true);
+        m_Player_Cancel_Secondary_Fire = m_Player.FindAction("Cancel_Secondary_Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -380,6 +643,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Primary_Fire;
     private readonly InputAction m_Player_Secondary_Fire;
     private readonly InputAction m_Player_Scroll;
+    private readonly InputAction m_Player_ToggleDebug;
+    private readonly InputAction m_Player_ReturnDebug;
+    private readonly InputAction m_Player_WeaponWheel;
+    private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Continue;
+    private readonly InputAction m_Player_Cancel_Secondary_Fire;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -394,6 +663,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Primary_Fire => m_Wrapper.m_Player_Primary_Fire;
         public InputAction @Secondary_Fire => m_Wrapper.m_Player_Secondary_Fire;
         public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
+        public InputAction @ToggleDebug => m_Wrapper.m_Player_ToggleDebug;
+        public InputAction @ReturnDebug => m_Wrapper.m_Player_ReturnDebug;
+        public InputAction @WeaponWheel => m_Wrapper.m_Player_WeaponWheel;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Continue => m_Wrapper.m_Player_Continue;
+        public InputAction @Cancel_Secondary_Fire => m_Wrapper.m_Player_Cancel_Secondary_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -433,6 +708,24 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Scroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
                 @Scroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
                 @Scroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @ToggleDebug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
+                @ToggleDebug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
+                @ToggleDebug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
+                @ReturnDebug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturnDebug;
+                @ReturnDebug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturnDebug;
+                @ReturnDebug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturnDebug;
+                @WeaponWheel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponWheel;
+                @WeaponWheel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponWheel;
+                @WeaponWheel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponWheel;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Continue.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnContinue;
+                @Continue.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnContinue;
+                @Continue.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnContinue;
+                @Cancel_Secondary_Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
+                @Cancel_Secondary_Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
+                @Cancel_Secondary_Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -467,6 +760,24 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Scroll.started += instance.OnScroll;
                 @Scroll.performed += instance.OnScroll;
                 @Scroll.canceled += instance.OnScroll;
+                @ToggleDebug.started += instance.OnToggleDebug;
+                @ToggleDebug.performed += instance.OnToggleDebug;
+                @ToggleDebug.canceled += instance.OnToggleDebug;
+                @ReturnDebug.started += instance.OnReturnDebug;
+                @ReturnDebug.performed += instance.OnReturnDebug;
+                @ReturnDebug.canceled += instance.OnReturnDebug;
+                @WeaponWheel.started += instance.OnWeaponWheel;
+                @WeaponWheel.performed += instance.OnWeaponWheel;
+                @WeaponWheel.canceled += instance.OnWeaponWheel;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Continue.started += instance.OnContinue;
+                @Continue.performed += instance.OnContinue;
+                @Continue.canceled += instance.OnContinue;
+                @Cancel_Secondary_Fire.started += instance.OnCancel_Secondary_Fire;
+                @Cancel_Secondary_Fire.performed += instance.OnCancel_Secondary_Fire;
+                @Cancel_Secondary_Fire.canceled += instance.OnCancel_Secondary_Fire;
             }
         }
     }
@@ -478,6 +789,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_KeyboardandMouseSchemeIndex == -1) m_KeyboardandMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard and Mouse");
             return asset.controlSchemes[m_KeyboardandMouseSchemeIndex];
+        }
+    }
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
     public interface IPlayerActions
@@ -492,5 +812,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnPrimary_Fire(InputAction.CallbackContext context);
         void OnSecondary_Fire(InputAction.CallbackContext context);
         void OnScroll(InputAction.CallbackContext context);
+        void OnToggleDebug(InputAction.CallbackContext context);
+        void OnReturnDebug(InputAction.CallbackContext context);
+        void OnWeaponWheel(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
+        void OnCancel_Secondary_Fire(InputAction.CallbackContext context);
     }
 }

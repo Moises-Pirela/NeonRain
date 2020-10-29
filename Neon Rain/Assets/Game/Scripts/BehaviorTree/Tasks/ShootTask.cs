@@ -10,32 +10,35 @@ public class ShootTask : BTNode
     private float shootingTimer = 0;
     private static readonly int Shoot = Animator.StringToHash("Shoot");
 
+    private LayerMask _layerMask;
+
     public ShootTask(BaseAI baseAI)
     {
         _myai = baseAI;
+        
+        _layerMask = LayerMask.GetMask("Units");
+        LayerMask playerMask = LayerMask.GetMask("Player");
+        _layerMask += playerMask;
     }
     
     public override BTNodeStates Evaluate()
     {
-        var target = _myai.CurrentTarget;
-        
         shootingTimer += Time.deltaTime;
 
+        if (!(shootingTimer >= _myai.unitData.fireRate)) return BTNodeStates.FAILURE;
+        
+        var target = _myai.CurrentTarget;
+        
         var position = target.transform.position;
+        
         var direction = position - _myai.transform.position;
         
-        var layerMask = 1 << 2;
-
-        layerMask = ~layerMask;
-
-        if (!(shootingTimer >= _myai.unitData.fireRate)) return BTNodeStates.FAILURE;
-
         _myai.myEntity.animator.SetTrigger(Shoot);
-
-        if (Physics.Raycast(_myai.transform.position, direction, out var hit, _myai.unitData.shootingRange, layerMask))
+        
+        if (Physics.Raycast(_myai.transform.position + new Vector3(0,0.5f,0.6f), direction, out var hit, _myai.unitData.shootingRange, _layerMask, QueryTriggerInteraction.Collide))
         {   
             var targetEntity = hit.transform.GetComponent<BaseEntity>();
-
+            
             if (targetEntity != null)
             {
                 targetEntity.TakeDamage(_myai.unitData.damage);

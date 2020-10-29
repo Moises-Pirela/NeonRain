@@ -10,9 +10,14 @@ public class AIManager : BaseEntity
         onHealthChange += OnDeath;
     }
 
+    public void Respawn()
+    {
+        SetUp();
+    }
+
     private void OnDeath()
     {
         if (Health <= 0)
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
 }

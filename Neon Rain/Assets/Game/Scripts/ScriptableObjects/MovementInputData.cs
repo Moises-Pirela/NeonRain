@@ -16,6 +16,7 @@ namespace VHS
 
             bool m_runClicked = false;
             bool m_runReleased = true;
+            private bool m_isGrappling = false;
         #endregion
 
         #region Properties
@@ -40,6 +41,12 @@ namespace VHS
             {
                 get => m_isRunning;
                 set => m_isRunning = value;
+            }
+
+            public bool IsGrappling
+            {
+                get => m_isGrappling;
+                set => m_isGrappling = value;
             }
 
             public bool IsCrouching
@@ -85,6 +92,7 @@ namespace VHS
                 m_jumpClicked = false;
                 m_runClicked = false;
                 m_runReleased =false;
+                m_isGrappling = false;
             }
         #endregion
     }
