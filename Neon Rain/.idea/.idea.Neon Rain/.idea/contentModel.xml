@@ -33,32 +33,16 @@
               <e p="BTSelector.cs" t="Include" />
               <e p="BTSequence.cs" t="Include" />
               <e p="Conditions" t="Include">
-                <e p="EnemyInRangeCondition.cs" t="Include" />
+                <e p="CanMoveCondition.cs" t="Include" />
                 <e p="EnemySpottedCondition.cs" t="Include" />
-                <e p="ForceFailCondition.cs" t="Include" />
-                <e p="HasWaypointTargetCondition.cs" t="Include" />
-                <e p="HeardNoiseCondition.cs" t="Include" />
-                <e p="IsActiveCondition.cs" t="Include" />
-                <e p="IsAwareCondition.cs" t="Include" />
-                <e p="IsPatrolCondition.cs" t="Include" />
-                <e p="OfficerDeadCondition.cs" t="Include" />
-                <e p="ReachedDestinationCondition.cs" t="Include" />
-                <e p="ResistFleeCondition.cs" t="Include" />
-                <e p="ShouldFleeCondition.cs" t="Include" />
+                <e p="InAttackRangeCondition.cs" t="Include" />
               </e>
               <e p="DebugNode.cs" t="Include" />
               <e p="IPatrol.cs" t="Include" />
               <e p="Tasks" t="Include">
                 <e p="AttackTask.cs" t="Include" />
-                <e p="FaceTargetTask.cs" t="Include" />
-                <e p="FillAwarenessMeterTask.cs" t="Include" />
-                <e p="FleeTask.cs" t="Include" />
-                <e p="GainAwarenessTask.cs" t="Include" />
+                <e p="FaceMoveDirectionTask.cs" t="Include" />
                 <e p="MoveToTask.cs" t="Include" />
-                <e p="PatrolTask.cs" t="Include" />
-                <e p="SelectPatrolPointTask.cs" t="Include" />
-                <e p="SetAlertStateTask.cs" t="Include" />
-                <e p="SetDangerStateTask.cs" t="Include" />
               </e>
             </e>
             <e p="Billboard" t="Include">
@@ -77,8 +61,6 @@
             <e p="Enemies" t="Include">
               <e p="AIManager.cs" t="Include" />
               <e p="HammerHeadAI.cs" t="Include" />
-              <e p="NaziOfficerAIController.cs" t="Include" />
-              <e p="NaziTrooperAIController.cs" t="Include" />
               <e p="UnitData.cs" t="Include" />
               <e p="VisionController.cs" t="Include" />
             </e>

@@ -24,6 +24,13 @@ public class PlayerEvents : MonoBehaviour
         Current = this;
     }
 
+    public event Action onShake;
+
+    public void Shake()
+    {
+        onShake?.Invoke();
+    }
+
     public event Action onRest;
 
     public void Rest()

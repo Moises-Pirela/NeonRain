@@ -61,48 +61,31 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IPatrol.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Waypoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceTargetTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GPUDemo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SetDangerStateTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SetAlertStateTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectPatrolPointTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FillAwarenessMeterTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/PatrolTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ReachedDestinationCondition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/OfficerDeadCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HeardNoiseCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/IsActiveCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ShouldFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ResistFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/InteractionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/IsAwareCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypointTargetCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
@@ -131,13 +114,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Node.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Selector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/BaseNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Sequence.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Task.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Root.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Task.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Sequence.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Selector.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/BaseNode.cs" />
@@ -159,7 +135,6 @@
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerSelector.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerConditional.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FillAwarenessUITask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/NoiseMaker.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceTargetTask.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FaceTargetTask.cs" />
@@ -169,19 +144,27 @@
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Sequence.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/EnemySpottedConditional.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Selector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Condition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/GainAwarenessTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ForceFailCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziTrooperAIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/NoiseMaker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/InAttackRangeCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirectionTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/CanMoveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -288,7 +271,7 @@
       <workItem from="1604352680282" duration="3412000" />
       <workItem from="1604525826977" duration="11034000" />
       <workItem from="1604605275750" duration="15596000" />
-      <workItem from="1604700558194" duration="8600000" />
+      <workItem from="1604700558194" duration="20928000" />
     </task>
     <servers />
   </component>

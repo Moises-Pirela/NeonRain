@@ -1,30 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-
-public class AttackTask : BTNode
+﻿public class AttackTask : BTNode
 {
-    private BaseAI _myai;
-
-    private float shootingTimer = 0;
-    private static readonly int Shoot = Animator.StringToHash("Shoot");
-
-    private LayerMask _layerMask;
-
+    private BaseAI Myai;
+    
     public AttackTask(BaseAI baseAI)
     {
-        _myai = baseAI;
-        
-        _layerMask = LayerMask.GetMask("Units");
-        LayerMask playerMask = LayerMask.GetMask("Player");
-        _layerMask += playerMask;
+        Myai = baseAI;
     }
     
     public override BTNodeStates Evaluate()
     {
-        _myai.Attack();
-        
+        Myai.Attack();
+
         return BTNodeStates.SUCCESS;
     }
 }

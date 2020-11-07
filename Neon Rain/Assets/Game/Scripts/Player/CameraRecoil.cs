@@ -13,6 +13,10 @@ public class CameraRecoil : MonoBehaviour
 
     [Header("Aiming Recoil:")]
     public Vector3 recoilRotationAiming = new Vector3(0.5f, 0.5f, 1.5f);
+    
+    [Header("Camera Shake:")]
+    public Vector3 recoilCameraShake = new Vector3(0.5f, 0.5f, 1.5f);
+    
 
     [Header("State:")]
     public bool aiming;
@@ -24,6 +28,7 @@ public class CameraRecoil : MonoBehaviour
     void Start()
     {
         PlayerEvents.Current.onPlayerShoot += Shoot;
+        PlayerEvents.Current.onShake += Shake;
     }
 
     void FixedUpdate()
@@ -31,6 +36,14 @@ public class CameraRecoil : MonoBehaviour
         currentRotation = Vector3.Lerp(currentRotation, Vector3.zero, returnSpeed * Time.deltaTime);
         Rot = Vector3.Slerp(Rot, currentRotation, rotationSpeed * Time.deltaTime);
         transform.localRotation = Quaternion.Euler(Rot);
+    }
+
+    
+    public void Shake()
+    {
+        var yRotation = Random.Range(-recoilCameraShake.y, recoilCameraShake.y) * 15;
+        var zRotation = Random.Range(-recoilCameraShake.z, recoilCameraShake.z) * 15;
+        currentRotation += new Vector3(-recoilCameraShake.x, yRotation, zRotation);
     }
 
     public void Shoot()

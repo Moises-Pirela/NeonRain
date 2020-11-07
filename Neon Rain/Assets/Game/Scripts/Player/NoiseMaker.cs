@@ -47,8 +47,8 @@ public class NoiseMaker : MonoBehaviour
             var direction = hitPosition - position;
             var distance = Vector3.Distance(position, hitPosition);
             var aiAgent = hitColliders[i].GetComponent<BaseAI>();
-            aiAgent.SetNoiseDetected(noiseLevel);
-            aiAgent.moveToPosition = transform.position - (transform.forward * -3);
+            // aiAgent.SetNoiseDetected(noiseLevel);
+            // aiAgent.InvestigationTarget = transform.position - (transform.forward * -3);
         }
     }
 

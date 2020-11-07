@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.ProBuilder;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public enum AIType
@@ -19,127 +21,136 @@ public enum AIState
     FLEEING
 }
 
-public enum AIBehavior
-{
-    IDLE,
-    PATROL
-}
-
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(BaseEntity))]
 public abstract class BaseAI : MonoBehaviour
 {
+    public BTSequence rootAI;
+
     public UnitData unitData;
 
-    private GameObject _currentTarget;
+    [HideInInspector] public NavMeshAgent agent;
 
-    public GameObject CurrentTarget
+    private BaseEntity m_currentAttackTargetEntity;
+
+    private Vector3 m_movePosition;
+
+    [HideInInspector] public BaseEntity self;
+
+    protected float attackTimer;
+
+    public bool isAttacking;
+    
+    [SerializeField] protected LayerMask attackMask;
+
+    protected virtual BTSequence Seq_CombatSequence()
     {
-        get => _currentTarget;
-        set { _currentTarget = value; }
+        BTSequence sequence = new BTSequence(new List<BTNode>()
+        {
+                new EnemySpottedCondition(this),
+                new DebugNode("ENEMY SPOTTED"),
+                Sel_InAttackRangeSelector(),
+                new DebugNode("IN ATTACK RANGE"),
+                new FaceMoveDirectionTask(this),
+                new AttackTask(this)
+        });
+
+        return sequence;
     }
 
-    private Vector3 investigationTarget;
-
-    public Vector3 InvestigationTarget
+    protected virtual BTSelector Sel_InAttackRangeSelector()
     {
-        get => investigationTarget;
-        set => investigationTarget = value;
+        BTSelector selector = new BTSelector(new List<BTNode>()
+        {
+            new InAttackRangeCondition(this),
+            Seq_MoveSequence(),
+        });
+
+        return selector;
+    }
+
+    protected virtual BTSequence Seq_MoveSequence()
+    {
+        BTSequence sequence = new BTSequence(new List<BTNode>()
+        {
+            //new CanMoveCondition(this),
+            new FaceMoveDirectionTask(this),
+            new MoveToTask(this)
+        });
+
+        return sequence;
+    }
+
+    protected void PopulateBtNodes(List<BTNode> btNodes)
+    {
+        rootAI = new BTSequence(btNodes);
     }
     
-    public BaseEntity myEntity;
-
-    private BaseEntity _currentTargetBaseEntity;
-    public BaseEntity CurrentTargetBaseEntity => _currentTargetBaseEntity;
-
-    public NavMeshAgent agent;
-
-    private float awarenessMeter = 0;
-
-    public float AwarenessMeter
+    public virtual bool CanMove()
     {
-        get => awarenessMeter;
-        set => awarenessMeter = Mathf.Clamp(value,0f,1f);
+        return !isAttacking;
     }
-
-    public const float awarenessMeterThreshold = 1f;
-
-    public BTSelector rootAI;
-
-    [HideInInspector] public AIState aiState;
-    public AIBehavior aiBehavior;
-
-    [HideInInspector] public bool resistedFlee = false;
-
-    [HideInInspector] public bool heardNoise = false;
-
-    [HideInInspector] public bool playerSpotted = false;
-    [HideInInspector] public float noiseDetected = 0;
-
-    [SerializeField] private GameObject _sprite;
-
-    [SerializeField] private Camera worldCamera;
-
-    public Image awarenessMeterFill;
 
     private void Awake()
     {
-        myEntity = GetComponent<BaseEntity>();
-        aiState = AIState.ACTIVE;
+        SetComponents();
     }
+
+    private void LateUpdate()
+    {
+        rootAI.Evaluate();
+    }
+
+    private void SetComponents()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        self = GetComponent<BaseEntity>();
+    }
+
+    public bool EnemySpotted()
+    {
+        return m_currentAttackTargetEntity != null;
+    }
+
+    public bool InAttackRange
+    {
+        get
+        {
+            if (m_currentAttackTargetEntity == null) return false;
+            
+            return Vector3.Distance(transform.position, m_currentAttackTargetEntity.transform.position) <= unitData.attackRange;
+        }
+    }
+
+    public Vector3 MovePosition
+    {
+        get { return m_movePosition; }
+        set { m_movePosition = value; }
+    }
+
+    public Vector3 AttackTargetPosition
+    {
+        get
+        {
+            if (m_currentAttackTargetEntity == null) return transform.position;
+            
+            return m_currentAttackTargetEntity.transform.position;
+        }
+    }
+
+    public BaseEntity CurrentAttackTarget
+    {
+        get { return m_currentAttackTargetEntity; }
+        set
+        {
+            m_currentAttackTargetEntity = value;
+        }
+        
+    }
+
+    public abstract void Attack();
 
     public void Respawn()
     {
-        AwarenessMeter = 0;
-        CurrentTarget = null;
-        playerSpotted = false;
-        noiseDetected = 0;
-        heardNoise = false;
-        resistedFlee = false;
-        _currentTargetBaseEntity = null;
-        investigationTarget = Vector3.zero;
-        agent.isStopped = true;
-        aiState = AIState.ACTIVE;
-    }
-
-
-    public void SetCurrentTarget(GameObject target, BaseEntity baseEntity = null)
-    {
-        _currentTarget = target;
-        _currentTargetBaseEntity = baseEntity;
-    }
-
-    public bool CheckOfficerAlive()
-    {
-        LayerMask layerMask = LayerMask.GetMask($"Units");
-        int maxColliders = 10;
-        Collider[] hitColliders = new Collider[maxColliders];
-        int numColliders =
-            Physics.OverlapSphereNonAlloc(transform.position, unitData.sightDistance * 2, hitColliders, layerMask);
-        for (int i = 0; i < numColliders; i++)
-        {
-            var unit = hitColliders[i].GetComponent<BaseAI>();
-
-            if (unit.unitData.aiType == AIType.OFFICER) return true;
-        }
-
-        return false;
-    }
-
-    public void SetNoiseDetected(float val)
-    {
-        noiseDetected = val;
-        heardNoise = true;
-    }
-
-    public void ResetNoiseDetection()
-    {
-        heardNoise = false;
-        noiseDetected = 0;
-    }
-
-    public void ResetAwareness()
-    {
-        AwarenessMeter = 0;
-        playerSpotted = false;
-        SetCurrentTarget(null, null);
     }
 }

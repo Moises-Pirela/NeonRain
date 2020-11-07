@@ -1,23 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class EnemySpottedCondition : BTNode
 {
-    private BaseEntity _enemyBase;
-    private BaseAI myAI;
-    
-    public EnemySpottedCondition(BaseAI myAI)
+    private BaseAI MyAI;
+
+    public EnemySpottedCondition(BaseAI baseAI)
     {
-        this.myAI = myAI;
+        MyAI = baseAI;
     }
     
     public override BTNodeStates Evaluate()
     {
-        _enemyBase = myAI.CurrentTargetBaseEntity;
-        
-        if (_enemyBase == null) return BTNodeStates.FAILURE;
-        
-        return _enemyBase.faction != myAI.myEntity.faction ? BTNodeStates.SUCCESS : BTNodeStates.FAILURE;
+        return MyAI.EnemySpotted() ? BTNodeStates.SUCCESS : BTNodeStates.FAILURE;
     }
 }

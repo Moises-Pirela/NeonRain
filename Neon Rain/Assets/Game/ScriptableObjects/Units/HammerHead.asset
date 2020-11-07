@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402f60e236c0506479093f44b133eacd, type: 3}
-  m_Name: SturmmannData
+  m_Name: HammerHead
   m_EditorClassIdentifier: 
-  unitRank: 0
+  unitRank: 2
   aiType: 0
   attackRange: 5
-  sightDistance: 15
-  fov: 60
-  fireRate: 0.5
-  damage: 25
+  sightDistance: 10
+  fov: 45
+  fireRate: 3
+  damage: 75

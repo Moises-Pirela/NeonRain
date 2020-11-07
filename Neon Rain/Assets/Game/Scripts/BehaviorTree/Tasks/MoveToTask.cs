@@ -1,23 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MoveToTask : BTNode
 {
-    private BaseAI _myagent;
+    private BaseAI Myai;
     
-    public MoveToTask(BaseAI agent)
+    public MoveToTask(BaseAI baseAI)
     {
-        _myagent = agent;
+        Myai = baseAI;
     }
-    
     public override BTNodeStates Evaluate()
     {
-        var destination = _myagent.CurrentTarget.transform.position + new Vector3(Random.Range(0, 15), 0, 0);
-        
-        _myagent.agent.SetDestination(destination);
+        Myai.agent.SetDestination(Myai.MovePosition);
 
+        Myai.agent.isStopped = !Myai.CanMove();
+        
         return BTNodeStates.SUCCESS;
     }
 }

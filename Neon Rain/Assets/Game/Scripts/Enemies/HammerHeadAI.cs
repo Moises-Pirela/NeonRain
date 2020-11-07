@@ -1,92 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HammerHeadAI : BaseAI
-{   
-    private BTSequence engageEnemySequence;
-    private BTSelector targetInRangeSelector;
-    private BTSelector heardNoiseSelector;
-    private BTSelector hasWaypointSelector;
-    private BTSequence officerAliveSequence;
-    private BTSequence investigateSequence;
-    private BTSequence patrolSequence;
-
-    private float m_shootingTimer;
-    
-
-    private void Awake()
-    {
-    }
-
+{
     private void Start()
-    { 
-        targetInRangeSelector = new BTSelector(new List<BTNode>()
-        {
-            new EnemyInRangeCondition(this),
-            new MoveToTask(this)
-        });
-        
-        engageEnemySequence = new BTSequence(new List<BTNode>()
-        {
-            new EnemySpottedCondition(this),
-            // new GainAwarenessTask(this),
-            // new FillAwarenessMeterTask(this),
-            // new IsAwareCondition(this),
-            // new SetDangerStateTask(this),
-            new FaceTargetTask(this),
-            targetInRangeSelector,
-            new AttackTask(this)
-        });
-        
-        investigateSequence = new BTSequence(new List<BTNode>()
-        {
-            new HeardNoiseCondition(this),
-            new GainAwarenessTask(this),
-            new FillAwarenessMeterTask(this),
-            new IsAwareCondition(this),
-            new SetAlertStateTask(this),
-            new MoveToTask(this)
-        });
-        
-        officerAliveSequence = new BTSequence(new List<BTNode>()
-        {
-            new ResistFleeCondition(this),
-            new OfficerDeadCondition(this),
-            new ShouldFleeCondition(this),
-            new FleeTask(this)
-        });
-        
-        rootAI = new BTSelector(new List<BTNode>()
-        {
-            new IsActiveCondition(this),
-            //officerAliveSequence,
-            engageEnemySequence,
-            //investigateSequence,
-            //patrolSequence
-        });
-    }
-    
-    public override void Attack()
     {
-        m_shootingTimer += Time.deltaTime;
+        List<BTNode> myTree = new List<BTNode>()
+        {
+            Seq_CombatSequence()
+        };
+        
+        PopulateBtNodes(myTree);
+    }
 
-        if (!(m_shootingTimer >= this.unitData.fireRate)) return;
+    private IEnumerator AttackSequence()
+    {
+        isAttacking = true;
+
+        yield return new WaitForSeconds(1f);
         
         Vector3 explosionPos = transform.position;
-        
+
         var colliders = new Collider[32];
-        
-        var size = Physics.OverlapSphereNonAlloc(explosionPos, 20,  colliders, m_attackLayerMask);
+
+        var size = Physics.OverlapSphereNonAlloc(explosionPos, 20, colliders, attackMask);
 
         for (var i = 0; i < size; i++)
         {
             Collider hit = colliders[i];
             Rigidbody rb = hit.attachedRigidbody;
             
+            Debug.Log(hit.name);
+
             BaseEntity baseEntity = hit.GetComponent<BaseEntity>();
 
-            if (baseEntity == myEntity)
+            if (baseEntity == self)
             {
                 continue;
             }
@@ -97,15 +47,37 @@ public class HammerHeadAI : BaseAI
             }
 
             var damageable = hit.GetComponent<Damageable>();
-
+            
             if (damageable != null)
-            {
                 damageable.TakeDamage(unitData.damage);
-            }
-                
+
+            var playerManager = hit.GetComponent<PlayerManager>();
+            
+            if (playerManager != null)
+                PlayerEvents.Current.Shake();
+
+            attackTimer = 0;
         }
         
-        m_shootingTimer = 0;
+        yield return new WaitForSeconds(1);
+
+        isAttacking = false;
+    }
+
+    public override void Attack()
+    {
+        attackTimer += Time.deltaTime;
+        
+        Debug.Log("Preparing attack");
+
+        if (!(attackTimer >= unitData.fireRate)) return;
+        
+        if (isAttacking) return;
+
+        StartCoroutine(AttackSequence());
+        
+        Debug.Log("attack");
+
         
     }
 }

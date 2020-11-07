@@ -38,7 +38,7 @@ public class VisionController : MonoBehaviour
     }
 
     void CheckForTarget(Collider collider)
-    {
+    {   
         LayerMask layerMask = LayerMask.GetMask("Units");
         LayerMask playerMask = LayerMask.GetMask("Player");
         layerMask += playerMask;
@@ -60,17 +60,16 @@ public class VisionController : MonoBehaviour
                 {
                     return;
                 }
-
-                myAI.playerSpotted = true;
-                myAI.SetCurrentTarget(unit.gameObject, unit);
             }
         }
         else
         {
-            if (myAI.myEntity.faction == unit.faction) return;
+             if (myAI.self.faction == unit.faction) return;
             
-            myAI.AwarenessMeter = 1;
-            myAI.SetCurrentTarget(unit.gameObject, unit);
+            // myAI.AwarenessMeter = 1;
         }
+
+        myAI.CurrentAttackTarget = unit;
+        myAI.MovePosition = unit.transform.position;
     }
 }
