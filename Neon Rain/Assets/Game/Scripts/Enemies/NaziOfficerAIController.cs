@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class NaziOfficerAIController : BaseAI
 {
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
+    }
 }

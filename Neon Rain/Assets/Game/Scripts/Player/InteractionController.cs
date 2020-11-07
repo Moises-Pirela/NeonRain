@@ -30,6 +30,7 @@ public class InteractionController : MonoBehaviour
 
         var interactable = hit.collider.GetComponent<Interactable>();
 
+        interactable?.OnHighlight();
         _currentInteractable = interactable;
     }
 }

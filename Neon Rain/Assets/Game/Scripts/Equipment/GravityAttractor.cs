@@ -22,6 +22,8 @@ namespace Game.Scripts.PlayerScripts
         private bool attracting = false;
 
         private Rigidbody target;
+
+        public LayerMask layerMask;
         
         public GravityAttractor(EquipmentData data) : base(data)
         {
@@ -119,14 +121,15 @@ namespace Game.Scripts.PlayerScripts
             attracting = true;
             
             _playerManager.DrainArmor(mydata.armorDrain);
+            
         }
 
         private void FindTarget()
         {
             ClearTarget();
-            
-            if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range)) return;
 
+            if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range, layerMask)) return;
+           
             Rigidbody hitTarget = hit.collider.GetComponent<Rigidbody>();
             
             if (!hitTarget) return;

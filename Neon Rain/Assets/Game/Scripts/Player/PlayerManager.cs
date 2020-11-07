@@ -29,7 +29,7 @@ public class PlayerManager : BaseEntity
         GameMaster._current.onRestartLevel += () => { _controller.enabled = true; };
         PlayerEvents.Current.sprinting += () =>
         {
-            DrainArmor(2f);
+            DrainArmor(0.05f);
         };
         
         onDeath += () => { _controller.enabled = false; };

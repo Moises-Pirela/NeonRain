@@ -23,6 +23,10 @@ public class NaziTrooperAIController : BaseAI, IPatrol
         set => patrolPoints = value;
     }
     
+    private static readonly int Shoot = Animator.StringToHash("Shoot");
+
+    private float m_shootingTimer;
+    
     private void Start()
     {   
         hasWaypointSelector = new BTSelector(new List<BTNode>()
@@ -45,7 +49,7 @@ public class NaziTrooperAIController : BaseAI, IPatrol
             new EnemyInRangeCondition(this),
             new MoveToTask(this)
         });
-
+        
         engageEnemySequence = new BTSequence(new List<BTNode>()
         {
             new EnemySpottedCondition(this),
@@ -55,7 +59,7 @@ public class NaziTrooperAIController : BaseAI, IPatrol
             new SetDangerStateTask(this),
             new FaceTargetTask(this),
             targetInRangeSelector,
-            new ShootTask(this)
+            new AttackTask(this)
         });
         
         investigateSequence = new BTSequence(new List<BTNode>()
@@ -65,7 +69,7 @@ public class NaziTrooperAIController : BaseAI, IPatrol
             new FillAwarenessMeterTask(this),
             new IsAwareCondition(this),
             new SetAlertStateTask(this),
-            new InvestigateTask(this)
+            new MoveToTask(this)
         });
         
         officerAliveSequence = new BTSequence(new List<BTNode>()
@@ -79,14 +83,42 @@ public class NaziTrooperAIController : BaseAI, IPatrol
         rootAI = new BTSelector(new List<BTNode>()
         {
             new IsActiveCondition(this),
-            officerAliveSequence,
+            //officerAliveSequence,
             engageEnemySequence,
             investigateSequence,
-            patrolSequence
+            //patrolSequence
         });
     }
-    private void LateUpdate()
+
+   
+
+    public override void Attack()
     {
-        rootAI.Evaluate();
+        m_shootingTimer += Time.deltaTime;
+
+        if (!(m_shootingTimer >= this.unitData.fireRate)) return;
+        
+        var target = this.CurrentTarget;
+        
+        var position = target.transform.position;
+        
+        var direction = position - this.transform.position;
+        
+        this.myEntity.animator.SetTrigger(Shoot);
+        
+        if (Physics.Raycast(this.transform.position + new Vector3(0,0.5f,0.6f), direction, out var hit, this.unitData.attackRange, m_attackLayerMask, QueryTriggerInteraction.Ignore))
+        {   
+            var targetEntity = hit.transform.GetComponent<BaseEntity>();
+            
+            if (targetEntity != null)
+            {
+                targetEntity.TakeDamage(this.unitData.damage);
+                
+            }
+        }
+
+        //audioSource.PlayOneShot(audioSource.clip);
+
+        m_shootingTimer = 0;
     }
 }

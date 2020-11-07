@@ -26,6 +26,10 @@ public class BillboardEntity : MonoBehaviour
 
         angleIndex = 0;
         
+        spriteObject.transform.localEulerAngles = new Vector3(0,myAngle + 360,0);
+
+        if (!_billboardEntityData.isDynamic) return;
+        
         for (int i = 0 ; i  < _billboardData.billboardAngles.Length; i++)
         {
             if (i < _billboardData.billboardAngles.Length - 1)
@@ -47,8 +51,8 @@ public class BillboardEntity : MonoBehaviour
         }
 
         spriteObject.color = _billboardEntityData.debugAnglesCycle[angleIndex];
-        
-        spriteObject.transform.localEulerAngles = new Vector3(0,myAngle + 360,0);
+
+
     }
 
     public void LookAtCamera()

@@ -7,9 +7,13 @@ public class Cryotank : Interactable
 {
     public Transform spawnPosition;
 
-    public override void Interact(PlayerManager playerManager)
+    public override void Interact(PlayerManager playerManager, bool magneticInteraction = false)
     {
         StartCoroutine(Interaction(playerManager));
+    }
+
+    public override void OnHighlight()
+    {
     }
 
     public IEnumerator Interaction(PlayerManager playerManager)

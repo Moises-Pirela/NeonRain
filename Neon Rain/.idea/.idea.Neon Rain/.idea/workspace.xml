@@ -58,7 +58,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IPatrol.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Waypoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,7 +71,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SetDangerStateTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SetAlertStateTask.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/InvestigateTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectPatrolPointTask.cs" root0="FORCE_HIGHLIGHTING" />
@@ -89,12 +88,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/IsActiveCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ShouldFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ResistFleeCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/InteractionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -124,45 +125,63 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/QuaternionSerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/Vector3SerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IBehaviorAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/KeyData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/DebugNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/SaveData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityGrapple.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/InteractionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Selector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/BaseNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Sequence.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Task.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Root.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Task.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Sequence.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Selector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/BaseNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Root.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Root.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/CanFleeConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/BaseNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/LeaderDeadConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/RollFleeConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Task.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FleeTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FleeTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/SetFleeTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsActiveConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/BehaviourTree.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/EnemySpotted.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/GainAwarenessTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsAwareConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerSelector.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FillAwarenessUITask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/NoiseMaker.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceTargetTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ShootTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FaceTargetTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/InAttackRangeConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/AttackTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Sequence.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/EnemySpottedConditional.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Selector.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Condition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/GainAwarenessTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ForceFailCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziTrooperAIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Dagger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameMaster.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIBlackboard.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Camera/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Cryotank.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Inventory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Magnet.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/Interactable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InputHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Magnetize.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -187,7 +206,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -207,10 +226,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6936">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6936" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -264,7 +283,12 @@
       <workItem from="1603756116155" duration="7347000" />
       <workItem from="1603824640387" duration="8985000" />
       <workItem from="1603920007540" duration="598000" />
-      <workItem from="1603984655108" duration="10574000" />
+      <workItem from="1603984655108" duration="11192000" />
+      <workItem from="1604097887993" duration="13857000" />
+      <workItem from="1604352680282" duration="3412000" />
+      <workItem from="1604525826977" duration="11034000" />
+      <workItem from="1604605275750" duration="15596000" />
+      <workItem from="1604700558194" duration="8600000" />
     </task>
     <servers />
   </component>
@@ -287,5 +311,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FaceTargetTask.cs</url>
+          <line>9</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\BehaviourTree\Nodes\Tasks\FaceTargetTask.cs" initialLine="9" containingFunctionPresentation="method 'DoTask'" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

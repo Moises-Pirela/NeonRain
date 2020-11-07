@@ -384,7 +384,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""id"": ""598b5e25-fa60-42ba-9261-60cf5088e5c2"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Normalize(max=1)"",
                     ""groups"": ""Controller"",
                     ""action"": ""Primary_Fire"",
                     ""isComposite"": false,

@@ -27,11 +27,7 @@
           <e p="Scripts" t="Include">
             <e p="BehaviorTree" t="Include">
               <e p="AIBlackboard.cs" t="Include" />
-              <e p="AIController.cs" t="Include" />
               <e p="BaseAI.cs" t="Include" />
-              <e p="Behaviors" t="Include">
-                <e p="ScharfuhrerBehavior.cs" t="Include" />
-              </e>
               <e p="BTNode.cs" t="Include" />
               <e p="BTNodeStates.cs" t="Include" />
               <e p="BTSelector.cs" t="Include" />
@@ -39,6 +35,7 @@
               <e p="Conditions" t="Include">
                 <e p="EnemyInRangeCondition.cs" t="Include" />
                 <e p="EnemySpottedCondition.cs" t="Include" />
+                <e p="ForceFailCondition.cs" t="Include" />
                 <e p="HasWaypointTargetCondition.cs" t="Include" />
                 <e p="HeardNoiseCondition.cs" t="Include" />
                 <e p="IsActiveCondition.cs" t="Include" />
@@ -50,26 +47,18 @@
                 <e p="ShouldFleeCondition.cs" t="Include" />
               </e>
               <e p="DebugNode.cs" t="Include" />
-              <e p="IBehaviorAI.cs" t="Include" />
               <e p="IPatrol.cs" t="Include" />
               <e p="Tasks" t="Include">
-                <e p="CheckArrivalTask.cs" t="Include" />
-                <e p="CheckTypeTask.cs" t="Include" />
+                <e p="AttackTask.cs" t="Include" />
                 <e p="FaceTargetTask.cs" t="Include" />
                 <e p="FillAwarenessMeterTask.cs" t="Include" />
                 <e p="FleeTask.cs" t="Include" />
                 <e p="GainAwarenessTask.cs" t="Include" />
-                <e p="GenerateAwarenessMeterTask.cs" t="Include" />
-                <e p="InvestigateTask.cs" t="Include" />
-                <e p="MoveTask.cs" t="Include" />
                 <e p="MoveToTask.cs" t="Include" />
                 <e p="PatrolTask.cs" t="Include" />
-                <e p="PlayerSpottedTask.cs" t="Include" />
-                <e p="SearchTask.cs" t="Include" />
                 <e p="SelectPatrolPointTask.cs" t="Include" />
                 <e p="SetAlertStateTask.cs" t="Include" />
                 <e p="SetDangerStateTask.cs" t="Include" />
-                <e p="ShootTask.cs" t="Include" />
               </e>
             </e>
             <e p="Billboard" t="Include">
@@ -84,8 +73,10 @@
               <e p="CameraZoom.cs" t="Include" />
             </e>
             <e p="Cryotank.cs" t="Include" />
+            <e p="Door.cs" t="Include" />
             <e p="Enemies" t="Include">
               <e p="AIManager.cs" t="Include" />
+              <e p="HammerHeadAI.cs" t="Include" />
               <e p="NaziOfficerAIController.cs" t="Include" />
               <e p="NaziTrooperAIController.cs" t="Include" />
               <e p="UnitData.cs" t="Include" />
@@ -109,8 +100,11 @@
               <e p="Interactable.cs" t="Include" />
               <e p="InteractableData.cs" t="Include" />
             </e>
+            <e p="Key.cs" t="Include" />
             <e p="LevelData.cs" t="Include" />
             <e p="LevelManager.cs" t="Include" />
+            <e p="Magnet.cs" t="Include" />
+            <e p="Magnetize.cs" t="Include" />
             <e p="Perlin_Noise_Scroller" t="Include">
               <e p="PerlinNoiseScroller.cs" t="Include" />
             </e>
@@ -142,6 +136,7 @@
             <e p="ScriptableObjects" t="Include">
               <e p="CameraInputData.cs" t="Include" />
               <e p="HeadBobData.cs" t="Include" />
+              <e p="KeyData.cs" t="Include" />
               <e p="MovementInputData.cs" t="Include" />
               <e p="PerlinNoiseData.cs" t="Include" />
             </e>
@@ -177,8 +172,6 @@
           </e>
         </e>
         <e p="GpuDemo.cs" t="Include" />
-        <e p="Magnet.cs" t="Include" />
-        <e p="Magnetize.cs" t="Include" />
         <e p="Packages" t="Include">
           <e p="Voxelizer" t="Include">
             <e p="Scripts" t="Include">

@@ -28,6 +28,6 @@ public class SaveData
     public bool[] levelsStarted = new bool[4];
     
     public List<EntityData> entityData = new List<EntityData>();
-    
+
     public Inventory inventory = new Inventory();
 }

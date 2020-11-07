@@ -15,6 +15,10 @@ public class Inventory
 
     public EquipmentData leftHand;
     public EquipmentData rightHand;
+    
+    public List<int> keyRing = new List<int>(); //key id's
+
+    public int upgradeModules = 0;
 
     public Inventory()
     {

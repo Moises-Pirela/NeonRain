@@ -1,0 +1,15 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:7dd6bb19049f06c10e14615dbe0daf29:a95c27cf9100d7c8b53dd97b2fb78df8:845b7da2f4a72715d0e96d291fd61aef$
+#
+:format=40300
+:texture=HammerHead.png
+:size=256x256
+:pivotpoints=enabled
+:borders=disabled
+
+Hammer Head;1;45;144;210; 0.5069444444444444;0.48809523809523814; 0;0;0;0; 9;138;157;144;97;120;79;113;1;35;0;42;70;13;87;0;147;68;210; 7;0;7;8;5;6;7;2;3;5;3;4;5;0;2;5;0;1;2;0;5;7

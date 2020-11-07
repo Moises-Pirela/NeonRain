@@ -676,6 +676,9 @@ MonoBehaviour:
   equippedHandPos: {x: 0, y: 0, z: 0}
   holdPosition: {fileID: 358416403}
   range: 50
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 5120
 --- !u!1 &459308634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,10 +4082,10 @@ MonoBehaviour:
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_RunstepLenghten: 0.7
   m_StepInterval: 4
-  crouchSpeed: 2
-  walkSpeed: 4
+  crouchSpeed: 3
+  walkSpeed: 6
   runSpeed: 12
-  jumpSpeed: 12
+  jumpSpeed: 8
   moveBackwardsSpeedPercent: 0.5
   moveSideSpeedPercent: 0.7
   canRunThreshold: 0.7
@@ -4262,7 +4265,7 @@ MonoBehaviour:
   faction: 2
   entityType: 1
   animator: {fileID: 0}
-  armorRegenAmount: 1
+  armorRegenAmount: 10
   armorRegenTimer: 0
   armorRegenTime: 1
   _controller: {fileID: 510954825382077587}

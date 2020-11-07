@@ -121,6 +121,7 @@ public class EquipmentController : MonoBehaviour
             
             leftHandEquipment.Use(context);
         };
+        
         _playerControls.Player.Secondary_Fire.canceled += context => leftHandEquipment.LeaveUse(context);
     }
 }
