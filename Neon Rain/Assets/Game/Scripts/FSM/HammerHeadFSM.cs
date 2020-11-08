@@ -1,26 +1,51 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HammerHeadAI : BaseAI
+public class HammerHeadFSM : StateMachine
 {
-    private void Start()
+    public override void AttackAction()
     {
-        List<BTNode> myTree = new List<BTNode>()
+        if (Vector3.Distance(transform.position, CurrentTarget.transform.position) <= unitData.attackRange)
         {
-            CombatSequence(),
-            WanderSequence()
-        };
+            attackTimer += Time.deltaTime;
         
-        PopulateBtNodes(myTree);
+            Debug.Log("Preparing attack");
+
+            if (!(attackTimer >= unitData.fireRate)) return;
+        
+            if (isAttacking) return;
+
+            StartCoroutine(AttackSequence());   
+        }
+        else
+        {
+            if (!isAttacking)
+                currentState = States.CHASING;
+        }
+    }
+
+    public override void ChaseAction()
+    {
+        if (Vector3.Distance(transform.position, CurrentTarget.transform.position) > unitData.attackRange)
+        {
+            agent.SetDestination(CurrentTarget.transform.position);
+        }
+        else
+        {
+            currentState = States.ATTACKING;
+        }
     }
 
     private IEnumerator AttackSequence()
     {
         isAttacking = true;
 
+        agent.isStopped = true;
+
         yield return new WaitForSeconds(1f);
+        
+        Debug.Log("attack");
         
         Vector3 explosionPos = transform.position;
 
@@ -32,6 +57,8 @@ public class HammerHeadAI : BaseAI
         {
             Collider hit = colliders[i];
             Rigidbody rb = hit.attachedRigidbody;
+            
+            Debug.Log(hit.name);
 
             BaseEntity baseEntity = hit.GetComponent<BaseEntity>();
 
@@ -59,24 +86,10 @@ public class HammerHeadAI : BaseAI
         }
         
         yield return new WaitForSeconds(1);
+        
+        agent.isStopped = false;
+        
 
         isAttacking = false;
-    }
-
-    public override void Attack()
-    {   
-        attackTimer += Time.deltaTime;
-        
-        Debug.Log("Preparing attack");
-
-        if (!(attackTimer >= unitData.fireRate)) return;
-        
-        if (isAttacking) return;
-
-        StartCoroutine(AttackSequence());
-        
-        Debug.Log("attack");
-
-        
     }
 }

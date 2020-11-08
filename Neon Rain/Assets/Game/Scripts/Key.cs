@@ -9,7 +9,6 @@ public class Key : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("GOT KEYS");
         SaveData.Current.inventory.keyRing.Add(keyData.keyID);
     }
 }

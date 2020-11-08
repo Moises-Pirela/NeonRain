@@ -14,7 +14,7 @@ public class FaceMoveDirectionTask : BTNode
 
         Myai.transform.DOKill();
 
-        Myai.transform.DOLookAt(Myai.MovePosition, 0.1f);
+        Myai.transform.DOLookAt(Myai.CurrentAttackTarget.transform.position, 0.1f);
         
         return BTNodeStates.SUCCESS;
     }

@@ -25,7 +25,7 @@ public enum AIState
 [RequireComponent(typeof(BaseEntity))]
 public abstract class BaseAI : MonoBehaviour
 {
-    public BTSequence rootAI;
+    public BTRoot rootAI;
 
     public UnitData unitData;
 
@@ -41,15 +41,17 @@ public abstract class BaseAI : MonoBehaviour
 
     public bool isAttacking;
     
+    private bool hasWaypoint;
     [SerializeField] protected LayerMask attackMask;
 
-    protected virtual BTSequence Seq_CombatSequence()
+    protected virtual BTSequence CombatSequence()
     {
         BTSequence sequence = new BTSequence(new List<BTNode>()
         {
+            new DebugNode("COMBAT BEGIN"),
                 new EnemySpottedCondition(this),
                 new DebugNode("ENEMY SPOTTED"),
-                Sel_InAttackRangeSelector(),
+                InAttackRangeSelector(),
                 new DebugNode("IN ATTACK RANGE"),
                 new FaceMoveDirectionTask(this),
                 new AttackTask(this)
@@ -58,23 +60,57 @@ public abstract class BaseAI : MonoBehaviour
         return sequence;
     }
 
-    protected virtual BTSelector Sel_InAttackRangeSelector()
+    protected virtual BTSequence WanderSequence()
+    {
+        BTSequence sequence = new BTSequence(new List<BTNode>()
+        {
+            new DebugNode("Wander begin"),
+            HasWaypointSelector() ,
+            new DebugNode("Wander"),
+            new ReachedDestinationCondition(this),
+            new DebugNode("NEW WAYPOINT"),
+            new SelectRandomWanderPoint(this),
+            MoveSequence()
+        });
+
+        return sequence;
+    }
+
+    protected virtual BTSelector InAttackRangeSelector()
     {
         BTSelector selector = new BTSelector(new List<BTNode>()
         {
             new InAttackRangeCondition(this),
-            Seq_MoveSequence(),
+            MoveSequence(),
+            new ForceFailureTask()
+        });
+
+        return selector;
+    }
+    
+    protected virtual BTSelector HasWaypointSelector()
+    {
+        BTSelector selector = new BTSelector(new List<BTNode>()
+        {
+            new HasWaypointCondition(this),
+            new BTSequence(new List<BTNode>()
+            {
+                new SelectRandomWanderPoint(this),
+                new DebugNode("Select waypoint and move"),
+                MoveSequence(),
+            }),
+            new ForceFailureTask()
         });
 
         return selector;
     }
 
-    protected virtual BTSequence Seq_MoveSequence()
+    protected virtual BTSequence MoveSequence()
     {
         BTSequence sequence = new BTSequence(new List<BTNode>()
         {
             //new CanMoveCondition(this),
-            new FaceMoveDirectionTask(this),
+            //new FaceMoveDirectionTask(this),
             new MoveToTask(this)
         });
 
@@ -83,7 +119,7 @@ public abstract class BaseAI : MonoBehaviour
 
     protected void PopulateBtNodes(List<BTNode> btNodes)
     {
-        rootAI = new BTSequence(btNodes);
+        rootAI = new BTRoot(btNodes);
     }
     
     public virtual bool CanMove()
@@ -111,14 +147,22 @@ public abstract class BaseAI : MonoBehaviour
     {
         return m_currentAttackTargetEntity != null;
     }
+    public bool HasWaypoint
+    {
+        get { return hasWaypoint; }
+
+        set { hasWaypoint = value; }
+    }
 
     public bool InAttackRange
     {
         get
         {
             if (m_currentAttackTargetEntity == null) return false;
-            
-            return Vector3.Distance(transform.position, m_currentAttackTargetEntity.transform.position) <= unitData.attackRange;
+
+            var distance = Vector3.Distance(CurrentAttackTarget.transform.position,transform.position) ;
+
+            return distance < unitData.attackRange;
         }
     }
 

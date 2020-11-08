@@ -7,6 +7,9 @@ public class VisionController : MonoBehaviour
 {
     [SerializeField] private BaseAI myAI;
     [SerializeField] private SphereCollider myCollider;
+    [SerializeField] private StateMachine StateMachine;
+    [SerializeField] private LayerMask obstaclesMask;
+    
 
     // IEnumerator SurveyArea()
     // {
@@ -39,12 +42,6 @@ public class VisionController : MonoBehaviour
 
     void CheckForTarget(Collider collider)
     {   
-        LayerMask layerMask = LayerMask.GetMask("Units");
-        LayerMask playerMask = LayerMask.GetMask("Player");
-        layerMask += playerMask;
-        LayerMask obstaclesMask = ~layerMask;
-
-
         var unit = collider.GetComponent<BaseEntity>();
 
         if (!unit) return;
@@ -55,11 +52,15 @@ public class VisionController : MonoBehaviour
         {
             if ((Vector3.Angle(transform.forward, direction) <= myAI.unitData.fov))
             {
-                if (Physics.Raycast(transform.forward, direction, out RaycastHit hit,
+                if (Physics.Raycast(transform.position, unit.transform.position, out RaycastHit hit,
                     myAI.unitData.sightDistance, obstaclesMask))
                 {
                     return;
                 }
+            }
+            else
+            {
+                return;
             }
         }
         else
@@ -69,7 +70,9 @@ public class VisionController : MonoBehaviour
             // myAI.AwarenessMeter = 1;
         }
 
+        StateMachine.currentState = States.ATTACKING;
+
         myAI.CurrentAttackTarget = unit;
-        myAI.MovePosition = unit.transform.position;
+        myAI.MovePosition = unit.transform.position + (unit.transform.forward * 3);
     }
 }

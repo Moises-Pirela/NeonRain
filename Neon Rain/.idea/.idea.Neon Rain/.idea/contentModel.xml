@@ -30,19 +30,24 @@
               <e p="BaseAI.cs" t="Include" />
               <e p="BTNode.cs" t="Include" />
               <e p="BTNodeStates.cs" t="Include" />
+              <e p="BTRoot.cs" t="Include" />
               <e p="BTSelector.cs" t="Include" />
               <e p="BTSequence.cs" t="Include" />
               <e p="Conditions" t="Include">
                 <e p="CanMoveCondition.cs" t="Include" />
                 <e p="EnemySpottedCondition.cs" t="Include" />
+                <e p="HasWaypointCondition.cs" t="Include" />
                 <e p="InAttackRangeCondition.cs" t="Include" />
               </e>
               <e p="DebugNode.cs" t="Include" />
               <e p="IPatrol.cs" t="Include" />
+              <e p="ReachedDestinationCondition.cs" t="Include" />
               <e p="Tasks" t="Include">
                 <e p="AttackTask.cs" t="Include" />
                 <e p="FaceMoveDirectionTask.cs" t="Include" />
+                <e p="ForceFailureTask.cs" t="Include" />
                 <e p="MoveToTask.cs" t="Include" />
+                <e p="SelectRandomWanderPoint.cs" t="Include" />
               </e>
             </e>
             <e p="Billboard" t="Include">
@@ -75,6 +80,10 @@
               <e p="GravityAttractor.cs" t="Include" />
               <e p="GravityGrapple.cs" t="Include" />
               <e p="Pistol.cs" t="Include" />
+            </e>
+            <e p="FSM" t="Include">
+              <e p="HammerHeadFSM.cs" t="Include" />
+              <e p="StateMachine.cs" t="Include" />
             </e>
             <e p="GameMaster.cs" t="Include" />
             <e p="Input" t="Include">

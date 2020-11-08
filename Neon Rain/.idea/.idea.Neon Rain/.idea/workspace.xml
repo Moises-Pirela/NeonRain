@@ -63,16 +63,19 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03035303-2B91-4045-A0B9-6BEA329B98D3/01/900123e5/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GPUDemo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,6 +90,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -114,15 +118,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Sequence.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Selector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/BaseNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviourTree/Nodes/Root.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Root.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/CanFleeConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/BaseNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/LeaderDeadConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/RollFleeConditional.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Task.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FleeTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FleeTask.cs" />
@@ -153,18 +148,27 @@
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/NoiseMaker.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/InAttackRangeCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirectionTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/CanMoveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/InAttackRangeCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirectionTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BTRoot.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectRandomWanderPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypointCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ReachedDestinationCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -209,10 +213,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6936">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6936" />
+      <option name="pid" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -271,7 +275,11 @@
       <workItem from="1604352680282" duration="3412000" />
       <workItem from="1604525826977" duration="11034000" />
       <workItem from="1604605275750" duration="15596000" />
-      <workItem from="1604700558194" duration="20928000" />
+      <workItem from="1604700558194" duration="20929000" />
+      <workItem from="1604790460123" duration="595000" />
+      <workItem from="1604791601410" duration="887000" />
+      <workItem from="1604792551887" duration="11268000" />
+      <workItem from="1604831551926" duration="7212000" />
     </task>
     <servers />
   </component>
