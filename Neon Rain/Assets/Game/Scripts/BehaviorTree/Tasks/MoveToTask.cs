@@ -13,8 +13,6 @@ public class MoveToTask : BTNode
     {
         Myai.agent.SetDestination(Myai.MovePosition);
 
-        Myai.agent.isStopped = !Myai.CanMove();
-        
         return BTNodeStates.SUCCESS;
     }
 }

@@ -27,7 +27,7 @@ namespace VHS
                     if (!_playerManager.isDead || GameMaster._current.IsPaused) return;
 
                     _playerManager.isDead = false;
-                    _playerManager.SetUp();
+                    //_playerManager.SetUp();
                     
                     GameMaster._current.RestartLevel();
                 };

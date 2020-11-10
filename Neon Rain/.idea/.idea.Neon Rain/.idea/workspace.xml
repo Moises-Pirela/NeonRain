@@ -69,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GPUDemo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -92,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_DoubleSided_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
@@ -118,16 +120,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Task.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FleeTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FleeTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/SetFleeTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsActiveConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/BehaviourTree.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/EnemySpotted.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/GainAwarenessTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsAwareConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerSelector.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/IsDangerConditional.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FillAwarenessUITask.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/MoveToTask.cs" />
@@ -154,21 +146,31 @@
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/CanMoveCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/InAttackRangeCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirectionTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BTRoot.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectRandomWanderPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypointCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ReachedDestinationCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/ExplosiveData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -213,10 +215,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21968">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21968" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -279,7 +281,8 @@
       <workItem from="1604790460123" duration="595000" />
       <workItem from="1604791601410" duration="887000" />
       <workItem from="1604792551887" duration="11268000" />
-      <workItem from="1604831551926" duration="7212000" />
+      <workItem from="1604831551926" duration="11429000" />
+      <workItem from="1604969417061" duration="8205000" />
     </task>
     <servers />
   </component>
@@ -311,6 +314,19 @@
           <line>9</line>
           <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\BehaviourTree\Nodes\Tasks\FaceTargetTask.cs" initialLine="9" containingFunctionPresentation="method 'DoTask'" />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs</url>
+          <line>51</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\Game\Scripts\Equipment\Pistol.cs" initialLine="51" containingFunctionPresentation="method 'Use'">
+            <startOffsets>
+              <option value="1525" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1551" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

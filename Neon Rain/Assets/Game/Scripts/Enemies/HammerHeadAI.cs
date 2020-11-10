@@ -19,6 +19,8 @@ public class HammerHeadAI : BaseAI
     private IEnumerator AttackSequence()
     {
         isAttacking = true;
+        
+        agent.isStopped = true;
 
         yield return new WaitForSeconds(1f);
         
@@ -26,7 +28,7 @@ public class HammerHeadAI : BaseAI
 
         var colliders = new Collider[32];
 
-        var size = Physics.OverlapSphereNonAlloc(explosionPos, 20, colliders, attackMask);
+        var size = Physics.OverlapSphereNonAlloc(explosionPos, 10, colliders, attackMask);
 
         for (var i = 0; i < size; i++)
         {
@@ -42,7 +44,7 @@ public class HammerHeadAI : BaseAI
 
             if (rb != null)
             {
-                rb.AddExplosionForce(1500, explosionPos, 20, 3.0F);
+                rb.AddExplosionForce(3000, explosionPos, 10, 1.0F);
             }
 
             var damageable = hit.GetComponent<Damageable>();
@@ -59,6 +61,8 @@ public class HammerHeadAI : BaseAI
         }
         
         yield return new WaitForSeconds(1);
+        
+        agent.isStopped = false;
 
         isAttacking = false;
     }
@@ -67,15 +71,11 @@ public class HammerHeadAI : BaseAI
     {   
         attackTimer += Time.deltaTime;
         
-        Debug.Log("Preparing attack");
-
         if (!(attackTimer >= unitData.fireRate)) return;
         
         if (isAttacking) return;
 
         StartCoroutine(AttackSequence());
-        
-        Debug.Log("attack");
 
         
     }

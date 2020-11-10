@@ -22,6 +22,26 @@
             <e p="DebugController.cs" t="Include" />
           </e>
         </e>
+        <e p="EffectExamples" t="Include">
+          <e p="Magic Effects" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="Ice.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Misc Effects" t="Include">
+            <e p="Prefabs" t="Include">
+              <e p="Readme_Dissolve_Respawn_.txt" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="SpawnEffect.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Dissolve.shader" t="Include" />
+              <e p="FireFly.shader" t="Include" />
+              <e p="Respawn.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Game" t="Include">
           <e p="PlayerControls.cs" t="Include" />
           <e p="Scripts" t="Include">
@@ -126,6 +146,7 @@
             </e>
             <e p="ScriptableObjects" t="Include">
               <e p="CameraInputData.cs" t="Include" />
+              <e p="ExplosiveData.cs" t="Include" />
               <e p="HeadBobData.cs" t="Include" />
               <e p="KeyData.cs" t="Include" />
               <e p="MovementInputData.cs" t="Include" />
@@ -135,6 +156,10 @@
             <e p="VoxelMenu.cs" t="Include" />
             <e p="VoxelUtil.cs" t="Include" />
             <e p="Waypoint.cs" t="Include" />
+            <e p="WorldProps" t="Include">
+              <e p="Explosive.cs" t="Include" />
+              <e p="ExplosiveBarrel.cs" t="Include" />
+            </e>
           </e>
           <e p="Standard Assets" t="Include">
             <e p="Utility" t="Include">
@@ -357,6 +382,22 @@
           </e>
         </e>
         <e p="ShadowCaster.cs" t="Include" />
+        <e p="Shared" t="Include">
+          <e p="Ramps" t="Include">
+            <e p="Editor" t="Include">
+              <e p="RampAssetEditor.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="RampAsset.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="AdjustTimeScale.cs" t="Include" />
+            <e p="ProximityActivate.cs" t="Include" />
+            <e p="SimpleCameraController.cs" t="Include" />
+            <e p="SimpleCharacterMotor.cs" t="Include" />
+          </e>
+        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

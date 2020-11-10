@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitRank: 2
   aiType: 0
-  attackRange: 5
+  attackRange: 10
   sightDistance: 15
   fov: 45
   fireRate: 3

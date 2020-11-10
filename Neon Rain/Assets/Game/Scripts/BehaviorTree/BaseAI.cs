@@ -48,11 +48,8 @@ public abstract class BaseAI : MonoBehaviour
     {
         BTSequence sequence = new BTSequence(new List<BTNode>()
         {
-            new DebugNode("COMBAT BEGIN"),
                 new EnemySpottedCondition(this),
-                new DebugNode("ENEMY SPOTTED"),
                 InAttackRangeSelector(),
-                new DebugNode("IN ATTACK RANGE"),
                 new FaceMoveDirectionTask(this),
                 new AttackTask(this)
         });
@@ -64,11 +61,8 @@ public abstract class BaseAI : MonoBehaviour
     {
         BTSequence sequence = new BTSequence(new List<BTNode>()
         {
-            new DebugNode("Wander begin"),
             HasWaypointSelector() ,
-            new DebugNode("Wander"),
             new ReachedDestinationCondition(this),
-            new DebugNode("NEW WAYPOINT"),
             new SelectRandomWanderPoint(this),
             MoveSequence()
         });
@@ -81,8 +75,12 @@ public abstract class BaseAI : MonoBehaviour
         BTSelector selector = new BTSelector(new List<BTNode>()
         {
             new InAttackRangeCondition(this),
-            MoveSequence(),
-            new ForceFailureTask()
+            new BTSequence(new List<BTNode>()
+            {
+                new DebugNode("MOVING TO TARGET"),
+                MoveSequence(),
+                new ForceFailureTask()
+            }),
         });
 
         return selector;
@@ -162,7 +160,7 @@ public abstract class BaseAI : MonoBehaviour
 
             var distance = Vector3.Distance(CurrentAttackTarget.transform.position,transform.position) ;
 
-            return distance < unitData.attackRange;
+            return distance <= unitData.attackRange;
         }
     }
 

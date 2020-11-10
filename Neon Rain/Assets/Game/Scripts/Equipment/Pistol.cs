@@ -41,7 +41,7 @@ public class Pistol : Equipment
 
         if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, 100, layerMask, QueryTriggerInteraction.Ignore)) return;
 
-        BaseEntity target = hit.transform.GetComponent<BaseEntity>();
+        Damageable target = hit.transform.GetComponent<Damageable>();
         
         var effect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         effect.transform.SetParent(hit.transform);

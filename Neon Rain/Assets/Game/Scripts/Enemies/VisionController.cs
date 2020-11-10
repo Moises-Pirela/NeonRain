@@ -70,7 +70,7 @@ public class VisionController : MonoBehaviour
             // myAI.AwarenessMeter = 1;
         }
 
-        StateMachine.currentState = States.ATTACKING;
+        //StateMachine.currentState = States.ATTACKING;
 
         myAI.CurrentAttackTarget = unit;
         myAI.MovePosition = unit.transform.position + (unit.transform.forward * 3);

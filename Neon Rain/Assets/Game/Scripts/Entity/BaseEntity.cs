@@ -29,7 +29,7 @@ public abstract class BaseEntity : Damageable
         GameMaster._current.onRestartLevel += () =>
         {
             isDead = false;
-            SetUp();
+            //SetUp();
         };
     }
 }

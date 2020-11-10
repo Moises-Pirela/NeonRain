@@ -32,8 +32,8 @@ public class LevelManager : MonoBehaviour
             var enemy = enemies[index];
             enemy.transform.position = _enemyInitialPos[index];
             enemy.transform.rotation = _enemyInitialRot[index];
-            enemy.GetComponent<AIManager>().Respawn();
-            enemy.GetComponent<BaseAI>().Respawn();
+            //enemy.GetComponent<AIManager>().Respawn();
+            //enemy.GetComponent<BaseAI>().Respawn();
             enemy.SetActive(true);
         }
     }

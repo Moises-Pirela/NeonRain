@@ -54,13 +54,18 @@ public abstract class Damageable : MonoBehaviour
     public Action<float, float> onArmorChange;
     public Action onDeath;
 
-    public void SetUp()
+    private void Awake()
+    {
+        SetUp();
+    }
+
+    protected void SetUp()
     {
         Health = maxHealth;
         Armor = maxShield;
     }
 
-    public void TakeDamage(float damageAmount)
+    public virtual void TakeDamage(float damageAmount)
     {
         if (Armor > 0)
         {
