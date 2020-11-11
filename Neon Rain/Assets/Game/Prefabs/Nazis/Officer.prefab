@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &193231674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193231675}
+  m_Layer: 10
+  m_Name: GrenadeLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &193231675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193231674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.296, z: 3.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4586664576342919559}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4586664576342919566
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,14 +40,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4586664576342919559}
   - component: {fileID: 4586664576342919558}
-  - component: {fileID: 4586664576342919557}
   - component: {fileID: 4586664576342919555}
   - component: {fileID: 4586664576342919554}
   - component: {fileID: 4586664576342919553}
   - component: {fileID: 4586664576342919552}
-  - component: {fileID: 4586664576342919567}
-  - component: {fileID: 4586664576342919556}
   - component: {fileID: 4586664576342919608}
+  - component: {fileID: 184521781}
+  - component: {fileID: 184521790}
   m_Layer: 10
   m_Name: Officer
   m_TagString: Untagged
@@ -34,11 +63,12 @@ Transform:
   m_GameObject: {fileID: 4586664576342919566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 91, y: 0.00000020861626, z: 40}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 0.1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4586664576432964174}
   - {fileID: 4586664577721390875}
   - {fileID: 4586664577736616175}
+  - {fileID: 193231675}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,20 +88,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 1
---- !u!136 &4586664576342919557
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586664576342919566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.4
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &4586664576342919555
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -139,44 +155,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.28216434, y: 0.3237365, z: 0}
   m_Center: {x: -0.009701057, y: 1.764416, z: 0}
---- !u!114 &4586664576342919567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586664576342919566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bde4a147f3239b14ca840d8806a1a679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  worldCamera: {fileID: 0}
-  _sprite: {fileID: 0}
---- !u!114 &4586664576342919556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4586664576342919566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71542cc8b864542489f4284b08ebf54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitData: {fileID: 11400000, guid: a2af25f990adf1a4e869fd3bcfa6f65c, type: 2}
-  myEntity: {fileID: 0}
-  agent: {fileID: 4586664576342919555}
-  aiState: 0
-  aiBehavior: 0
-  resistedFlee: 0
-  heardNoise: 0
-  playerSpotted: 0
-  noiseDetected: 0
-  _sprite: {fileID: 4586664577360610754}
-  worldCamera: {fileID: 0}
-  awarenessMeterFill: {fileID: 0}
 --- !u!114 &4586664576342919608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +169,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagged: 0
   magnetType: 0
+--- !u!114 &184521781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586664576342919566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04456e827ea63aa448b9c26a5d58b514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _billboardData: {fileID: 11400000, guid: 48079055ddb67e742a1d4777d4557e46, type: 2}
+  _billboardEntityData: {fileID: 11400000, guid: 4dfee287358453d4d9ea9a8eccf2594e,
+    type: 2}
+  spriteObject: {fileID: 4586664577360610756}
+--- !u!114 &184521790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586664576342919566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f4da06ff3527941b667c80d7633f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: 05b7860fa2d74b74f876655920d80781, type: 2}
+  agent: {fileID: 0}
+  self: {fileID: 0}
+  isAttacking: 0
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  grenadePrefab: {fileID: 3427098427494822412, guid: 7210e2dc872e1524580fa51367e83435,
+    type: 3}
+  grenadeSpawnPosition: {fileID: 193231675}
 --- !u!1 &4586664576432964173
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,13 +321,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4586664577202279548}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 473192ab526762042987cf2fe91e6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAI: {fileID: 4586664576342919556}
+  myAI: {fileID: 184521790}
   myCollider: {fileID: 4586664577202279550}
+  StateMachine: {fileID: 0}
+  obstaclesMask:
+    serializedVersion: 2
+    m_Bits: 4119
 --- !u!135 &4586664577202279550
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -321,7 +341,7 @@ SphereCollider:
   m_GameObject: {fileID: 4586664577202279548}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}

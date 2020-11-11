@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 1123609143959570371, guid: a656d12172c62bf4089b7467279e0b13,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.85, y: 2.09}
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 5833952796601322892}
   - component: {fileID: 5833952796601322903}
   - component: {fileID: 5833952796601322895}
+  - component: {fileID: 6517741960353585676}
   m_Layer: 10
   m_Name: HammerHead
   m_TagString: Untagged
@@ -210,7 +211,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5833952796601322881}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -227,8 +228,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 5833952796601322881}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 0.68
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -315,6 +316,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagged: 0
   magnetType: 0
+--- !u!114 &6517741960353585676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833952796601322881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a28e1fc84e4dc4097432b2e239cbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: 61b8a1c74a7e7dc42b7f834101834890, type: 2}
+  agent: {fileID: 0}
+  self: {fileID: 0}
+  isAttacking: 0
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 5632
 --- !u!1 &5833952796781464575
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +719,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473192ab526762042987cf2fe91e6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAI: {fileID: 0}
+  myAI: {fileID: 6517741960353585676}
   myCollider: {fileID: 5833952797652190318}
+  StateMachine: {fileID: 0}
+  obstaclesMask:
+    serializedVersion: 2
+    m_Bits: 2359
 --- !u!135 &5833952797652190318
 SphereCollider:
   m_ObjectHideFlags: 0

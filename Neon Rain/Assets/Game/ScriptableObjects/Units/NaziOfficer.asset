@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a8d2c4896d8c44e801fd7353774246, type: 3}
-  m_Name: Barrel
+  m_Script: {fileID: 11500000, guid: 402f60e236c0506479093f44b133eacd, type: 3}
+  m_Name: NaziOfficer
   m_EditorClassIdentifier: 
-  explosionRadius: 5
-  explosionForce: 1500
-  explosionDamage: 50
+  unitRank: 1
+  aiType: 1
+  attackRange: 20
+  sightDistance: 30
+  fov: 45
+  fireRate: 5
+  damage: 25

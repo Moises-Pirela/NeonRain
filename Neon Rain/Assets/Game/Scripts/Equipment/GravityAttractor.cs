@@ -46,32 +46,38 @@ namespace Game.Scripts.PlayerScripts
             switch (context.interaction)
             {
                 case TapInteraction _:
+                    Debug.Log("Press");
                     if (target)
                     {
                         ClearTarget();
+                        Debug.Log("CLEARED");
                     }
                         
                     break;
                 case HoldInteraction _:
-                    if (!target)
-                    {
-                        readyToAttract = true; 
-                    }
-                        
+                    Debug.Log("Hold");
+                    if (_playerManager.Armor < mydata.armorDrain) return;
+                    Attract();
+                    
                     break;
             }
+            
+            context.interaction.Reset();
         }
 
         public override void LeaveUse(InputAction.CallbackContext context)
         {
-            switch (context.interaction)
-            {
-                case TapInteraction _:
-                    break;
-                case HoldInteraction _:
-                    Attract();
-                    break;
-            }
+            
+            //
+            // switch (context.interaction)
+            // {
+            //     case TapInteraction _:
+            //         
+            //         break;
+            //     case HoldInteraction _:
+            //         Attract();
+            //         break;
+            // }
         }
 
         public override InputAction MyInput()
@@ -87,14 +93,17 @@ namespace Game.Scripts.PlayerScripts
 
         private void Update()
         {
-            if (attracting)
+            if (target != null && attracting)
             {
                 target.transform.position = Vector3.Slerp(target.transform.position, holdPosition.position, 0.3f);
+                Debug.Log("Attracting");
             }
         }
 
         private void Attract()
         {
+            FindTarget();
+            
             if (!target) return;
 
             var agent = target.GetComponent<BaseAI>();
@@ -139,8 +148,8 @@ namespace Game.Scripts.PlayerScripts
 
         private void FixedUpdate()
         {
-            if (readyToAttract)
-                FindTarget();
+            // if (readyToAttract)
+            //     FindTarget();
         }
 
         private void ClearTarget()

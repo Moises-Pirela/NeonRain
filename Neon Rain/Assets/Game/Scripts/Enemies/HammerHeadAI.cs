@@ -42,7 +42,7 @@ public class HammerHeadAI : BaseAI
                 continue;
             }
 
-            if (rb != null)
+            if (rb != null && baseEntity == null)
             {
                 rb.AddExplosionForce(3000, explosionPos, 10, 1.0F);
             }

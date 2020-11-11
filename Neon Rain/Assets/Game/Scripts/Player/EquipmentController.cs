@@ -117,8 +117,6 @@ public class EquipmentController : MonoBehaviour
         {
             if (_playerManager.isDead) return;
             
-            if (_playerManager.Armor < left.mydata.armorDrain) return;
-            
             leftHandEquipment.Use(context);
         };
         

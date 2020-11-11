@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
+using VHS;
 
 public class Pistol : Equipment
 {
@@ -9,6 +12,8 @@ public class Pistol : Equipment
     public float damage;
     private Transform playerController;
     public GameObject impactEffect;
+
+    public LayerMask layerMask;
 
     private void Awake()
     {
@@ -21,19 +26,20 @@ public class Pistol : Equipment
         fpsCam = camera;
         playerController = player;
     }
-
+    
     public override void Use(InputAction.CallbackContext context)
     {
         if (DebugController._instance.IsInConsole || GameMaster._current.IsPaused) return;
         
         if (PlayerEvents.Current.isAttacking) return;
-        
-        var layerMask = 1 << 8;
-        var layerMask2 = layerMask + (1 << 9);
 
-        layerMask = ~layerMask2;
-        
         audioSource.PlayOneShot(useEffect);
+
+        if (InputHandler.IsController())
+            StartCoroutine(InputHandler.Rumble(0,0.75f,0.1f));
+        
+        //Gamepad.current?.SetMotorSpeeds(0f,0.75f);
+        //InputSystem.ResetHaptics();
 
         //transform.DOPunchRotation(new Vector3(-20,0,0), 0.1f);
         

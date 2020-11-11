@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using VHS;
 
 public abstract class Explosive : Damageable
 {
@@ -14,10 +16,10 @@ public abstract class Explosive : Damageable
 
     public virtual void Explode()
     {
-        var hitColliders = new Collider[32];
+        var hitColliders = new Collider[512];
         var position = transform.position;
         var numColliders =  Physics.OverlapSphereNonAlloc(position, data.explosionRadius, hitColliders, layerMask);
-        
+
         explosionEffect.SetActive(true);
         explosionEffect.transform.parent = null;
         
@@ -26,24 +28,31 @@ public abstract class Explosive : Damageable
             var currentCollider = hitColliders[i];
             
             if (!currentCollider) continue;
+
+            var damageable = currentCollider.GetComponent<Damageable>();
             
-            if (currentCollider.GetComponent<BaseEntity>())
-                currentCollider.GetComponent<BaseEntity>().TakeDamage(data.explosionDamage);
+            if (damageable != null && damageable != this)
+                damageable.TakeDamage(data.explosionDamage);
             
             if (!currentCollider.GetComponent<Rigidbody>()) continue;
-            var direction = currentCollider.transform.position - transform.position;
             var rg = currentCollider.GetComponent<Rigidbody>();
             
             var playerManager = currentCollider.GetComponent<PlayerManager>();
             
             if (playerManager != null)
+            {
                 PlayerEvents.Current.Shake();
 
-            //rg.isKinematic = false;
-
+                // if (InputHandler.IsController())
+                // {
+                //     StartCoroutine(InputHandler.Rumble(data.explosionForce / 10000, data.explosionForce / 5000, 0f));
+                // }
+                
+                continue;
+            }
+            
             rg.AddExplosionForce(data.explosionForce, position, data.explosionRadius, 3.0F);
         }
-        
         Destroy(explosionEffect,2f);
         Destroy(gameObject);
     }

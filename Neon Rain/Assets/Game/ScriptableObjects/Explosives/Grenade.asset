@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6a8d2c4896d8c44e801fd7353774246, type: 3}
-  m_Name: Barrel
+  m_Name: Grenade
   m_EditorClassIdentifier: 
-  explosionRadius: 5
-  explosionForce: 1500
-  explosionDamage: 50
+  explosionRadius: 2.5
+  explosionForce: 500
+  explosionDamage: 35

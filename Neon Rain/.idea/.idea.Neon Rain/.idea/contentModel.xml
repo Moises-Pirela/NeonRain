@@ -86,6 +86,7 @@
             <e p="Enemies" t="Include">
               <e p="AIManager.cs" t="Include" />
               <e p="HammerHeadAI.cs" t="Include" />
+              <e p="NaziOfficerAI.cs" t="Include" />
               <e p="UnitData.cs" t="Include" />
               <e p="VisionController.cs" t="Include" />
             </e>
@@ -159,6 +160,7 @@
             <e p="WorldProps" t="Include">
               <e p="Explosive.cs" t="Include" />
               <e p="ExplosiveBarrel.cs" t="Include" />
+              <e p="Grenade.cs" t="Include" />
             </e>
           </e>
           <e p="Standard Assets" t="Include">
