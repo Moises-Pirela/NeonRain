@@ -40,6 +40,14 @@ public class VisionController : MonoBehaviour
         //CheckForTarget();
     }
 
+    private void LateUpdate()
+    {
+        if (!myAI.EnemySpotted()) return;
+        
+        var transform1 = myAI.CurrentAttackTarget.transform;
+        myAI.MovePosition = transform1.position + (transform1.forward * 3);
+    }
+
     void CheckForTarget(Collider collider)
     {   
         var unit = collider.GetComponent<BaseEntity>();
@@ -50,18 +58,18 @@ public class VisionController : MonoBehaviour
 
         if (unit.entityType == EntityType.PLAYER)
         {
-            if ((Vector3.Angle(transform.forward, direction) <= myAI.unitData.fov))
-            {
-                if (Physics.Raycast(transform.position, unit.transform.position, out RaycastHit hit,
-                    myAI.unitData.sightDistance, obstaclesMask))
-                {
-                    return;
-                }
-            }
-            else
-            {
-                return;
-            }
+            // if ((Vector3.Angle(transform.forward, direction) <= myAI.unitData.fov))
+            // {
+            //     if (Physics.Raycast(transform.position, unit.transform.position, out RaycastHit hit,
+            //         myAI.unitData.sightDistance, obstaclesMask))
+            //     {
+            //         return;
+            //     }
+            // }
+            // else
+            // {
+            //     return;
+            // }
         }
         else
         {
@@ -73,6 +81,5 @@ public class VisionController : MonoBehaviour
         //StateMachine.currentState = States.ATTACKING;
 
         myAI.CurrentAttackTarget = unit;
-        myAI.MovePosition = unit.transform.position + (unit.transform.forward * 3);
     }
 }

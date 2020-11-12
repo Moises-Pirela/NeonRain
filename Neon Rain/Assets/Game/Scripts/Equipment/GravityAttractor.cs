@@ -49,8 +49,7 @@ namespace Game.Scripts.PlayerScripts
                     Debug.Log("Press");
                     if (target)
                     {
-                        ClearTarget();
-                        Debug.Log("CLEARED");
+                        PushTarget();
                     }
                         
                     break;
@@ -65,6 +64,22 @@ namespace Game.Scripts.PlayerScripts
             context.interaction.Reset();
         }
 
+        public void PushTarget()
+        {
+            var explosive = target.GetComponent<Explosive>();
+
+
+            if (explosive)
+            {
+                explosive.canExplode = true;
+            }
+            
+            target.constraints = RigidbodyConstraints.None;
+            target.AddForce(fpsCam.transform.forward * 50, ForceMode.Impulse);
+            
+            ClearTarget();
+        }
+        
         public override void LeaveUse(InputAction.CallbackContext context)
         {
             
@@ -96,7 +111,6 @@ namespace Game.Scripts.PlayerScripts
             if (target != null && attracting)
             {
                 target.transform.position = Vector3.Slerp(target.transform.position, holdPosition.position, 0.3f);
-                Debug.Log("Attracting");
             }
         }
 
@@ -115,6 +129,7 @@ namespace Game.Scripts.PlayerScripts
             if (agent)
             {
                 agent.agent.enabled = false;
+                agent.isAttracted = true;
             }
             else
             {
@@ -157,7 +172,7 @@ namespace Game.Scripts.PlayerScripts
             if (target)
             {
                 target.constraints = RigidbodyConstraints.None;
-                target.useGravity = false;
+                //target.useGravity = false;
                 target.transform.parent = null;
                 attracting = false;
             }

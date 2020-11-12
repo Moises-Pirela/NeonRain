@@ -22,7 +22,7 @@ public class Grenade : Explosive
     
     public IEnumerator InitiateExplode()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         
         base.Explode();
     }

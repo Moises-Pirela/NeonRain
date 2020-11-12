@@ -2183,7 +2183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1295184299
@@ -4059,9 +4059,9 @@ MonoBehaviour:
   m_RunstepLenghten: 0.7
   m_StepInterval: 4
   crouchSpeed: 3
-  walkSpeed: 6
-  runSpeed: 12
-  jumpSpeed: 8
+  walkSpeed: 16
+  runSpeed: 8
+  jumpSpeed: 12
   moveBackwardsSpeedPercent: 0.5
   moveSideSpeedPercent: 0.7
   canRunThreshold: 0.7

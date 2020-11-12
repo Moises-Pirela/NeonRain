@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 215603159472673195}
   - component: {fileID: 215603159472673194}
   - component: {fileID: 8968343509362471986}
-  - component: {fileID: 1028638808}
+  - component: {fileID: 674700839}
   m_Layer: 12
   m_Name: Cylinder
   m_TagString: Untagged
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565e5d4a665c5a841b810d0be5926eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 25
   maxShield: 0
   takingDamage: 0
   isDead: 0
@@ -919,7 +919,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4171195298953702885}
   fireStream: {fileID: 216365739788993632}
   exploding: 0
---- !u!208 &1028638808
+--- !u!208 &674700839
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

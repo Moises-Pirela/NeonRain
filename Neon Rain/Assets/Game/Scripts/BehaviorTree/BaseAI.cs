@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.ProBuilder;
@@ -44,6 +45,8 @@ public abstract class BaseAI : MonoBehaviour
     private bool hasWaypoint;
     [SerializeField] protected LayerMask attackMask;
 
+    public bool isAttracted = false;
+
     protected virtual BTSequence CombatSequence()
     {
         BTSequence sequence = new BTSequence(new List<BTNode>()
@@ -77,7 +80,6 @@ public abstract class BaseAI : MonoBehaviour
             new InAttackRangeCondition(this),
             new BTSequence(new List<BTNode>()
             {
-                new DebugNode("MOVING TO TARGET"),
                 MoveSequence(),
                 new ForceFailureTask()
             }),
@@ -94,7 +96,6 @@ public abstract class BaseAI : MonoBehaviour
             new BTSequence(new List<BTNode>()
             {
                 new SelectRandomWanderPoint(this),
-                new DebugNode("Select waypoint and move"),
                 MoveSequence(),
             }),
             new ForceFailureTask()
@@ -188,6 +189,19 @@ public abstract class BaseAI : MonoBehaviour
             m_currentAttackTargetEntity = value;
         }
         
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (isAttracted)
+        {
+            Invoke("ResetAgent", 1f);
+        }
+    }
+
+    private void ResetAgent()
+    {
+        agent.enabled = true;
     }
 
     public abstract void Attack();

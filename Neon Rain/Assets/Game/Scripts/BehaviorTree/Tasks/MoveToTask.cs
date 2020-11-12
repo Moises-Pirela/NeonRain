@@ -11,7 +11,12 @@ public class MoveToTask : BTNode
     }
     public override BTNodeStates Evaluate()
     {
-        Myai.agent.SetDestination(Myai.MovePosition);
+        if (Myai.agent.enabled)
+            Myai.agent.SetDestination(Myai.MovePosition);
+        else
+        {
+            return BTNodeStates.FAILURE;
+        }
 
         return BTNodeStates.SUCCESS;
     }

@@ -10,7 +10,7 @@ public class HammerHeadAI : BaseAI
         List<BTNode> myTree = new List<BTNode>()
         {
             CombatSequence(),
-            WanderSequence()
+            //WanderSequence()
         };
         
         PopulateBtNodes(myTree);
@@ -20,7 +20,8 @@ public class HammerHeadAI : BaseAI
     {
         isAttacking = true;
         
-        agent.isStopped = true;
+        if (agent.enabled)
+            agent.isStopped = true;
 
         yield return new WaitForSeconds(1f);
         
@@ -37,10 +38,14 @@ public class HammerHeadAI : BaseAI
 
             BaseEntity baseEntity = hit.GetComponent<BaseEntity>();
 
-            if (baseEntity == self)
+            if (baseEntity != null)
             {
-                continue;
+                if (baseEntity == self || baseEntity.faction == self.faction)
+                {
+                    continue;
+                }    
             }
+            
 
             if (rb != null && baseEntity == null)
             {
@@ -62,7 +67,9 @@ public class HammerHeadAI : BaseAI
         
         yield return new WaitForSeconds(1);
         
-        agent.isStopped = false;
+        
+        if (agent.enabled)
+            agent.isStopped = false;
 
         isAttacking = false;
     }

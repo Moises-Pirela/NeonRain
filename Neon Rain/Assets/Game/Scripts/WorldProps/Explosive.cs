@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +17,7 @@ public abstract class Explosive : Damageable
 
     public virtual void Explode()
     {
-        var hitColliders = new Collider[512];
+        var hitColliders = new Collider[32];
         var position = transform.position;
         var numColliders =  Physics.OverlapSphereNonAlloc(position, data.explosionRadius, hitColliders, layerMask);
 
@@ -25,9 +26,12 @@ public abstract class Explosive : Damageable
         
         for (var i = 0; i < numColliders; i++)
         {
+            
             var currentCollider = hitColliders[i];
             
             if (!currentCollider) continue;
+            
+            Physics.IgnoreCollision(GetComponent<Collider>(), currentCollider);
 
             var damageable = currentCollider.GetComponent<Damageable>();
             
@@ -55,6 +59,12 @@ public abstract class Explosive : Damageable
         }
         Destroy(explosionEffect,2f);
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (canExplode)
+            Explode();
     }
 
     public override void TakeDamage(float damageAmount)

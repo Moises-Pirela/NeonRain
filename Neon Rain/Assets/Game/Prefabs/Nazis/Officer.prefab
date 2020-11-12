@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193231674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.296, z: 3.72}
+  m_LocalPosition: {x: -0.223, y: 1.272, z: 0.104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4586664576342919559}
@@ -204,6 +204,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 1536
+  isAttracted: 0
   grenadePrefab: {fileID: 3427098427494822412, guid: 7210e2dc872e1524580fa51367e83435,
     type: 3}
   grenadeSpawnPosition: {fileID: 193231675}

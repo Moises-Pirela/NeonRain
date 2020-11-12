@@ -85,6 +85,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -105,6 +106,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_DoubleSided.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardEntityData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_Liquid.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_ND.shader" root0="FORCE_HIGHLIGHTING" />
@@ -157,11 +159,8 @@
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectRandomWanderPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypointCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ReachedDestinationCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/ExplosiveData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
@@ -170,14 +169,17 @@
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Grenade.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Grenade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -222,10 +224,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9752">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29148">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9752" />
+      <option name="pid" value="29148" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -292,6 +294,7 @@
       <workItem from="1604969417061" duration="8205000" />
       <workItem from="1605025033007" duration="5000" />
       <workItem from="1605025856387" duration="23312000" />
+      <workItem from="1605118436943" duration="9482000" />
     </task>
     <servers />
   </component>
