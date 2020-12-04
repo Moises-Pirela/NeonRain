@@ -10,5 +10,6 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         SaveData.Current.inventory.keyRing.Add(keyData.keyID);
+        Destroy(gameObject);
     }
 }

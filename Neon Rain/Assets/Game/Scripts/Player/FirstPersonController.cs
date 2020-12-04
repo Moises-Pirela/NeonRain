@@ -29,6 +29,7 @@ namespace VHS
                     [SerializeField] private float crouchSpeed = 1f;
                     [SerializeField] private float walkSpeed = 2f;
                     [SerializeField] private float runSpeed = 3f;
+                    [SerializeField] private float dashSpeed = 20f;
                     [SerializeField] private float jumpSpeed = 5f;
                     [Slider(0f,1f)][SerializeField] private float moveBackwardsSpeedPercent = 0.5f;
                     [Slider(0f,1f)][SerializeField] private float moveSideSpeedPercent = 0.75f;
@@ -38,6 +39,11 @@ namespace VHS
                     [Space, Header("Run Settings")]
                     [Slider(-1f,1f)][SerializeField] private float canRunThreshold = 0.8f;
                     [SerializeField] private AnimationCurve runTransitionCurve = AnimationCurve.EaseInOut(0f,0f,1f,1f);
+                #endregion
+
+                #region Dash Settings
+                [Space, Header("Run Settings")]
+                [SerializeField] private AnimationCurve dashTransitionCurve = AnimationCurve.EaseInOut(0f,0f,1f,1f);
                 #endregion
 
                 #region Crouch Settings
@@ -127,6 +133,7 @@ namespace VHS
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_smoothCurrentSpeed;
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_finalSmoothCurrentSpeed;
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_walkRunSpeedDifference;
+                    [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_dashSpeedDifference;
 
                     [Space]
                     [BoxGroup("DEBUG")][SerializeField][ReadOnly] private float m_finalRayLength;
@@ -179,6 +186,8 @@ namespace VHS
                     // Check if Grounded,Wall etc
                     CheckIfGrounded();
                     CheckIfWall();
+                    
+                    CalculateSpeed();
 
                     // Apply Smoothing
                     SmoothInput();
@@ -190,15 +199,16 @@ namespace VHS
 
                     // Calculate Movement
                     CalculateMovementDirection();
-                    CalculateSpeed();
+                    
                     CalculateFinalMovement();
 
                     // Handle Player Movement, Gravity, Jump, Crouch etc.
                     HandleCrouch();
                     HandleHeadBob();
-                    HandleRunFOV();
+                    HandleFOV();
                     HandleCameraSway();
                     HandleLanding();
+                    HandleDash();
 
                     ApplyGravity();
                     
@@ -400,7 +410,7 @@ namespace VHS
                     // ReSharper disable once SuggestVarOrType_BuiltInTypes
                     float dot = Vector3.Dot(transform.forward,normalizedDirection);
                     
-                    return dot >= canRunThreshold && !movementInputData.IsCrouching && _playerManager.Armor > 0;
+                    return dot >= canRunThreshold && !movementInputData.IsCrouching && !movementInputData.Dashed;
                 }
 
                 protected virtual void CalculateMovementDirection()
@@ -429,6 +439,7 @@ namespace VHS
                     m_currentSpeed = movementInputData.IsRunning && CanRun() ? runSpeed : walkSpeed;
                     m_currentSpeed = movementInputData.IsCrouching ? crouchSpeed : m_currentSpeed;
                     m_currentSpeed = !movementInputData.HasInput ? 0f : m_currentSpeed;
+                    m_currentSpeed = movementInputData.Dashed ?  dashSpeed : m_currentSpeed;
                     m_currentSpeed = Math.Abs(movementInputData.InputVector.y - (-1)) < 1 ? m_currentSpeed * moveBackwardsSpeedPercent : m_currentSpeed;
                     m_currentSpeed = movementInputData.InputVector.x != 0 && movementInputData.InputVector.y ==  0 ? m_currentSpeed * moveSideSpeedPercent :  m_currentSpeed;
                 }
@@ -515,7 +526,7 @@ namespace VHS
             #region Landing Methods
                 protected virtual void HandleLanding()
                 {
-                    if (m_previouslyGrounded || !m_isGrounded) return;
+                    if (m_previouslyGrounded || !m_isGrounded || movementInputData.Dashed) return;
                     
                     InvokeLandingRoutine();
                     PlayLandingSound();
@@ -584,27 +595,33 @@ namespace VHS
                     m_cameraController.HandleSway(m_smoothInputVector,movementInputData.InputVector.x);
                 }
 
-                protected virtual void HandleRunFOV()
+                protected virtual void HandleFOV()
                 {
-                    if(movementInputData.HasInput && m_isGrounded  && !m_hitWall)
+                    if((movementInputData.HasInput || movementInputData.Dashed) && m_isGrounded  && !m_hitWall)
                     {
                         if(movementInputData.RunClicked && CanRun())
                         {
                             m_duringRunAnimation = true;
-                            m_cameraController.ChangeRunFOV(false);
+                            m_cameraController.ChangeFOV(false);
                         }
 
                         if(movementInputData.IsRunning && CanRun() && !m_duringRunAnimation )
                         {
                             m_duringRunAnimation = true;
-                            m_cameraController.ChangeRunFOV(false);
+                            m_cameraController.ChangeFOV(false);
                         }
 
                         if (movementInputData.RunClicked && !CanRun())
                         {
                             m_duringRunAnimation = false;
-                            m_cameraController.ChangeRunFOV(true);
+                            m_cameraController.ChangeFOV(true);
                         }
+                        
+                        if (movementInputData.Dashed)
+                            m_cameraController.ChangeFOV(false);
+                        
+                        if (!movementInputData.Dashed)
+                            m_cameraController.ChangeFOV(true);
                     }
 
                     if (!movementInputData.RunReleased && movementInputData.HasInput && !m_hitWall) return;
@@ -612,7 +629,7 @@ namespace VHS
                     if (!m_duringRunAnimation) return;
                         
                     m_duringRunAnimation = false;
-                    m_cameraController.ChangeRunFOV(true);
+                    m_cameraController.ChangeFOV(true);
                 }
                 protected virtual void HandleJump()
                 {
@@ -625,8 +642,24 @@ namespace VHS
                         
                     PlayJumpSound();
                 }
+
+                protected virtual void HandleDash()
+                {
+                    if (!movementInputData.Dashed) return;
+
+                    m_finalMoveVector = movementInputData.DashVector;
+                    m_finalMoveVector.z *= dashSpeed; 
+                    m_finalMoveVector.x *= dashSpeed;
+                    m_finalMoveVector.y *= dashSpeed * 0.1f;
+                       
+                    m_previouslyGrounded = true;
+                    m_isGrounded = false;
+                        
+                }
                 protected virtual void ApplyGravity()
                 {
+                    if (movementInputData.Dashed) return;
+                    
                     if(m_characterController.isGrounded) // if we would use our own m_isGrounded it would not work that good, this one is more precise
                     {
                         m_inAirTimer = 0f;

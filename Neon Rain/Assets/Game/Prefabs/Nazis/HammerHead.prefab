@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 5833952796601322893}
   - component: {fileID: 5833952796601322892}
   - component: {fileID: 5833952796601322903}
-  - component: {fileID: 5833952796601322895}
   - component: {fileID: 6517741960353585676}
   m_Layer: 10
   m_Name: HammerHead
@@ -195,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 5833952796601322881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25, y: -0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 5833952797090345864}
   - {fileID: 5833952796781464572}
@@ -228,7 +227,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5833952796601322881}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2
+  m_Radius: 0.68
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
@@ -257,6 +256,11 @@ MonoBehaviour:
   maxShield: 0
   takingDamage: 0
   isDead: 0
+  hitEffect: {fileID: 3652884851415638971, guid: 16ee805a1dbd6e44598eb37bd5219507,
+    type: 3}
+  deathEffect: {fileID: 2991262524421098004, guid: 456659565ee360f48bd8e87bb1e54902,
+    type: 3}
+  spriteMesh: {fileID: 0}
   faction: 0
   entityType: 0
   animator: {fileID: 5833952795922838931}
@@ -302,20 +306,6 @@ MonoBehaviour:
   _billboardEntityData: {fileID: 11400000, guid: 4dfee287358453d4d9ea9a8eccf2594e,
     type: 2}
   spriteObject: {fileID: 5833952795922838928}
---- !u!114 &5833952796601322895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5833952796601322881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c46636e62cf054da9fcc0b59482776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagged: 0
-  magnetType: 0
 --- !u!114 &6517741960353585676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +325,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 5632
+  isAttracted: 0
 --- !u!1 &5833952796781464575
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +715,7 @@ MonoBehaviour:
   StateMachine: {fileID: 0}
   obstaclesMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 12289
 --- !u!135 &5833952797652190318
 SphereCollider:
   m_ObjectHideFlags: 0

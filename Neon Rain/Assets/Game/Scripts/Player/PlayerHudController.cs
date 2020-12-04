@@ -32,6 +32,8 @@ public class PlayerHudController : MonoBehaviour
     [SerializeField] private BaseEntity player;
 
     [SerializeField] private GameObject weaponWheel;
+    [SerializeField] private GameObject weaponBar;
+    [SerializeField] private GameObject[] weaponSlotsHighlight;
 
     [SerializeField] private TextMeshProUGUI toolTip;
 
@@ -41,7 +43,13 @@ public class PlayerHudController : MonoBehaviour
 
     [SerializeField] private InteractionController _interactionController;
 
-    [SerializeField] private Animator _animator; 
+    [SerializeField] private Animator _animator;
+
+    private bool changedWeapon;
+
+    public static bool ChangedWeapon;
+
+    private bool changingWeapons;
 
     private void Awake()
     {
@@ -72,6 +80,26 @@ public class PlayerHudController : MonoBehaviour
     {
         _playerControls.Player.WeaponWheel.performed += context => { ShowWeaponWheel(); };
         _playerControls.Player.WeaponWheel.canceled += context => { CloseWeaponWheel(); };
+        _playerControls.Player.Equipment1.performed += context =>
+        {
+            StartCoroutine(ShowWeaponBar(0));
+        };
+        _playerControls.Player.Equipment2.performed += context =>
+        {
+            StartCoroutine(ShowWeaponBar(1));
+        };
+        _playerControls.Player.Equipment3.performed += context =>
+        {
+            StartCoroutine(ShowWeaponBar(2));
+        };
+        _playerControls.Player.Equipment4.performed += context =>
+        {
+            StartCoroutine(ShowWeaponBar(3));
+        };
+        _playerControls.Player.Equipment5.performed += context =>
+        {
+            StartCoroutine(ShowWeaponBar(4));
+        };
     }
     private void OnEnable()
     {
@@ -82,17 +110,45 @@ public class PlayerHudController : MonoBehaviour
     {
         _playerControls.Disable();
     }
+
+    private IEnumerator ShowWeaponBar(int weaponIndex)
+    {
+        weaponSlotsHighlight[weaponIndex].SetActive(true);
+        
+        if(changingWeapons)
+            yield break;
+        
+        changingWeapons = true;
+        
+        weaponBar.transform.DOMoveY(0, 0.5f).SetEase(Ease.Linear);
+
+        yield return new WaitForSeconds(1f);
+        
+        HideWeaponBar();
+    }
+
+    private void HideWeaponBar()
+    {
+        weaponBar.transform.DOMoveY(-265f, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            foreach (var o in weaponSlotsHighlight)
+            {
+                o.SetActive(false);
+                changingWeapons = false;
+            }    
+        });
+    }
     
     private void ShowWeaponWheel()
     {
         weaponWheel.gameObject.SetActive(true);
         Time.timeScale = 0.1f;
         GameMaster._current.IsPaused = true;
-        pistolButton.interactable = SaveData.Current.inventory.pistol.IsUnlocked;
-        gravityAttractorButton.interactable = SaveData.Current.inventory.gravityAttractor.IsUnlocked;
-        gravityGrappleButton.interactable = SaveData.Current.inventory.gravityGrapple.IsUnlocked;
-        daggerButton.interactable = SaveData.Current.inventory.dagger.IsUnlocked;
-        magenetizeButton.interactable = SaveData.Current.inventory.dagger.IsUnlocked;
+        // pistolButton.interactable = SaveData.Current.inventory.pistol.IsUnlocked;
+        // gravityAttractorButton.interactable = SaveData.Current.inventory.gravityAttractor.IsUnlocked;
+        // gravityGrappleButton.interactable = SaveData.Current.inventory.gravityGrapple.IsUnlocked;
+        // daggerButton.interactable = SaveData.Current.inventory.dagger.IsUnlocked;
+        // magenetizeButton.interactable = SaveData.Current.inventory.dagger.IsUnlocked;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
@@ -100,33 +156,15 @@ public class PlayerHudController : MonoBehaviour
     private void CloseWeaponWheel()
     {
         weaponWheel.gameObject.SetActive(false);
+        changedWeapon = ChangedWeapon;
         onCloseWeaponWheel?.Invoke();
+        
         Time.timeScale = 1;
         GameMaster._current.IsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-
-    public void SelectWeapon(int weapon)
-    {
-        switch (weapon)
-        {
-            case 0:
-                SaveData.Current.inventory.rightHand = SaveData.Current.inventory.pistol;
-                break;
-            case 1:
-                SaveData.Current.inventory.leftHand = SaveData.Current.inventory.gravityAttractor;
-                break;
-            case 2:
-                SaveData.Current.inventory.leftHand = SaveData.Current.inventory.gravityGrapple;
-                break;
-            case 3:
-                SaveData.Current.inventory.rightHand = SaveData.Current.inventory.dagger;
-                break;
-            case 4:
-                SaveData.Current.inventory.leftHand = SaveData.Current.inventory.magnetize;
-                break;
-        }
+        changedWeapon = false;
+        ChangedWeapon = changedWeapon;
     }
 
     private void DeathAnimation()

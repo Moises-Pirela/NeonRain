@@ -8,9 +8,9 @@ using UnityEngine;
 public class Inventory
 {
     public EquipmentData pistol = new EquipmentData(1, 10, 25);
-    public EquipmentData gravityAttractor = new EquipmentData(1, 0, 0,25);
-    public EquipmentData gravityGrapple = new EquipmentData(-1, 0,0,50);
-    public EquipmentData magnetize = new EquipmentData(1, 0,0,50);
+    public EquipmentData gravityAttractor = new EquipmentData(1, 0, 0,25, EquipmentData.EquipmentType.Lhand);
+    public EquipmentData gravityGrapple = new EquipmentData(1, 0,0,50, EquipmentData.EquipmentType.Lhand);
+    public EquipmentData magnetize = new EquipmentData(1, 0,0,50, EquipmentData.EquipmentType.Lhand);
     public EquipmentData dagger = new EquipmentData(1, 0, 0, 0);
 
     public EquipmentData leftHand;

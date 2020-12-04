@@ -49,9 +49,9 @@ public class Pistol : Equipment
 
         Damageable target = hit.transform.GetComponent<Damageable>();
         
-        var effect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        effect.transform.SetParent(hit.transform);
-        Destroy(effect, 2f);
+        // var effect = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        // effect.transform.SetParent(hit.transform);
+        // Destroy(effect, 2f);
         
         if (target == null) return; 
             
@@ -68,6 +68,11 @@ public class Pistol : Equipment
     public override void LeaveUse(InputAction.CallbackContext context)
     {
         throw new System.NotImplementedException();
+    }
+
+    public override void CancelUse(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
     }
 
     // private bool CanShoot()

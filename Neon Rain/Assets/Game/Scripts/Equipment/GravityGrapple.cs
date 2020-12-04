@@ -12,12 +12,12 @@ public class GravityGrapple : Equipment
     private Camera fpsCam;
     private Transform player;
 
-    [SerializeField] private ParticleSystem grappleTarget;
+    [SerializeField] private LineRenderer grappleTarget;
     [SerializeField] private float range;
     [SerializeField] private MovementInputData _movementInputData;
 
     private bool isReady = false;
-    private Vector3 targetLocation;
+    private Vector3 targetVector;
     
     private void Awake()
     {
@@ -37,41 +37,45 @@ public class GravityGrapple : Equipment
         isReady = false;
         
         grappleTarget.gameObject.SetActive(false);
+        grappleTarget.SetPosition(1 , Vector3.zero);
 
-        targetLocation = Vector3.zero;
+        targetVector = Vector3.zero;
     }
 
     private void FindTargetLocation()
     {
-        targetLocation = Vector3.zero;
+        targetVector = Vector3.zero;
         
-        if (!Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range)) return;
-
-        grappleTarget.transform.position = hit.point;
-        targetLocation = hit.point;
-
+        grappleTarget.SetPosition(1 , Vector3.forward * range);
+        targetVector =  fpsCam.transform.forward.normalized * range;
     }
 
     private void ShowReadyAnimation()
     {
-        transform.DOPunchPosition(Vector3.back, 0.2f).onComplete += () =>
-        {
-            isReady = true;
-            grappleTarget.gameObject.SetActive(true);
-            grappleTarget.Play();
-        };
+        isReady = true;
+        grappleTarget.gameObject.SetActive(true);
     }
 
     private void Grapple()
     {
-        if (targetLocation != Vector3.zero)
+        if (targetVector != Vector3.zero)
         {
-            player.transform.DOMove(targetLocation, 0.5f);
+            _movementInputData.Dashed = true;
+            _movementInputData.DashVector = targetVector;
             _playerManager.DrainArmor(mydata.armorDrain);
+            StartCoroutine(Reset());
         };
         
         ClearTarget();
     }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        _movementInputData.Dashed = false;
+    }
+
 
     public override void SetEquipment(Camera camera, Transform player = null, EquipmentController equipmentController = null)
     {
@@ -84,9 +88,13 @@ public class GravityGrapple : Equipment
         switch (context.interaction)
         {
             case TapInteraction _:
-                ClearTarget();
+                Debug.Log("Press");
+                Grapple();
+                //ClearTarget();
                 break;
             case HoldInteraction _:
+                Debug.Log("Hold");
+                if (_playerManager.Armor < mydata.armorDrain) return;
                 ShowReadyAnimation();
                 break;
         }
@@ -97,12 +105,17 @@ public class GravityGrapple : Equipment
         switch (context.interaction)
         {
             case TapInteraction _:
-                ClearTarget();
+                //ClearTarget();
                 break;
             case HoldInteraction _:
                 Grapple();
                 break;
         }
+    }
+
+    public override void CancelUse(InputAction.CallbackContext context)
+    {
+        //throw new NotImplementedException();
     }
 
     public override InputAction MyInput()

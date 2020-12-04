@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class GameMaster : MonoBehaviour
 
     public Action onRestartLevel;
 
+    //private SceneView sceneView;
+
     public bool IsPaused
     {
         get => isPaused;
@@ -27,11 +31,17 @@ public class GameMaster : MonoBehaviour
     {
         _current = this;
         SaveData.Current = (SaveData) SerializationManager.Load(Application.persistentDataPath + "/saves/save.save");
+       // sceneView = SceneView.lastActiveSceneView;
+        
     }
 
     private void Start()
     {
         //Set level start position
+        //#if UNITY_EDITOR
+       
+        //SpawnPlayer(sceneView.camera.transform.position);
+        //#else
         if (SaveData.Current.levelsStarted[_levelManager.levelData.levelIndex] && SaveData.Current.lastSpawnPosition != Vector3.zero)
         {
             SpawnPlayer(SaveData.Current.lastSpawnPosition);             
@@ -40,6 +50,8 @@ public class GameMaster : MonoBehaviour
         {
             SpawnPlayer(_levelManager.spawnPosition.position);
         }
+        //#endif
+        
         
         AIBlackboard._current.Init();
         
@@ -49,11 +61,13 @@ public class GameMaster : MonoBehaviour
 
     public void RestartLevel()
     {
-        SpawnPlayer(SaveData.Current.lastSpawnPosition);
-        
-        onRestartLevel.Invoke();
-        
-        _levelManager.RespawnEnemies();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+
+        //SpawnPlayer(SaveData.Current.lastSpawnPosition);
+
+        // onRestartLevel.Invoke();
+        //
+        // _levelManager.RespawnEnemies();
     }
 
     private void SpawnPlayer(Vector3 spawnPosition)

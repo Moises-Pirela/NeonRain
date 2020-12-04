@@ -80,19 +80,14 @@ namespace Game.Scripts.PlayerScripts
             ClearTarget();
         }
         
+        public override void CancelUse(InputAction.CallbackContext context)
+        {
+            ClearTarget();
+        }
+        
         public override void LeaveUse(InputAction.CallbackContext context)
         {
             
-            //
-            // switch (context.interaction)
-            // {
-            //     case TapInteraction _:
-            //         
-            //         break;
-            //     case HoldInteraction _:
-            //         Attract();
-            //         break;
-            // }
         }
 
         public override InputAction MyInput()

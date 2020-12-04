@@ -27,7 +27,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!_controller.movementInputData.JumpClicked)
+        if (!_controller.movementInputData.JumpClicked && !_controller.movementInputData.Dashed)
             OnMove(_controller.MCurrentSpeed/6f);
     }
 

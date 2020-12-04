@@ -51,6 +51,11 @@ public class Dagger : Equipment
         throw new System.NotImplementedException();
     }
 
+    public override void CancelUse(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override InputAction MyInput()
     {
         PlayerControls _playerControls = new PlayerControls();

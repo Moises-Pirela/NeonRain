@@ -13,6 +13,7 @@ namespace VHS
 
             bool m_crouchClicked = false;
             bool m_jumpClicked = false;
+            bool m_dash = false;
 
             bool m_runClicked = false;
             bool m_runReleased = true;
@@ -25,6 +26,8 @@ namespace VHS
                 get => m_inputVector;
                 set => m_inputVector = value;
             }
+
+            public Vector3 DashVector;
 
             public bool HasInput => m_inputVector != Vector2.zero;
             public float InputVectorX
@@ -67,6 +70,12 @@ namespace VHS
                 set => m_jumpClicked = value;
             }
 
+            public bool Dashed
+            {
+                get => m_dash;
+                set => m_dash = value;
+            }
+
             public bool RunClicked
             {
                 get => m_runClicked;
@@ -84,6 +93,7 @@ namespace VHS
             public void ResetInput()
             {
                 m_inputVector = Vector2.zero;
+                DashVector = Vector3.zero;
                 
                 m_isRunning = false;
                 m_isCrouching = false;
@@ -93,6 +103,7 @@ namespace VHS
                 m_runClicked = false;
                 m_runReleased =false;
                 m_isGrappling = false;
+                m_dash = false;
             }
         #endregion
     }

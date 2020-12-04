@@ -59,12 +59,14 @@ public class VisionController : MonoBehaviour
         if (unit.entityType == EntityType.PLAYER)
         {
             // if ((Vector3.Angle(transform.forward, direction) <= myAI.unitData.fov))
-            // {
-            //     if (Physics.Raycast(transform.position, unit.transform.position, out RaycastHit hit,
-            //         myAI.unitData.sightDistance, obstaclesMask))
-            //     {
-            //         return;
-            //     }
+//            {
+                Debug.DrawRay(transform.position, direction, Color.red, 1);
+                if (!Physics.Raycast(transform.position, direction, out RaycastHit hit,
+                    myAI.unitData.sightDistance, obstaclesMask))
+                {
+                    
+                    myAI.CurrentAttackTarget = unit;
+                }
             // }
             // else
             // {
@@ -74,12 +76,14 @@ public class VisionController : MonoBehaviour
         else
         {
              if (myAI.self.faction == unit.faction) return;
+             
+             myAI.CurrentAttackTarget = unit;
             
             // myAI.AwarenessMeter = 1;
         }
 
         //StateMachine.currentState = States.ATTACKING;
 
-        myAI.CurrentAttackTarget = unit;
+        
     }
 }

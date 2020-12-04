@@ -6,4 +6,6 @@ using UnityEngine;
 public class InteractableData : ScriptableObject
 {
     public string toolTip;
+    public string activateToolTip;
+    public string deactivateToolTip;
 }

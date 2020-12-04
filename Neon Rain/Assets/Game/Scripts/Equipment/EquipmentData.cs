@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class EquipmentData
 {
+    [Serializable]
     public enum EquipmentType
     {
         Lhand,
@@ -30,11 +31,12 @@ public class EquipmentData
     
     public bool IsUnlocked => level > 0;
 
-    public EquipmentData( int level = -1, int startingAmmo = 0, int maxAmmo = 0, float armorDrain = 0)
+    public EquipmentData( int level = -1, int startingAmmo = 0, int maxAmmo = 0, float armorDrain = 0, EquipmentType type = EquipmentType.Rhand)
     {
         this.level = level;
         Ammo = startingAmmo;
         this.maxAmmo = maxAmmo;
         this.armorDrain = armorDrain;
+        equipmentType = type;
     }
 }

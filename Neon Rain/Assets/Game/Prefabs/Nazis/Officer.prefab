@@ -126,6 +126,11 @@ MonoBehaviour:
   maxShield: 0
   takingDamage: 0
   isDead: 0
+  hitEffect: {fileID: 4152693728293286759, guid: 6150a7d8090bfd94c97f2cebdb16af39,
+    type: 3}
+  deathEffect: {fileID: 2991262524421098004, guid: 456659565ee360f48bd8e87bb1e54902,
+    type: 3}
+  spriteMesh: {fileID: 4586664576432964173}
   faction: 0
   entityType: 0
   animator: {fileID: 4586664577360610755}
@@ -332,7 +337,7 @@ MonoBehaviour:
   StateMachine: {fileID: 0}
   obstaclesMask:
     serializedVersion: 2
-    m_Bits: 4119
+    m_Bits: 12289
 --- !u!135 &4586664577202279550
 SphereCollider:
   m_ObjectHideFlags: 0

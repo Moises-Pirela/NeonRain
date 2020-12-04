@@ -27,6 +27,8 @@ public abstract class Equipment : MonoBehaviour
 
     public abstract void LeaveUse(InputAction.CallbackContext context);
 
+    public abstract void CancelUse(InputAction.CallbackContext context);
+
     public abstract InputAction MyInput();
 
     public abstract bool MyReverseInput();

@@ -15,7 +15,7 @@ MonoBehaviour:
   unitRank: 0
   aiType: 0
   attackRange: 5
-  sightDistance: 15
+  sightDistance: 10
   fov: 60
   fireRate: 0.5
   damage: 25

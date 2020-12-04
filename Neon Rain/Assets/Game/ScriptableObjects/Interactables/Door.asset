@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253fd9b2f06b63a4ab000abe60ce9645, type: 3}
   m_Name: Door
   m_EditorClassIdentifier: 
-  toolTip: 
+  toolTip: Open
+  activateToolTip: Open
+  deactivateToolTip: Close

@@ -83,6 +83,8 @@
             </e>
             <e p="Cryotank.cs" t="Include" />
             <e p="Door.cs" t="Include" />
+            <e p="Elevator.cs" t="Include" />
+            <e p="ElevatorSwitch.cs" t="Include" />
             <e p="Enemies" t="Include">
               <e p="AIManager.cs" t="Include" />
               <e p="HammerHeadAI.cs" t="Include" />
@@ -102,6 +104,7 @@
               <e p="GravityGrapple.cs" t="Include" />
               <e p="Pistol.cs" t="Include" />
             </e>
+            <e p="FlickeringLight.cs" t="Include" />
             <e p="FSM" t="Include">
               <e p="HammerHeadFSM.cs" t="Include" />
               <e p="StateMachine.cs" t="Include" />
@@ -124,6 +127,7 @@
               <e p="CameraRecoil.cs" t="Include" />
               <e p="Damageable.cs" t="Include" />
               <e p="EquipmentController.cs" t="Include" />
+              <e p="EquipmentScriptableObject.cs" t="Include" />
               <e p="FirstPersonController.cs" t="Include" />
               <e p="HeadBob.cs" t="Include" />
               <e p="InteractionController.cs" t="Include" />
@@ -135,6 +139,8 @@
               <e p="PlayerEvents.cs" t="Include" />
               <e p="PlayerHudController.cs" t="Include" />
               <e p="PlayerManager.cs" t="Include" />
+              <e p="WeaponWheel.cs" t="Include" />
+              <e p="WeaponWheelItem.cs" t="Include" />
             </e>
             <e p="SaveSystem" t="Include">
               <e p="EntityData.cs" t="Include" />
@@ -153,7 +159,11 @@
               <e p="MovementInputData.cs" t="Include" />
               <e p="PerlinNoiseData.cs" t="Include" />
             </e>
+            <e p="SearchLight.cs" t="Include" />
             <e p="ShadowVolume.cs" t="Include" />
+            <e p="Switch.cs" t="Include" />
+            <e p="TruckAI.cs" t="Include" />
+            <e p="UpgradeModule.cs" t="Include" />
             <e p="VoxelMenu.cs" t="Include" />
             <e p="VoxelUtil.cs" t="Include" />
             <e p="Waypoint.cs" t="Include" />
@@ -164,6 +174,34 @@
             </e>
           </e>
           <e p="Standard Assets" t="Include">
+            <e p="Effects" t="Include">
+              <e p="GlassRefraction" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="GlassStainedBumpDistort.shader" t="Include" />
+                </e>
+              </e>
+              <e p="ImageEffects" t="Include">
+                <e p="readme.txt" t="Include" />
+              </e>
+              <e p="Projectors" t="Include">
+                <e p="Guidelines.txt" t="Include" />
+                <e p="Shaders" t="Include">
+                  <e p="ProjectorLight.shader" t="Include" />
+                  <e p="ProjectorMultiply.shader" t="Include" />
+                </e>
+              </e>
+              <e p="TessellationShaders" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="BumpedSpecularDisplacement.shader" t="Include" />
+                  <e p="BumpedSpecularSmooth.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Prototyping" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="WorldCoordDiffuse.shader" t="Include" />
+              </e>
+            </e>
             <e p="Utility" t="Include">
               <e p="ActivateTrigger.cs" t="Include" />
               <e p="AlphaButtonClickMask.cs" t="Include" />
@@ -190,6 +228,105 @@
           </e>
         </e>
         <e p="GpuDemo.cs" t="Include" />
+        <e p="Knife" t="Include">
+          <e p="Real Blood" t="Include">
+            <e p="readme.txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="ProjectionShader.shader" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AnimationEventSimpleObserverable.cs" t="Include" />
+              <e p="AutoSpawner.cs" t="Include" />
+              <e p="CollisionDamage.cs" t="Include" />
+              <e p="DecalEnergyTrigger.cs" t="Include" />
+              <e p="Decals" t="Include">
+                <e p="CharacterDamagePainter.cs" t="Include" />
+                <e p="DecalProjectorTester.cs" t="Include" />
+                <e p="DecalsProjector.cs" t="Include" />
+              </e>
+              <e p="DecalsOnCollision.cs" t="Include" />
+              <e p="DecalsOnParticleCollision.cs" t="Include" />
+              <e p="DecalsOnParticleCollisionAngledSpawn.cs" t="Include" />
+              <e p="DemoBlock.cs" t="Include" />
+              <e p="DemoDollHand.cs" t="Include" />
+              <e p="DemoHandExplosionEventHandler.cs" t="Include" />
+              <e p="DemoRobot.cs" t="Include" />
+              <e p="DemoRobotTrigger.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="ConnectParentJointMenuItem.cs" t="Include" />
+              </e>
+              <e p="ExampleDamageable.cs" t="Include" />
+              <e p="ExplodeableDoll.cs" t="Include" />
+              <e p="ExplodeableHead.cs" t="Include" />
+              <e p="FeetDecalSpawner.cs" t="Include" />
+              <e p="HeadExplosionDoll.cs" t="Include" />
+              <e p="HitBox.cs" t="Include" />
+              <e p="HittableDoll.cs" t="Include" />
+              <e p="InstancedRendererColorApplier.cs" t="Include" />
+              <e p="InstancedRendererColorApplierRandomizer.cs" t="Include" />
+              <e p="InstancedRendererVectorApplier.cs" t="Include" />
+              <e p="IResettable.cs" t="Include" />
+              <e p="ISimpleObserverable.cs" t="Include" />
+              <e p="ISpawner.cs" t="Include" />
+              <e p="ISpawnerContainer.cs" t="Include" />
+              <e p="LiquidSurface" t="Include">
+                <e p="LiquidSurface.cs" t="Include" />
+                <e p="LiquidSurfaceParticleFromDamage.cs" t="Include" />
+                <e p="RenderingCameraCreator.cs" t="Include" />
+                <e p="RenderTextureCreator.cs" t="Include" />
+                <e p="SimpleGameObjectPool.cs" t="Include" />
+                <e p="TextureApplier.cs" t="Include" />
+                <e p="TransformPlacer.cs" t="Include" />
+              </e>
+              <e p="LocalPositionToVectorApplier.cs" t="Include" />
+              <e p="LocalRotator.cs" t="Include" />
+              <e p="MaterialFloatAnimator.cs" t="Include" />
+              <e p="NoiseLocalRotation.cs" t="Include" />
+              <e p="ParticleSystemsController.cs" t="Include" />
+              <e p="PlayAnimationByAnimationEvent.cs" t="Include" />
+              <e p="RandomAnimatorSpeed.cs" t="Include" />
+              <e p="RandomIntegerParameter.cs" t="Include" />
+              <e p="ResetButtonByDamage.cs" t="Include" />
+              <e p="RigidbodyExplosion.cs" t="Include" />
+              <e p="RobotModeButton.cs" t="Include" />
+              <e p="Spawner.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="BloodPuddle (Instanced).shader" t="Include" />
+              <e p="BloodPuddle.shader" t="Include" />
+              <e p="BloodTrail.shader" t="Include" />
+              <e p="Distortion.shader" t="Include" />
+              <e p="Edge Zone.shader" t="Include" />
+              <e p="Liquid Blood Errosion.shader" t="Include" />
+              <e p="Liquid Blood Sphere Errosion.shader" t="Include" />
+              <e p="Liquid Blood.shader" t="Include" />
+              <e p="Liquid Surface Opaque.shader" t="Include" />
+              <e p="Liquid Surface Transparent.shader" t="Include" />
+              <e p="PBR Damageable Metallic.shader" t="Include" />
+              <e p="PBR Damageable.shader" t="Include" />
+              <e p="PBR Masked Albedo.shader" t="Include" />
+              <e p="PBR NormalFix.shader" t="Include" />
+              <e p="Simple Decal.shader" t="Include" />
+              <e p="SurfaceWithBakedSkinnedAnimation.shader" t="Include" />
+            </e>
+            <e p="SimpleController" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="AnimatorFX.cs" t="Include" />
+                <e p="BloodFX.cs" t="Include" />
+                <e p="DamageData.cs" t="Include" />
+                <e p="EmptyWeapon.cs" t="Include" />
+                <e p="FPSDamageFX.cs" t="Include" />
+                <e p="FPSDamageFXPlayer.cs" t="Include" />
+                <e p="Hands.cs" t="Include" />
+                <e p="IFPSDamageFX.cs" t="Include" />
+                <e p="IHittable.cs" t="Include" />
+                <e p="PlayerController.cs" t="Include" />
+                <e p="ShotgunWeapon.cs" t="Include" />
+                <e p="Weapon.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Packages" t="Include">
           <e p="Voxelizer" t="Include">
             <e p="Scripts" t="Include">

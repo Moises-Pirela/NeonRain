@@ -10391,6 +10391,9 @@ MonoBehaviour:
   maxShield: 0
   takingDamage: 0
   isDead: 0
+  hitEffect: {fileID: 0}
+  deathEffect: {fileID: 0}
+  spriteMesh: {fileID: 0}
   canExplode: 0
   data: {fileID: 11400000, guid: d43f3042e7c37da458c32a963e6241da, type: 2}
   layerMask:
@@ -10398,7 +10401,7 @@ MonoBehaviour:
     m_Bits: 5632
   explosionEffect: {fileID: 3425270551300762068}
   rb: {fileID: 3427098427494822403}
-  launchForce: 20
+  launchForce: 50
 --- !u!135 &3427098427494822402
 SphereCollider:
   m_ObjectHideFlags: 0

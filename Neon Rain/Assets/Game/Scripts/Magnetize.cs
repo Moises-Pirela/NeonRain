@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class Magnetize : Equipment
 {
@@ -47,46 +47,78 @@ public class Magnetize : Equipment
     {
         fpsCam = camera;
         targetMagnets = new List<Magnet>();
+        targets = 0;
+        targetMagnets.Clear();
     }
 
     public override void Use(InputAction.CallbackContext context)
     {
-        if (DebugController._instance.IsInConsole || GameMaster._current.IsPaused) return;
-
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, 100, _layerMask,
-            QueryTriggerInteraction.Ignore))
+        switch (context.interaction)
         {
-            var magnet = hit.collider.GetComponent<Magnet>();
+            case TapInteraction _:
+                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, 100, _layerMask,
+                    QueryTriggerInteraction.Ignore))
+                {
+                    var magnet = hit.collider.GetComponent<Magnet>();
         
-            if (magnet == null) return;
+                    if (magnet == null) return;
 
-            if (magnet.magnetType == MagnetType.Inanimate)
-            {
-                //Go ahead and use
-                var magnetInteractable = magnet.gameObject.GetComponent<Interactable>();
+                    if (magnet.magnetType == MagnetType.Inanimate)
+                    {
+                        //Go ahead and use
+                        var magnetInteractable = magnet.gameObject.GetComponent<Interactable>();
+                
+                        if (_playerManager.Armor < mydata.armorDrain) return;
+                
+                        _playerManager.DrainArmor(mydata.armorDrain);
             
-                magnetInteractable.Interact(null,true);
-                return;
-            }
+                        magnetInteractable.Interact(null,true);
+                        return;
+                    }
 
-            if (targets >= 2 || targetMagnets.Contains(magnet)) return;
+                    if (targets >= 2 || targetMagnets.Contains(magnet)) return;
             
-            targetMagnets.Add(magnet);
-            targets++;
-            magnet.tagged = true;
+                    targetMagnets.Add(magnet);
+                    targets++;
+                    magnet.tagged = true;
+                }
+                // else
+                // {
+                    if (targets >= 2 && targetMagnets.Count >= 2)
+                    {
+                        if (_playerManager.Armor < mydata.armorDrain) return;
+                        _playerManager.DrainArmor(mydata.armorDrain);
+                        Activate();
+                    }
+                //}
+                break;
+            case HoldInteraction _:
+                
+                break;
         }
-        else
-        {
-            if (targets >= 2)
-            {
-                Activate();
-            }
-        }
+    }
+
+    public override void CancelUse(InputAction.CallbackContext context)
+    {
+        
     }
 
     public override void LeaveUse(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        switch (context.interaction)
+        {
+            case TapInteraction _:
+                // if (targets >= 2)
+                // {
+                //     if (_playerManager.Armor < mydata.armorDrain) return;
+                //
+                //     _playerManager.DrainArmor(mydata.armorDrain);
+                //     Activate();
+                // }
+                break;
+            case HoldInteraction _:
+                break;
+        }
     }
 
     public override InputAction MyInput()

@@ -22,7 +22,7 @@ public class PlayerManager : BaseEntity
         SetUp();
     }
 
-    private void Start()
+    private new void Start()
     {
         PlayerEvents.Current.onPlayerCrouch += () => { exposure = 0.5f; };
         PlayerEvents.Current.onPlayerStand += () => { exposure = 1; };
@@ -37,7 +37,7 @@ public class PlayerManager : BaseEntity
 
     private void Update()
     {
-        if ((Armor > 0) && (Armor < maxShield))
+        if ((Armor >= 0) && (Armor < maxShield))
         {
             armorRegenTimer += Time.deltaTime;
 

@@ -143,7 +143,7 @@ namespace VHS
                 cameraZoom.ChangeFOV(this);
         }
 
-        public void ChangeRunFOV(bool _returning)
+        public void ChangeFOV(bool _returning)
         {
             cameraZoom.ChangeRunFOV(_returning, this);
         }

@@ -91,14 +91,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Tap(pressPoint=0.3),Hold""
                 },
                 {
-                    ""name"": ""Scroll"",
-                    ""type"": ""Value"",
-                    ""id"": ""a8f1490b-f1a4-4b76-90bc-888443a56ea1"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""ToggleDebug"",
                     ""type"": ""Button"",
                     ""id"": ""10e6b568-d990-495f-b834-8d6f1ed524ed"",
@@ -142,6 +134,62 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Cancel_Secondary_Fire"",
                     ""type"": ""Button"",
                     ""id"": ""60d168f8-5964-4701-9852-e96d32c257ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment1"",
+                    ""type"": ""Button"",
+                    ""id"": ""13ffa3b5-c9ca-4ba3-9062-141ee6f48cba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment2"",
+                    ""type"": ""Button"",
+                    ""id"": ""77fb0d18-5626-46f0-bfdb-0f0971ec3146"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment3"",
+                    ""type"": ""Button"",
+                    ""id"": ""18425fd8-c126-4b56-8b51-d23646445983"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment4"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa6fc8c2-5793-43ee-be59-eb9ef5b0f9bf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment5"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6009088-7d25-4a7c-8a95-b8ee990cac36"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""47f461a6-39bb-422d-a9e9-8776585e5eed"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""204eba88-08bd-47ae-be61-26a78494d105"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -414,17 +462,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""93a2c38d-afb1-4e5c-a694-56dd13f1df7b"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Scroll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""05562b12-152c-43a1-aefa-4088be18c283"",
                     ""path"": ""<Keyboard>/delete"",
                     ""interactions"": """",
@@ -459,7 +496,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e6878d5c-3063-4a23-b5cd-0fd729565ca1"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -532,6 +569,121 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Cancel_Secondary_Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d2539ec-74b9-452d-aa32-316910d9d0e0"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Equipment1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36c87357-6c8a-486d-8680-27305cc86809"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Equipment2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13a90bb9-1a85-4968-99f5-76cf86eb3bfe"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Equipment3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43ce848a-3574-492a-b3f3-68aaf1f9a67e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Equipment4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e80ab0c-78d6-4150-8dd7-b94f6f4fb2ab"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Equipment5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31ffcabc-b676-4182-a734-8abaac8485d5"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccb956bc-82e4-4db6-9750-fb49f5ae5a72"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""ab458664-ee04-4e56-91f5-31def50b9de3"",
+            ""actions"": [
+                {
+                    ""name"": ""Wheel"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""f51c4303-b427-4eef-b7bb-bea0fc8f63a0"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2dc372b7-83d2-4570-b891-095c72f33b3c"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Wheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee8795fd-ddb7-4a02-8db6-0c02ec90e9ba"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Wheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -577,13 +729,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Slide = m_Player.FindAction("Slide", throwIfNotFound: true);
         m_Player_Primary_Fire = m_Player.FindAction("Primary_Fire", throwIfNotFound: true);
         m_Player_Secondary_Fire = m_Player.FindAction("Secondary_Fire", throwIfNotFound: true);
-        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
         m_Player_ToggleDebug = m_Player.FindAction("ToggleDebug", throwIfNotFound: true);
         m_Player_ReturnDebug = m_Player.FindAction("ReturnDebug", throwIfNotFound: true);
         m_Player_WeaponWheel = m_Player.FindAction("WeaponWheel", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Continue = m_Player.FindAction("Continue", throwIfNotFound: true);
         m_Player_Cancel_Secondary_Fire = m_Player.FindAction("Cancel_Secondary_Fire", throwIfNotFound: true);
+        m_Player_Equipment1 = m_Player.FindAction("Equipment1", throwIfNotFound: true);
+        m_Player_Equipment2 = m_Player.FindAction("Equipment2", throwIfNotFound: true);
+        m_Player_Equipment3 = m_Player.FindAction("Equipment3", throwIfNotFound: true);
+        m_Player_Equipment4 = m_Player.FindAction("Equipment4", throwIfNotFound: true);
+        m_Player_Equipment5 = m_Player.FindAction("Equipment5", throwIfNotFound: true);
+        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
+        m_Player_Cancel = m_Player.FindAction("Cancel", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Wheel = m_UI.FindAction("Wheel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -642,13 +803,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Slide;
     private readonly InputAction m_Player_Primary_Fire;
     private readonly InputAction m_Player_Secondary_Fire;
-    private readonly InputAction m_Player_Scroll;
     private readonly InputAction m_Player_ToggleDebug;
     private readonly InputAction m_Player_ReturnDebug;
     private readonly InputAction m_Player_WeaponWheel;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Continue;
     private readonly InputAction m_Player_Cancel_Secondary_Fire;
+    private readonly InputAction m_Player_Equipment1;
+    private readonly InputAction m_Player_Equipment2;
+    private readonly InputAction m_Player_Equipment3;
+    private readonly InputAction m_Player_Equipment4;
+    private readonly InputAction m_Player_Equipment5;
+    private readonly InputAction m_Player_Scroll;
+    private readonly InputAction m_Player_Cancel;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -662,13 +829,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Slide => m_Wrapper.m_Player_Slide;
         public InputAction @Primary_Fire => m_Wrapper.m_Player_Primary_Fire;
         public InputAction @Secondary_Fire => m_Wrapper.m_Player_Secondary_Fire;
-        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
         public InputAction @ToggleDebug => m_Wrapper.m_Player_ToggleDebug;
         public InputAction @ReturnDebug => m_Wrapper.m_Player_ReturnDebug;
         public InputAction @WeaponWheel => m_Wrapper.m_Player_WeaponWheel;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Continue => m_Wrapper.m_Player_Continue;
         public InputAction @Cancel_Secondary_Fire => m_Wrapper.m_Player_Cancel_Secondary_Fire;
+        public InputAction @Equipment1 => m_Wrapper.m_Player_Equipment1;
+        public InputAction @Equipment2 => m_Wrapper.m_Player_Equipment2;
+        public InputAction @Equipment3 => m_Wrapper.m_Player_Equipment3;
+        public InputAction @Equipment4 => m_Wrapper.m_Player_Equipment4;
+        public InputAction @Equipment5 => m_Wrapper.m_Player_Equipment5;
+        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
+        public InputAction @Cancel => m_Wrapper.m_Player_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -705,9 +878,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Secondary_Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
                 @Secondary_Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
                 @Secondary_Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Fire;
-                @Scroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
-                @Scroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
-                @Scroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
                 @ToggleDebug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
                 @ToggleDebug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
                 @ToggleDebug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleDebug;
@@ -726,6 +896,27 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Cancel_Secondary_Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
                 @Cancel_Secondary_Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
                 @Cancel_Secondary_Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel_Secondary_Fire;
+                @Equipment1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment1;
+                @Equipment1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment1;
+                @Equipment1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment1;
+                @Equipment2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment2;
+                @Equipment2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment2;
+                @Equipment2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment2;
+                @Equipment3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment3;
+                @Equipment3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment3;
+                @Equipment3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment3;
+                @Equipment4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment4;
+                @Equipment4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment4;
+                @Equipment4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment4;
+                @Equipment5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment5;
+                @Equipment5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment5;
+                @Equipment5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEquipment5;
+                @Scroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @Scroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @Scroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @Cancel.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancel;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -757,9 +948,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Secondary_Fire.started += instance.OnSecondary_Fire;
                 @Secondary_Fire.performed += instance.OnSecondary_Fire;
                 @Secondary_Fire.canceled += instance.OnSecondary_Fire;
-                @Scroll.started += instance.OnScroll;
-                @Scroll.performed += instance.OnScroll;
-                @Scroll.canceled += instance.OnScroll;
                 @ToggleDebug.started += instance.OnToggleDebug;
                 @ToggleDebug.performed += instance.OnToggleDebug;
                 @ToggleDebug.canceled += instance.OnToggleDebug;
@@ -778,10 +966,64 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Cancel_Secondary_Fire.started += instance.OnCancel_Secondary_Fire;
                 @Cancel_Secondary_Fire.performed += instance.OnCancel_Secondary_Fire;
                 @Cancel_Secondary_Fire.canceled += instance.OnCancel_Secondary_Fire;
+                @Equipment1.started += instance.OnEquipment1;
+                @Equipment1.performed += instance.OnEquipment1;
+                @Equipment1.canceled += instance.OnEquipment1;
+                @Equipment2.started += instance.OnEquipment2;
+                @Equipment2.performed += instance.OnEquipment2;
+                @Equipment2.canceled += instance.OnEquipment2;
+                @Equipment3.started += instance.OnEquipment3;
+                @Equipment3.performed += instance.OnEquipment3;
+                @Equipment3.canceled += instance.OnEquipment3;
+                @Equipment4.started += instance.OnEquipment4;
+                @Equipment4.performed += instance.OnEquipment4;
+                @Equipment4.canceled += instance.OnEquipment4;
+                @Equipment5.started += instance.OnEquipment5;
+                @Equipment5.performed += instance.OnEquipment5;
+                @Equipment5.canceled += instance.OnEquipment5;
+                @Scroll.started += instance.OnScroll;
+                @Scroll.performed += instance.OnScroll;
+                @Scroll.canceled += instance.OnScroll;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_Wheel;
+    public struct UIActions
+    {
+        private @PlayerControls m_Wrapper;
+        public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Wheel => m_Wrapper.m_UI_Wheel;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @Wheel.started -= m_Wrapper.m_UIActionsCallbackInterface.OnWheel;
+                @Wheel.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnWheel;
+                @Wheel.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnWheel;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Wheel.started += instance.OnWheel;
+                @Wheel.performed += instance.OnWheel;
+                @Wheel.canceled += instance.OnWheel;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_KeyboardandMouseSchemeIndex = -1;
     public InputControlScheme KeyboardandMouseScheme
     {
@@ -811,12 +1053,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSlide(InputAction.CallbackContext context);
         void OnPrimary_Fire(InputAction.CallbackContext context);
         void OnSecondary_Fire(InputAction.CallbackContext context);
-        void OnScroll(InputAction.CallbackContext context);
         void OnToggleDebug(InputAction.CallbackContext context);
         void OnReturnDebug(InputAction.CallbackContext context);
         void OnWeaponWheel(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnContinue(InputAction.CallbackContext context);
         void OnCancel_Secondary_Fire(InputAction.CallbackContext context);
+        void OnEquipment1(InputAction.CallbackContext context);
+        void OnEquipment2(InputAction.CallbackContext context);
+        void OnEquipment3(InputAction.CallbackContext context);
+        void OnEquipment4(InputAction.CallbackContext context);
+        void OnEquipment5(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnWheel(InputAction.CallbackContext context);
     }
 }

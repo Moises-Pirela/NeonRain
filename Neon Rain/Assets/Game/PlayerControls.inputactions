@@ -78,14 +78,6 @@
                     "interactions": "Tap(pressPoint=0.3),Hold"
                 },
                 {
-                    "name": "Scroll",
-                    "type": "Value",
-                    "id": "a8f1490b-f1a4-4b76-90bc-888443a56ea1",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "ToggleDebug",
                     "type": "Button",
                     "id": "10e6b568-d990-495f-b834-8d6f1ed524ed",
@@ -129,6 +121,62 @@
                     "name": "Cancel_Secondary_Fire",
                     "type": "Button",
                     "id": "60d168f8-5964-4701-9852-e96d32c257ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Equipment1",
+                    "type": "Button",
+                    "id": "13ffa3b5-c9ca-4ba3-9062-141ee6f48cba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Equipment2",
+                    "type": "Button",
+                    "id": "77fb0d18-5626-46f0-bfdb-0f0971ec3146",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Equipment3",
+                    "type": "Button",
+                    "id": "18425fd8-c126-4b56-8b51-d23646445983",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Equipment4",
+                    "type": "Button",
+                    "id": "fa6fc8c2-5793-43ee-be59-eb9ef5b0f9bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Equipment5",
+                    "type": "Button",
+                    "id": "e6009088-7d25-4a7c-8a95-b8ee990cac36",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "47f461a6-39bb-422d-a9e9-8776585e5eed",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "204eba88-08bd-47ae-be61-26a78494d105",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -401,17 +449,6 @@
                 },
                 {
                     "name": "",
-                    "id": "93a2c38d-afb1-4e5c-a694-56dd13f1df7b",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Scroll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "05562b12-152c-43a1-aefa-4088be18c283",
                     "path": "<Keyboard>/delete",
                     "interactions": "",
@@ -446,7 +483,7 @@
                 {
                     "name": "",
                     "id": "e6878d5c-3063-4a23-b5cd-0fd729565ca1",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -517,6 +554,121 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Cancel_Secondary_Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d2539ec-74b9-452d-aa32-316910d9d0e0",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Equipment1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36c87357-6c8a-486d-8680-27305cc86809",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Equipment2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13a90bb9-1a85-4968-99f5-76cf86eb3bfe",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Equipment3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43ce848a-3574-492a-b3f3-68aaf1f9a67e",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Equipment4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e80ab0c-78d6-4150-8dd7-b94f6f4fb2ab",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Equipment5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31ffcabc-b676-4182-a734-8abaac8485d5",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ccb956bc-82e4-4db6-9750-fb49f5ae5a72",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "ab458664-ee04-4e56-91f5-31def50b9de3",
+            "actions": [
+                {
+                    "name": "Wheel",
+                    "type": "PassThrough",
+                    "id": "f51c4303-b427-4eef-b7bb-bea0fc8f63a0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2dc372b7-83d2-4570-b891-095c72f33b3c",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee8795fd-ddb7-4a02-8db6-0c02ec90e9ba",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "Controller",
+                    "action": "Wheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

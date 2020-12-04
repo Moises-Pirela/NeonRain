@@ -58,128 +58,136 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IPatrol.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Waypoint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/InputSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.2.3/Runtime/Core/ColliderBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03035303-2B91-4045-A0B9-6BEA329B98D3/01/900123e5/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9674024A-B0E7-4D27-BBE9-EAA30DAB34D1/c0/50495f7b/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GPUDemo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SearchLight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/UpgradeModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/KeyData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DebugConsole/Scripts/DebugCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerCollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/WeaponWheel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/InteractionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_DoubleSided_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/FlickeringLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardEntityData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Dagger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/03035303-2B91-4045-A0B9-6BEA329B98D3/01/900123e5/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/EquipmentData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR_Spec.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_Liquid_PBR.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/ElevatorSwitch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Waypoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/PBR/PS1_PBR.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/QuaternionSerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Knife/Real Blood/Scripts/DemoBlock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_Liquid_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Unlit/PS1_DoubleSided_Unlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/Vector3SerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_DoubleSided.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Billboard/BillboardEntityData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/PS1_Liquid.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_ND.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_Liquid_ND.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Dagger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_DoubleSided_ND.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Standard Assets/Utility/FOVKick.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/EquipmentData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/QuaternionSerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/Vector3SerializationSurrogate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/InputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Grenade.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/KeyData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_ND.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Player/WeaponWheelItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_Liquid_ND.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/IPatrol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Standard/Non-Dithered/PS1_DoubleSided_ND.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.2.3/Runtime/Core/ColliderBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/DebugNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Standard Assets/Utility/FOVKick.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9674024A-B0E7-4D27-BBE9-EAA30DAB34D1/c0/50495f7b/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GPUDemo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/FaceTargetTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/InAttackRangeConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Tasks/AttackTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAIController.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Sequence.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Conditions/EnemySpottedConditional.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Selector.cs" />
-      <option value="$PROJECT_DIR$/Assets/BehaviourTree/Nodes/Condition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/GainAwarenessTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/AIController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/UnitData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/ForceFailCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziTrooperAIController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemyInRangeCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/NoiseMaker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/CameraRecoil.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypoint.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/AttackTask.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/CanMoveCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/InAttackRangeCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/EnemySpottedCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/StateMachine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/FSM/HammerHeadFSM.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/FaceMoveDirectionTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BTRoot.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/SelectRandomWanderPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Conditions/HasWaypointCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/ReachedDestinationCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/ForceFailureTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/ExplosiveData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/LevelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerEvents.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InputHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/NaziOfficerAI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Grenade.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/Tasks/MoveToTask.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/HammerHeadAI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" />
-      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
       <option value="$PROJECT_DIR$/Assets/Game/Scripts/BehaviorTree/BaseAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Entity/BaseEntity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/AIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Knife/Real Blood/Scripts/DecalsOnParticleCollision.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/SaveSystem/SerializationManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/EquipmentData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InteractableData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/ElevatorSwitch.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Elevator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Inventory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Input/InputHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/ScriptableObjects/MovementInputData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Camera/CameraZoom.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerAnimations.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentScriptableObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/WeaponWheelItem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerHudController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/WeaponWheel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/Explosive.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/WorldProps/ExplosiveBarrel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/Damageable.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Key.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/SearchLight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/FlickeringLight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Switch.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Equipment.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Magnetize.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Dagger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityGrapple.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Equipment/Pistol.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/EquipmentController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Player/FirstPersonController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/TruckAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameMaster.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Enemies/VisionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/UpgradeModule.cs" />
+      <option value="$PROJECT_DIR$/Assets/Game/Scripts/Door.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1fTN2uh0GiA3XbGOV9kzssJrrYW" />
@@ -192,7 +200,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34991798" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -224,10 +232,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29148">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25436">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="29148" />
+      <option name="pid" value="25436" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -294,7 +302,14 @@
       <workItem from="1604969417061" duration="8205000" />
       <workItem from="1605025033007" duration="5000" />
       <workItem from="1605025856387" duration="23312000" />
-      <workItem from="1605118436943" duration="9482000" />
+      <workItem from="1605118436943" duration="12077000" />
+      <workItem from="1605198030941" duration="19687000" />
+      <workItem from="1605397386875" duration="41932000" />
+      <workItem from="1605813648006" duration="2862000" />
+      <workItem from="1606009378883" duration="2024000" />
+      <workItem from="1606222745955" duration="4393000" />
+      <workItem from="1606332610731" duration="11718000" />
+      <workItem from="1606416678213" duration="3455000" />
     </task>
     <servers />
   </component>
@@ -326,6 +341,58 @@
           <line>9</line>
           <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\BehaviourTree\Nodes\Tasks\FaceTargetTask.cs" initialLine="9" containingFunctionPresentation="method 'DoTask'" />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/Equipment/GravityAttractor.cs</url>
+          <line>84</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\Game\Scripts\Equipment\GravityAttractor.cs" initialLine="84" containingFunctionPresentation="method 'CancelUse'">
+            <startOffsets>
+              <option value="2381" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2395" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/TruckAI.cs</url>
+          <line>82</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\Game\Scripts\TruckAI.cs" initialLine="59" containingFunctionPresentation="method 'CheckDistance'">
+            <startOffsets>
+              <option value="1953" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1980" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/GameMaster.cs</url>
+          <line>50</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\Game\Scripts\GameMaster.cs" initialLine="50" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="1240" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1290" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/GameMaster.cs</url>
+          <line>46</line>
+          <properties documentPath="D:\Repos\NeonRain\Neon Rain\Assets\Game\Scripts\GameMaster.cs" initialLine="46" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="1133" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1181" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -11,6 +11,7 @@ public class ExplosiveBarrel : Explosive
     {
         exploding = true;
         fireStream.SetActive(true);
+        canExplode = true;
         
         yield return new WaitForSeconds(5f);
         
@@ -22,6 +23,10 @@ public class ExplosiveBarrel : Explosive
     {
         if (!exploding)
             StartCoroutine(InitiateExplode());
+        else
+        {
+            base.Explode();
+        }
     }
 
     public override void TakeDamage(float damageAmount)
